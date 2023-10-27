@@ -218,9 +218,6 @@
 				<div class="elementor-container elementor-column-gap-default">
 
 
-
-
-
 					<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
 
 					<script>
@@ -231,8 +228,9 @@
 								initialView: 'dayGridMonth',
 								headerToolbar: {
 									left: 'prev,next today',
-									center: 'title',
-									right: 'dayGridMonth,timeGridWeek,timeGridDay'
+									center: '',
+									/* right: 'dayGridMonth,timeGridWeek,timeGridDay', */
+                                    right: 'title'
 								},
 								locales: 'es',
 

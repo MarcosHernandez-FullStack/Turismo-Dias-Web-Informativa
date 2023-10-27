@@ -249,6 +249,10 @@
                                     margin-top: 5%;
                                 }
 
+
+                                .menu-item {
+                                    display: block !important;
+                                }
                             }
 
                             .ciudad {
@@ -266,7 +270,7 @@
                                 background: white;
                                 width: 200px;
                                 list-style: none;
-                                padding: 20px;
+                                padding: 17px;
                                 border: 1px solid rgba(0, 0, 0, 0.1);
                                 border-right: none;
                                 border-bottom: none;
@@ -296,58 +300,138 @@
                             .ciudad li:hover span {
                                 display: block;
                             }
+
+                            .menu-icon {
+                                /*  position: fixed; */
+                                left: 0;
+                                top: 0;
+                                padding: 10px;
+                                cursor: pointer;
+                                z-index: 1;
+                                /* Asegura que esté por encima del contenido */
+                            }
+
+                            .menu-icon-abrir {
+                                /*  position: fixed; */
+                                left: 0;
+                                top: 0;
+                                padding: 10px;
+                                cursor: pointer;
+                                z-index: 1;
+                                /* Asegura que esté por encima del contenido */
+                            }
+
+                            .menu-item {
+                                display: none;
+                            }
+
+                            .oculto {
+                                display: none;
+                            }
+
+                            #miDiv {
+                                display: none;
+                                transition: opacity 0.3s ease-in-out;
+                            }
                         </style>
 
                         <div class="contenedor-ciudad">
 
-
                             <div class="ciudad-mapa" style="display: flex; ">
-                                <div class="ciudad">
-                                    <ul>
-                                        <li>
-                                            <b> Tarapoto</b>
-                                            <span>&rarr;</span>
-                                        </li>
-                                        <li>
-                                            <b> Lima</b>
-                                            <span>&rarr;</span>
-                                        </li>
-                                        <li>
-                                            <b> Arequipa</b>
-                                            <span>&rarr;</span>
-                                        </li>
-                                        <li>
-                                            <b> Cusco</b>
-                                            <span>&rarr;</span>
-                                        </li>
-                                        <li>
-                                            <b> Trujillo</b>
-                                            <span>&rarr;</span>
-                                        </li>
-                                        <li>
-                                            <b> Chiclayo</b>
-                                            <span>&rarr;</span>
-                                        </li>
-                                        <li>
-                                            <b>Loreto</b>
-                                            <span>&rarr;</span>
-                                        </li>
-                                        <li>
-                                            <b> Tacna</b>
-                                            <span>&rarr;</span>
-                                        </li>
-                                    </ul>
+
+                                <div id="ciudadContainer" class="ciudad" style="    height: 100%;">
+                                    <div class="menu-icon-abrir">
+                                        <span id="mostrarBtn">&#9776;</span>
+                                        <!-- Este es el ícono de hamburguesa, puedes usar otro icono si lo prefieres -->
+                                    </div>
                                 </div>
 
-                                <div class="mapa" style="width: 100%;">
+
+                                <div id="miDiv" class="oculto"style="    height: 100%;">
+
+                                    <div class="ciudad">
+                                        <div class="menu-icon">
+                                            <span id="cerrarBtn"> &#9776;</span>
+
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <b> Ciudad 1</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                <b> Ciudad 2</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                <b> Ciudad 3</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                 <b> Ciudad 4</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                 <b> Ciudad 5</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                <b> Ciudad 6</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                               <b> Ciudad 7</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                <b> Ciudad 8</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                <b> Ciudad 9</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                 <b> Ciudad 10</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                            <li>
+                                                <b> Ciudad 11</b>
+                                                <span>&rarr;</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="mapa" style="width: 100%;     height: 100%;">
                                     <div>
                                         <iframe
+                                            style="    min-height: 619px;
+                                        height: 100%;"
                                             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10244.51789822277!2d-79.02822501159524!3d-8.121680698056583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2spe!4v1698022281684!5m2!1ses!2spe"
-                                            width="600" height="520" style="border:0;" allowfullscreen=""
-                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                            width="600" loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                 </div>
                             </div>
+
+                            <script>
+                                const mostrarBtn = document.getElementById("mostrarBtn");
+                                const miDiv = document.getElementById("miDiv");
+                                const ciudadContainer = document.getElementById("ciudadContainer"); // Seleccionamos el div contenedor
+
+                                mostrarBtn.addEventListener("click", function() {
+                                    miDiv.style.display = "block";
+                                    ciudadContainer.style.display = "none"; // Ocultamos el div contenedor
+                                });
+
+                                cerrarBtn.addEventListener("click", function() {
+                                    miDiv.style.display = "none";
+                                    ciudadContainer.style.display = "block"; // Mostramos nuevamente el div contenedor
+                                });
+                            </script>
 
 
                             <div class="call-center">
