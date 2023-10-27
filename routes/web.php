@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FAQController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,9 +31,7 @@ Route::get('/rutas', function () {
     return view('secciones.rutas');
 })->name('seccion.rutas');
 
-Route::get('/preguntas-frecuentes', function () {
-    return view('secciones.condiciones-de-viaje.preguntas-frecuentes');
-})->name('seccion.preguntas-frecuentes');
+Route::get('/preguntas-frecuentes', [FAQController::class, 'index'])->name('seccion.preguntas-frecuentes');
 
 Route::get('/calendario-eventos', function () {
     return view('secciones.condiciones-de-viaje.calendario-eventos');

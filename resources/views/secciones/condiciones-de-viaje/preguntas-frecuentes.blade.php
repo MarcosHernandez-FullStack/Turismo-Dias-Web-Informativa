@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="./../../xmlrpc.php">
-   {{--  <title>FAQ &#8211; Titulo temporal</title> --}}
+    {{--  <title>FAQ &#8211; Titulo temporal</title> --}}
     <meta name="robots" content="max-image-preview:large">
     <link rel="alternate" type="application/rss+xml" title="Titulo temporal &raquo; Feed" href="./../../feed/index.html">
     <link rel="alternate" type="application/rss+xml" title="Titulo temporal &raquo; Feed de comentarios"
@@ -219,7 +219,32 @@
                                     <div class="elementor-widget-container">
                                         <div
                                             class="jeg-elementor-kit jkit-accordion style-default jeg_module_142_3_653170e6b92ac">
-                                            <div class="card-wrapper expand">
+
+
+                                            @foreach ($faqsPrincipal as $key => $faq)
+                                                <div class="card-wrapper{{ $key == 0 ? ' expand' : '' }}">
+                                                    <div class="card-header">
+                                                        <a href="#expand-9259c74" class="card-header-button"
+                                                            aria-expanded="false" data-target="#expand-9259c74"
+                                                            aria-controls="expand-9259c74">
+                                                            <div class="left-icon-group">
+                                                                <div class="normal-icon"><i aria-hidden="true"
+                                                                        class="jki jki-chevrons-right-line"></i></div>
+                                                                <div class="active-icon"><i aria-hidden="true"
+                                                                        class="jki jki-chevrons-down-line"></i></div>
+                                                            </div>
+                                                            <span class="title">{{ $faq['pregunta'] }}</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="card-expand" id="expand-9259c74"
+                                                        style="display: {{ $key == 0 ? 'block' : 'none' }}">
+                                                        <div class="card-body">{{ $faq['respuesta'] }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+
+                                            {{-- <div class="card-wrapper expand">
                                                 <div class="card-header">
                                                     <a href="#expand-cf689ee" class="card-header-button"
                                                         aria-expanded="false" data-target="#expand-cf689ee"
@@ -239,63 +264,25 @@
                                                         pasaje correspondiente, viajarán acompañados de sus padres o caso
                                                         contrario portar permiso notarial.</div>
                                                 </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-9259c74" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-9259c74"
-                                                        aria-controls="expand-9259c74">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">¿Se pueden realizar viajes con
-                                                            animales?</span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-9259c74" style="display:none">
-                                                    <div class="card-body">No es posible, no transportamos animales.</div>
-                                                </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-75c9e32" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-75c9e32"
-                                                        aria-controls="expand-75c9e32">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">¿Con cuánto tiempo anticipado puede postergar
-                                                            mi
-                                                            pasaje?</span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-75c9e32" style="display:none">
-                                                    <div class="card-body">Las postergaciones se realizan hasta 4 horas
-                                                        antes de la salida del bus que ya tiene comprado. </div>
-                                                </div>
-                                            </div>
+                                            </div> --}}
+
+
                                         </div>
                                     </div>
                                 </div>
                                 <!-- <div class="elementor-element elementor-element-6bc99baf elementor-align-left elementor-widget elementor-widget-button"
-                data-id="6bc99baf" data-element_type="widget" data-widget_type="button.default">
-                <div class="elementor-widget-container">
-                 <div class="elementor-button-wrapper">
-                  <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
-                   href="#">
-                   <span class="elementor-button-content-wrapper">
-                    <span class="elementor-button-text">More About Us</span>
-                   </span>
-                  </a>
-                 </div>
-                </div>
-               </div> -->
+                                    data-id="6bc99baf" data-element_type="widget" data-widget_type="button.default">
+                                    <div class="elementor-widget-container">
+                                     <div class="elementor-button-wrapper">
+                                      <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
+                                       href="#">
+                                       <span class="elementor-button-content-wrapper">
+                                        <span class="elementor-button-text">More About Us</span>
+                                       </span>
+                                      </a>
+                                     </div>
+                                    </div>
+                                   </div> -->
                             </div>
                         </div>
                         <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1996cbbf animated-slow elementor-invisible"
@@ -311,139 +298,45 @@
                                     <div class="elementor-widget-container">
                                         <div
                                             class="jeg-elementor-kit jkit-accordion style-default jeg_module_142_3_653170e6b92ac">
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-9259c74" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-9259c74"
-                                                        aria-controls="expand-9259c74">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">¿Cuál es el tiempo de espera para el
-                                                            embarque?</span>
-                                                    </a>
+
+
+                                            @foreach ($faqsSecundaria as $faq)
+                                                <div class="card-wrapper ">
+                                                    <div class="card-header">
+                                                        <a href="#expand-9259c74" class="card-header-button"
+                                                            aria-expanded="false" data-target="#expand-9259c74"
+                                                            aria-controls="expand-9259c74">
+                                                            <div class="left-icon-group">
+                                                                <div class="normal-icon"><i aria-hidden="true"
+                                                                        class="jki jki-chevrons-right-line"></i></div>
+                                                                <div class="active-icon"><i aria-hidden="true"
+                                                                        class="jki jki-chevrons-down-line"></i></div>
+                                                            </div>
+                                                            <span class="title">{{ $faq['pregunta'] }}</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="card-expand" id="expand-9259c74" style="display:none">
+                                                        <div class="card-body">{{ $faq['respuesta'] }}</div>
+                                                    </div>
                                                 </div>
-                                                <div class="card-expand" id="expand-9259c74" style="display:none">
-                                                    <div class="card-body">La espera para el embarque es de 5 minutos como
-                                                        máximo. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-9259c74" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-9259c74"
-                                                        aria-controls="expand-9259c74">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">¿Puedo viajar con DNI vencido?</span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-9259c74" style="display:none">
-                                                    <div class="card-body">No es posible, debe adicionar su Ticket de
-                                                        Tramite y una FICHA RENIEC. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-75c9e32" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-75c9e32"
-                                                        aria-controls="expand-75c9e32">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">¿Puede un menor de edad viajar en asientos
-                                                            panorámico? </span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-75c9e32" style="display:none">
-                                                    <div class="card-body">No es posible, los menores de edad, mujeres
-                                                        embarazadas y personas de la tercera edad; a partir de los 65 años,
-                                                        no podrán viajar en asientos PANORÁMICOS. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-75c9e32" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-75c9e32"
-                                                        aria-controls="expand-75c9e32">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">¿De cuantos grados es el servicio? </span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-75c9e32" style="display:none">
-                                                    <div class="card-body">Nuestro servicio económico es de 140° y nuestro
-                                                        servicio vip es 160°. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-75c9e32" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-75c9e32"
-                                                        aria-controls="expand-75c9e32">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">¿Los buses tienen Cargador micro USB?</span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-75c9e32" style="display:none">
-                                                    <div class="card-body">Si, todos nuestros servicios lo tienen. </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-75c9e32" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-75c9e32"
-                                                        aria-controls="expand-75c9e32">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">¿Cuántos kilos de equipaje equivale mi pasaje?
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-75c9e32" style="display:none">
-                                                    <div class="card-body">El pasajero portará libre de pago 20 kg de
-                                                        equipaje. </div>
-                                                </div>
-                                            </div>
+                                            @endforeach
+
                                         </div>
                                     </div>
                                 </div>
                                 <!-- <div class="elementor-element elementor-element-6bc99baf elementor-align-left elementor-widget elementor-widget-button"
-                data-id="6bc99baf" data-element_type="widget" data-widget_type="button.default">
-                <div class="elementor-widget-container">
-                 <div class="elementor-button-wrapper">
-                  <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
-                   href="#">
-                   <span class="elementor-button-content-wrapper">
-                    <span class="elementor-button-text">More About Us</span>
-                   </span>
-                  </a>
-                 </div>
-                </div>
-               </div> -->
+                                    data-id="6bc99baf" data-element_type="widget" data-widget_type="button.default">
+                                    <div class="elementor-widget-container">
+                                     <div class="elementor-button-wrapper">
+                                      <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
+                                       href="#">
+                                       <span class="elementor-button-content-wrapper">
+                                        <span class="elementor-button-text">More About Us</span>
+                                       </span>
+                                      </a>
+                                     </div>
+                                    </div>
+                                   </div> -->
                             </div>
                         </div>
                     </div>
