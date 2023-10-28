@@ -90,6 +90,11 @@
 
     <body
         class="page-template page-template-elementor_header_footer page page-id-128 page-parent ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme elementor-default elementor-template-full-width elementor-kit-12 elementor-page elementor-page-128">
+
+
+
+
+
         <div id="page" class="hfeed site">
 
 
@@ -170,7 +175,7 @@
                         </div>
                     </div>
                 </section>
-                <section
+                {{--  <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-1a6ce39c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                     data-id="1a6ce39c" data-element_type="section">
                     <div class="elementor-container elementor-column-gap-default">
@@ -206,404 +211,9 @@
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> --}}
 
                 <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-63fe10b5 animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
-                    data-id="63fe10b5" data-element_type="section"
-                    data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
-                    <div class="elementor-container elementor-column-gap-default" style="    display: block;">
-                        <style>
-                            .contenedor-ciudad {
-
-                                margin: 0 auto;
-                                display: flex;
-                            }
-
-                            .ciudad-mapa {
-
-                                width: 80%;
-                            }
-
-                            .call-center {
-                                width: 35%;
-                            }
-
-                            @media (max-width: 1000px) {
-                                .contenedor-ciudad {
-                                    width: 100%;
-                                    display: block;
-                                    float: none;
-                                }
-
-                                .ciudad-mapa {
-                                    width: 100%;
-                                }
-
-                                .mapa {
-                                    width: 100%;
-                                }
-
-                                .call-center {
-                                    width: 100%;
-                                    margin-top: 5%;
-                                }
-
-
-                                .menu-item {
-                                    display: block !important;
-                                }
-                            }
-
-                            .ciudad {
-                                box-shadow: 0 0 3px rgba(62, 62, 62, 0.2);
-
-                            }
-
-                            .ciudad ul {
-                                margin: 0;
-                                padding: 0;
-                                display: inline-block;
-                            }
-
-                            .ciudad li {
-                                background: white;
-                                width: 200px;
-                                list-style: none;
-                                padding: 17px;
-                                border: 1px solid rgba(0, 0, 0, 0.1);
-                                border-right: none;
-                                border-bottom: none;
-
-                                cursor: pointer;
-
-                            }
-
-                            .ciudad li:hover {
-                                background: linear-gradient(to right, #0da40d 0%, #017F01 100%);
-                                /* Gradiente verde */
-                                color: white;
-                                /* Cambia el color del texto en hover */
-                                transition: background 0.3s ease;
-                                /* Añade una transición para suavizar el efecto */
-                            }
-
-
-
-                            .ciudad li span {
-                                float: right;
-                                font-weight: bold;
-                                display: none;
-                                font-family: calibri light;
-                            }
-
-                            .ciudad li:hover span {
-                                display: block;
-                            }
-
-                            .menu-icon {
-                                /*  position: fixed; */
-                                left: 0;
-                                top: 0;
-                                padding: 10px;
-                                cursor: pointer;
-                                z-index: 1;
-                                /* Asegura que esté por encima del contenido */
-                            }
-
-                            .menu-icon-abrir {
-                                /*  position: fixed; */
-                                left: 0;
-                                top: 0;
-                                padding: 10px;
-                                cursor: pointer;
-                                z-index: 1;
-                                /* Asegura que esté por encima del contenido */
-                            }
-
-                            .menu-item {
-                                display: none;
-                            }
-
-                            .oculto {
-                                display: none;
-                            }
-
-                            #miDiv {
-                                display: none;
-                                transition: opacity 0.3s ease-in-out;
-                            }
-                        </style>
-
-                        <div class="contenedor-ciudad">
-
-                            <div class="ciudad-mapa" style="display: flex; ">
-
-                                <div id="ciudadContainer" class="ciudad" style="    height: 100%;">
-                                    <div class="menu-icon-abrir">
-                                        <span id="mostrarBtn">&#9776;</span>
-                                        <!-- Este es el ícono de hamburguesa, puedes usar otro icono si lo prefieres -->
-                                    </div>
-                                </div>
-
-
-                                <div id="miDiv" class="oculto"style="    height: 100%;">
-
-                                    <div class="ciudad">
-                                        <div class="menu-icon">
-                                            <span id="cerrarBtn"> &#9776;</span>
-
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <b> Ciudad 1</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                <b> Ciudad 2</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                <b> Ciudad 3</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                 <b> Ciudad 4</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                 <b> Ciudad 5</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                <b> Ciudad 6</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                               <b> Ciudad 7</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                <b> Ciudad 8</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                <b> Ciudad 9</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                 <b> Ciudad 10</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                            <li>
-                                                <b> Ciudad 11</b>
-                                                <span>&rarr;</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                </div>
-
-                                <div class="mapa" style="width: 100%;     height: 100%;">
-                                    <div>
-                                        <iframe
-                                            style="    min-height: 619px;
-                                        height: 100%;"
-                                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10244.51789822277!2d-79.02822501159524!3d-8.121680698056583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2spe!4v1698022281684!5m2!1ses!2spe"
-                                            width="600" loading="lazy"
-                                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <script>
-                                const mostrarBtn = document.getElementById("mostrarBtn");
-                                const miDiv = document.getElementById("miDiv");
-                                const ciudadContainer = document.getElementById("ciudadContainer"); // Seleccionamos el div contenedor
-
-                                mostrarBtn.addEventListener("click", function() {
-                                    miDiv.style.display = "block";
-                                    ciudadContainer.style.display = "none"; // Ocultamos el div contenedor
-                                });
-
-                                cerrarBtn.addEventListener("click", function() {
-                                    miDiv.style.display = "none";
-                                    ciudadContainer.style.display = "block"; // Mostramos nuevamente el div contenedor
-                                });
-                            </script>
-
-
-                            <div class="call-center">
-
-                                <div>
-                                    <style>
-                                        .tarjeta {
-                                            box-shadow: 0px 3px 3px rgba(209, 209, 209, 0.3);
-                                            background-color: #ffffff;
-                                            border: 1px solid #ddd;
-                                            border-radius: 5px;
-                                            transition: box-shadow 0.3s;
-                                        }
-
-                                        .tarjeta:hover {
-                                            box-shadow: 0px 3px 3px rgba(108, 107, 107, 0.3);
-                                        }
-
-
-                                        .contenido {
-
-                                            padding: 20px;
-                                            border-bottom: 3px solid #ccc;
-                                        }
-
-                                        .contenido b {
-                                            display: flex;
-                                            justify-content: center;
-                                            color: #000;
-                                            padding: 20px;
-
-
-                                        }
-                                    </style>
-
-                                    <div class="tarjeta" style="margin-left: 10px; margin-right: 10px;">
-                                        <div class="contenido">
-                                            <div style="border-block: inherit; margin-bottom: 20px;">
-                                                <h5 style="text-align: center;" class="title">CALL CENTER</h5>
-                                            </div>
-                                            <div>
-                                                <style>
-                                                    .icon.style-color {
-                                                        width: 60px;
-                                                        height: 60px;
-                                                        /* text-align: center; */
-                                                        align-items: center;
-                                                        display: flex;
-                                                        justify-content: center;
-                                                        /* border-radius: 10px; */
-                                                    }
-
-                                                    i.jki.jki-phone-call-line {
-                                                        /* width: 100%; */
-                                                        font-size: x-large;
-                                                    }
-
-
-                                                    i.jki.jki-calendar-alt-solid {
-                                                        /* width: 100%; */
-                                                        font-size: x-large;
-                                                    }
-
-                                                    i.jki.jki-clock-solid {
-                                                        /* width: 100%; */
-                                                        font-size: x-large;
-                                                    }
-
-                                                    i.jki.jki-envelope2-light {
-                                                        /* width: 100%; */
-                                                        font-size: x-large;
-                                                    }
-                                                </style>
-                                                <div
-                                                    class="jeg-elementor-kit jkit-icon-box icon-position-left elementor-animation- jeg_module_134_4_653170f033005">
-                                                    <div style=" padding: inherit;
-												padding-left: 4%; border: none;"
-                                                        class="jkit-icon-box-wrapper hover-from-left">
-                                                        <div
-                                                            style="    margin-top: 3%;background: #017F01; color: white; border-radius: 10px;">
-                                                            <div class="icon style-color">
-                                                                <i aria-hidden="true" class="jki jki-phone-call-line"></i>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="icon-box icon-box-body"
-                                                            style="width: 100%;     margin-left: 3%;">
-                                                            <h4 class="title"
-                                                                style=" font-size: larger;text-align: left; margin-top: 10px;">
-                                                                Teléfono Celular</h4>
-                                                            <p class="icon-box-description"
-                                                                style="text-align: left;margin-top: -10px">(+62)81 250
-                                                                3358</p>
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
-
-                                                <div
-                                                    class="jeg-elementor-kit jkit-icon-box icon-position-left elementor-animation- jeg_module_134_4_653170f033005">
-                                                    <div style=" padding: inherit;
-												padding-left: 4%; border: none;"
-                                                        class="jkit-icon-box-wrapper hover-from-left">
-                                                        <div
-                                                            style="    margin-top: 3%;background: #017F01; color: white; border-radius: 10px;">
-                                                            <div class="icon style-color">
-                                                                <i aria-hidden="true" class="jki jki-envelope2-light"></i>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="icon-box icon-box-body"
-                                                            style="width: 100%;     margin-left: 3%;">
-                                                            <h4 class="title"
-                                                                style=" font-size: larger; text-align: left; margin-top: 10px;">
-                                                                Correo Electrónico</h4>
-                                                            <p class="icon-box-description"
-                                                                style="text-align: left;margin-top: -10px">
-                                                                contacto@turismodias.com</p>
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
-
-
-                                                <div
-                                                    class="jeg-elementor-kit jkit-icon-box icon-position-left elementor-animation- jeg_module_134_4_653170f033005">
-                                                    <div style=" padding: inherit;
-												padding-left: 4%; border: none;"
-                                                        class="jkit-icon-box-wrapper hover-from-left">
-                                                        <div
-                                                            style="    margin-top: 3%;background: #017F01; color: white; border-radius: 10px;">
-                                                            <div class="icon style-color">
-                                                                <i aria-hidden="true"
-                                                                    class="jki jki-calendar-alt-solid"></i>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="icon-box icon-box-body"
-                                                            style="width: 100%;     margin-left: 3%;">
-                                                            <h4 class="title"
-                                                                style="font-size: larger; text-align: left; margin-top: 10px;">
-                                                                Horario de Atención
-                                                            </h4>
-                                                            <p class="icon-box-description"
-                                                                style="text-align: left;margin-top: -10px">Lunes - Domingo
-                                                            </p>
-                                                            <p class="icon-box-description"
-                                                                style="text-align: left;margin-top: -10px">7:00 am - 10:30
-                                                                pm</p>
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
-
-
-
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section style="padding: inherit;"
                     class="elementor-section elementor-top-section elementor-element elementor-element-2653e49d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                     data-id="2653e49d" data-element_type="section">
                     <div class="elementor-container elementor-column-gap-default">
@@ -615,7 +225,7 @@
                                     data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}"
                                     data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                        <h5 class="elementor-heading-title elementor-size-default">Rutas</h5>
+                                        <h5 class="elementor-heading-title elementor-size-default">Turismo Dias</h5>
                                     </div>
                                 </div>
                                 <div class="elementor-element elementor-element-3bedf1b8 elementor-widget elementor-widget-jkit_heading"
@@ -625,12 +235,585 @@
                                         <div
                                             class="jeg-elementor-kit jkit-heading  align-center align-tablet-center align-mobile-center jeg_module_128_7_653170df725d3">
                                             <div class="heading-section-title  display-inline-block">
-                                                <h2 class="heading-title">Servicios Disponibles para: <span
+                                                <h2 class="heading-title">Rutas Disponibles para: <span
                                                         class="style-color"><span>Cajamarca</span></span> </h2>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div
+                                    class="elementor-element elementor-element-112472f0 elementor-widget elementor-widget-text-editor">
+                                    <div class="elementor-widget-container">
+                                        Selecciona una ciudad para conocer nuestras oficinas, rutas y horarios
+                                        disponibles.
+                                    </div>
+                                </div>
+                                {{--  <section style="padding: inherit;"
+                                    class="elementor-section elementor-top-section elementor-element elementor-element-2653e49d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                    data-id="2653e49d" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-default">
+                                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-27e5c5f0"
+                                            data-id="27e5c5f0" data-element_type="column">
+                                            <div class="elementor-widget-wrap elementor-element-populated">
+
+
+                                                <section
+                                                    class="elementor-section elementor-inner-section elementor-element elementor-element-70e64cc6 elementor-section-full_width animated-slow elementor-section-height-default elementor-section-height-default elementor-invisible"
+                                                    data-id="70e64cc6" data-element_type="section"
+                                                    data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;}">
+                                                    <div class="elementor-container elementor-column-gap-default">
+                                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-2a19e91c"
+                                                            data-id="2a19e91c" data-element_type="column">
+                                                            <div class="elementor-widget-wrap elementor-element-populated">
+                                                                <div class="elementor-element elementor-element-27e8056 elementor-view-framed elementor-shape-circle elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+                                                                    data-id="27e8056" data-element_type="widget"
+                                                                    data-widget_type="icon-box.default">
+                                                                    <div class="elementor-widget-container">
+                                                                        <link rel="stylesheet"
+                                                                            href="assets/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css">
+                                                                        <div class="elementor-icon-box-wrapper">
+                                                                            <div class="elementor-icon-box-icon">
+                                                                                <span
+                                                                                    class="elementor-icon elementor-animation-grow">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="jki jki-bus-solid"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="elementor-icon-box-content">
+                                                                                <h3 class="elementor-icon-box-title">
+                                                                                    <span>
+                                                                                        Clásico </span>
+                                                                                    <i style="color: darkgray; "
+                                                                                        class="fas fa-info-circle"></i>
+                                                                                </h3>
+
+                                                                                <div style="margin-bottom: 10%;">
+                                                                                    <div>CAJAMARCA - TRUJILLO</div>
+                                                                                    <div
+                                                                                        style="display: flex;     justify-content: space-evenly;">
+                                                                                        <div>
+                                                                                            <i class="fas fa-arrow-up"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                            <i
+                                                                                                class="fas fa-arrow-down"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div style="margin-bottom: 10%;">
+                                                                                    <div>CAJAMARCA - TRUJILLO</div>
+                                                                                    <div
+                                                                                        style="display: flex;     justify-content: space-evenly;">
+                                                                                        <div>
+                                                                                            <i class="fas fa-arrow-up"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                            <i
+                                                                                                class="fas fa-arrow-down"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="elementor-element elementor-element-15ba86e2 elementor-widget__width-initial elementor-absolute elementor-hidden-mobile e-transform elementor-hidden-tablet elementor-widget elementor-widget-image"
+                                                                    data-id="15ba86e2" data-element_type="widget"
+                                                                    data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_flipY_effect&quot;:&quot;transform&quot;}"
+                                                                    data-widget_type="image.default">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-16ed701b"
+                                                            data-id="16ed701b" data-element_type="column">
+                                                            <div class="elementor-widget-wrap elementor-element-populated">
+                                                                <div class="elementor-element elementor-element-1311eb3 elementor-view-framed elementor-shape-circle elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+                                                                    data-id="1311eb3" data-element_type="widget"
+                                                                    data-widget_type="icon-box.default">
+                                                                    <div class="elementor-widget-container">
+                                                                        <div class="elementor-icon-box-wrapper">
+                                                                            <div class="elementor-icon-box-icon">
+                                                                                <span
+                                                                                    class="elementor-icon elementor-animation-grow">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="jki jki-bus-solid"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="elementor-icon-box-content">
+                                                                                <h3 class="elementor-icon-box-title">
+                                                                                    <span>
+                                                                                        Plata </span>
+                                                                                    <i style="color: darkgray; "
+                                                                                        class="fas fa-info-circle"></i>
+                                                                                </h3>
+
+                                                                                <div style="margin-bottom: 10%;">
+                                                                                    <div>CAJAMARCA - TRUJILLO</div>
+                                                                                    <div
+                                                                                        style="display: flex;     justify-content: space-evenly;">
+                                                                                        <div>
+                                                                                            <i class="fas fa-arrow-up"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                            <i
+                                                                                                class="fas fa-arrow-down"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div style="margin-bottom: 10%;">
+                                                                                    <div>CAJAMARCA - TRUJILLO</div>
+                                                                                    <div
+                                                                                        style="display: flex;     justify-content: space-evenly;">
+                                                                                        <div>
+                                                                                            <i class="fas fa-arrow-up"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                            <i
+                                                                                                class="fas fa-arrow-down"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="elementor-element elementor-element-361530b6 elementor-widget__width-initial elementor-absolute elementor-hidden-mobile elementor-hidden-tablet elementor-widget elementor-widget-image"
+                                                                    data-id="361530b6" data-element_type="widget"
+                                                                    data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
+                                                                    data-widget_type="image.default">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-4bc58cee"
+                                                            data-id="4bc58cee" data-element_type="column">
+                                                            <div class="elementor-widget-wrap elementor-element-populated">
+                                                                <div class="elementor-element elementor-element-60e87b6e elementor-view-framed elementor-shape-circle elementor-position-top elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
+                                                                    data-id="60e87b6e" data-element_type="widget"
+                                                                    data-widget_type="icon-box.default">
+                                                                    <div class="elementor-widget-container">
+                                                                        <div class="elementor-icon-box-wrapper">
+                                                                            <div class="elementor-icon-box-icon">
+                                                                                <span
+                                                                                    class="elementor-icon elementor-animation-grow">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="jki jki-bus-solid"></i>
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="elementor-icon-box-content">
+                                                                                <h3 class="elementor-icon-box-title">
+                                                                                    <span>
+                                                                                        Oro </span> <i
+                                                                                        style="color: darkgray; "
+                                                                                        class="fas fa-info-circle"></i>
+                                                                                </h3>
+
+                                                                                <div style="margin-bottom: 10%;">
+                                                                                    <div>CAJAMARCA - TRUJILLO</div>
+                                                                                    <div
+                                                                                        style="display: flex;     justify-content: space-evenly;">
+                                                                                        <div>
+                                                                                            <i class="fas fa-arrow-up"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                            <i
+                                                                                                class="fas fa-arrow-down"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div style="margin-bottom: 10%;">
+                                                                                    <div>CAJAMARCA - TRUJILLO</div>
+                                                                                    <div
+                                                                                        style="display: flex;     justify-content: space-evenly;">
+                                                                                        <div>
+                                                                                            <i class="fas fa-arrow-up"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                            <i
+                                                                                                class="fas fa-arrow-down"></i>
+                                                                                            <span>7:00 am</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="elementor-element elementor-element-7b3efe35 elementor-widget__width-initial elementor-absolute elementor-hidden-mobile e-transform elementor-hidden-tablet elementor-widget elementor-widget-image"
+                                                                    data-id="7b3efe35" data-element_type="widget"
+                                                                    data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;_transform_flipY_effect&quot;:&quot;transform&quot;}"
+                                                                    data-widget_type="image.default">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </section>
                                             </div>
                                         </div>
                                     </div>
+                                </section> --}}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div style="margin: 10%; margin-top: -50px;">
+                    <div>
+                        <style>
+                            .fila {
+                                display: flex;
+                            }
+
+                            .columna {
+                                padding: 10px;
+
+                                flex-grow: 1;
+                                /* Permite que las columnas crezcan para llenar el espacio disponible */
+                            }
+
+                            ul {
+                                list-style: none;
+                                padding: 0;
+                            }
+
+                            i.fa-solid.fa-square-caret-right {
+                                color: #017F01;
+                                transition: color 0.2s;
+                            }
+
+                            li {
+                                border-bottom: 1px solid #ccc;
+                                padding: 10px;
+                                transition: background-color 0.2s, color 0.2s;
+                            }
+
+                            li:hover {
+                                background-color: #6e716f;
+                                color: white;
+                            }
+
+                            li:hover i.fa-solid.fa-square-caret-right {
+                                color: white;
+                            }
+
+                            .encabezado {
+                                background-color: #017F01;
+                                color: #ffffff;
+                                padding: 10px;
+                            }
+
+                            .fila-lista-mapa {
+                                display: flex;
+                                width: 70%
+                            }
+
+                            @media (max-width: 1000px) {
+
+                                /* .ciudades {
+                                                        display: none;
+                                                    } */
+
+                                .call {
+                                    width: 100% !important;
+                                }
+
+                                .direcciones {
+                                    width: 100% !important;
+                                }
+
+                                .mapa iframe {
+                                    height: 100%;
+                                    width: 100%;
+                                    min-height: 500;
+                                }
+
+                                .fila {
+                                    display: block;
+                                }
+
+                                .fila-lista-mapa {
+
+                                    width: 100%
+                                }
+
+                                .ciudades {
+                                    width: 100% !important;
+                                }
+
+                            }
+                        </style>
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+                        <div class="fila">
+                            <div class="fila-lista-mapa">
+                                <div id="ciudades-list" class=" ciudades columna"
+                                    style="width: 25%;  border: 1px solid #ccc;">
+                                    <p>
+                                    <h6 style="color: white" class="encabezado">Ciudades Disponibles</h6>
+                                    <ul>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                    </ul>
+                                    </p>
                                 </div>
+                                <div class="direcciones columna" style="width: 45%">
+                                    <div class="mapa" style="position: relative;">
+                                        <iframe width="100%" height="100%" frameborder="0" scrolling="no"
+                                            marginheight="0" marginwidth="0"
+                                            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Rambles,%201%20Barcelona,%20Spain+(Mi%20nombre%20de%20negocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                                        </iframe>
+                                        <button id="mostrar-ciudades"
+                                            style="position: absolute; top: 10px; right: 10px; background-color: #017F01; color: white; padding: 5px 10px; border: none; cursor: pointer;">
+                                            <i class="fas fa-list"></i> ciudades
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    // Obtener elementos del DOM
+                                    var ciudadesList = document.getElementById('ciudades-list');
+                                    var mostrarCiudadesButton = document.getElementById('mostrar-ciudades');
+
+                                    // Manejador de evento para el botón
+                                    mostrarCiudadesButton.addEventListener('click', function() {
+                                        if (ciudadesList.style.display === 'none') {
+                                            ciudadesList.style.display = 'block';
+                                        } else {
+                                            ciudadesList.style.display = 'none';
+                                        }
+                                    });
+                                });
+                            </script>
+
+
+                            <div class="call columna" style="width: 30%">
+                                <div class="call-center">
+
+                                    <div>
+                                        <style>
+                                            .tarjeta {
+                                                box-shadow: 0px 3px 3px rgba(209, 209, 209, 0.3);
+                                                background-color: #ffffff;
+                                                border: 1px solid #ddd;
+                                                border-radius: 5px;
+                                                transition: box-shadow 0.3s;
+                                            }
+
+                                            .tarjeta:hover {
+                                                box-shadow: 0px 3px 3px rgba(108, 107, 107, 0.3);
+                                            }
+
+
+                                            .contenido {
+
+                                                padding: 15px;
+                                                border-bottom: 3px solid #ccc;
+                                            }
+
+                                            .contenido b {
+                                                display: flex;
+                                                justify-content: center;
+                                                color: #000;
+                                                padding: 20px;
+
+
+                                            }
+                                        </style>
+
+                                        <div class="tarjeta">
+                                            <div class="contenido">
+                                                <div style="border-block: inherit; margin-bottom: 20px;">
+                                                    <h5 style="text-align: center;" class="title">CALL CENTER</h5>
+                                                </div>
+                                                <div>
+                                                    <style>
+                                                        .icon.style-color {
+                                                            width: 40px;
+                                                            height: 40px;
+                                                            /* text-align: center; */
+                                                            align-items: center;
+                                                            display: flex;
+                                                            justify-content: center;
+                                                            /* border-radius: 10px; */
+                                                        }
+
+                                                        i.jki.jki-phone-call-line {
+                                                            /* width: 100%; */
+                                                            font-size: x-large;
+                                                        }
+
+
+                                                        i.jki.jki-calendar-alt-solid {
+                                                            /* width: 100%; */
+                                                            font-size: x-large;
+                                                        }
+
+                                                        i.jki.jki-clock-solid {
+                                                            /* width: 100%; */
+                                                            font-size: x-large;
+                                                        }
+
+                                                        i.jki.jki-envelope2-light {
+                                                            /* width: 100%; */
+                                                            font-size: x-large;
+                                                        }
+                                                    </style>
+                                                    <div
+                                                        class="jeg-elementor-kit jkit-icon-box icon-position-left elementor-animation- jeg_module_134_4_653170f033005">
+                                                        <div style=" padding: inherit;
+                                                    padding-left: 4%; border: none;"
+                                                            class="jkit-icon-box-wrapper hover-from-left">
+                                                            <div
+                                                                style="    margin-top: 3%;background: #017F01; color: white; border-radius: 10px;">
+                                                                <div class="icon style-color">
+                                                                    <i aria-hidden="true"
+                                                                        class="jki jki-phone-call-line"></i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="icon-box icon-box-body"
+                                                                style="width: 100%;     margin-left: 3%;">
+                                                                <h4 class="title"
+                                                                    style=" font-size: larger;text-align: left; ">
+                                                                    Teléfono Celular</h4>
+                                                                <p class="icon-box-description"
+                                                                    style="text-align: left;margin-top: -10px">(+62)81 250
+                                                                    3358</p>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        class="jeg-elementor-kit jkit-icon-box icon-position-left elementor-animation- jeg_module_134_4_653170f033005">
+                                                        <div style=" padding: inherit;
+                                                    padding-left: 4%; border: none;"
+                                                            class="jkit-icon-box-wrapper hover-from-left">
+                                                            <div
+                                                                style="    margin-top: 3%;background: #017F01; color: white; border-radius: 10px;">
+                                                                <div class="icon style-color">
+                                                                    <i aria-hidden="true"
+                                                                        class="jki jki-envelope2-light"></i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="icon-box icon-box-body"
+                                                                style="width: 100%;     margin-left: 3%;">
+                                                                <h4 class="title"
+                                                                    style=" font-size: larger; text-align: left; ">
+                                                                    Correo Electrónico</h4>
+                                                                <p class="icon-box-description"
+                                                                    style="text-align: left;margin-top: -10px">
+                                                                    contacto@turismodias.com</p>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div
+                                                        class="jeg-elementor-kit jkit-icon-box icon-position-left elementor-animation- jeg_module_134_4_653170f033005">
+                                                        <div style=" padding: inherit;
+                                                    padding-left: 4%; border: none;"
+                                                            class="jkit-icon-box-wrapper hover-from-left">
+                                                            <div
+                                                                style="    margin-top: 3%;background: #017F01; color: white; border-radius: 10px;">
+                                                                <div class="icon style-color">
+                                                                    <i aria-hidden="true"
+                                                                        class="jki jki-calendar-alt-solid"></i>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="icon-box icon-box-body"
+                                                                style="width: 100%;     margin-left: 3%;">
+                                                                <h4 class="title"
+                                                                    style="font-size: larger; text-align: left; ">
+                                                                    Horario
+                                                                </h4>
+                                                                <p class="icon-box-description"
+                                                                    style="text-align: left;margin-top: -10px">Lunes -
+                                                                    Domingo
+                                                                </p>
+                                                                <p class="icon-box-description"
+                                                                    style="text-align: left;margin-top: -10px">7:00 am -
+                                                                    10:30
+                                                                    pm</p>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <section style="padding: inherit; margin-top:-60px"
+                    class="elementor-section elementor-top-section elementor-element elementor-element-2653e49d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="2653e49d" data-element_type="section">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-27e5c5f0"
+                            data-id="27e5c5f0" data-element_type="column">
+                            <div class="elementor-widget-wrap elementor-element-populated">
+
 
                                 <section style="padding: inherit;"
                                     class="elementor-section elementor-top-section elementor-element elementor-element-2653e49d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
