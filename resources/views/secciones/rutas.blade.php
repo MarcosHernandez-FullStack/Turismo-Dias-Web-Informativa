@@ -501,7 +501,7 @@
                                 /* Permite que las columnas crezcan para llenar el espacio disponible */
                             }
 
-                            ul {
+                            .ul-ciudad {
                                 list-style: none;
                                 padding: 0;
                             }
@@ -511,18 +511,18 @@
                                 transition: color 0.2s;
                             }
 
-                            li {
+                            .li-ciudad {
                                 border-bottom: 1px solid #ccc;
                                 padding: 10px;
                                 transition: background-color 0.2s, color 0.2s;
                             }
 
-                            li:hover {
+                            .li-ciudad:hover {
                                 background-color: #6e716f;
                                 color: white;
                             }
 
-                            li:hover i.fa-solid.fa-square-caret-right {
+                            .li-ciudad:hover i.fa-solid.fa-square-caret-right {
                                 color: white;
                             }
 
@@ -540,8 +540,8 @@
                             @media (max-width: 1000px) {
 
                                 /* .ciudades {
-                                                        display: none;
-                                                    } */
+                                                            display: none;
+                                                        } */
 
                                 .call {
                                     width: 100% !important;
@@ -580,17 +580,17 @@
                                     style="width: 25%;  border: 1px solid #ccc;">
                                     <p>
                                     <h6 style="color: white" class="encabezado">Ciudades Disponibles</h6>
-                                    <ul>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                                        <li> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                    <ul class="ul-ciudad">
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"><i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                                        <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
                                     </ul>
                                     </p>
                                 </div>
