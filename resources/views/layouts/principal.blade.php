@@ -305,10 +305,12 @@
     @yield('contenidoPrincipal')
 
 
+
+
     <footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
         <div class="footer-width-fixer">
             <div data-elementor-type="wp-post" data-elementor-id="232" class="elementor elementor-232">
-                <section
+                <section style="background-color: #0b4044"
                     class="elementor-section elementor-top-section elementor-element elementor-element-4f6c7509 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                     data-id="4f6c7509" data-element_type="section"
                     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -859,6 +861,8 @@
             </div>
         </div>
     </footer>
+
+
     </div>
 
 </body>
