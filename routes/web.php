@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\FAQController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,20 +19,27 @@ Route::get('/', function () {
     return view('bienvenido');
 });
 
+Route::get('/servicios', [ServicioController::class, 'index'])->name('seccion.servicios');
+Route::get('/preguntas-frecuentes', [FAQController::class, 'index'])->name('seccion.preguntas-frecuentes');
+
+
 Route::get('/nosotros', function () {
     return view('secciones.nosotros');
 })->name('seccion.nosotros');
 
-Route::get('/servicios', function () {
-    return view('secciones.servicios');
-})->name('seccion.servicios');
+
+
 
 
 Route::get('/rutas', function () {
     return view('secciones.rutas');
 })->name('seccion.rutas');
 
-Route::get('/preguntas-frecuentes', [FAQController::class, 'index'])->name('seccion.preguntas-frecuentes');
+
+
+
+
+
 
 Route::get('/calendario-eventos', function () {
     return view('secciones.condiciones-de-viaje.calendario-eventos');
