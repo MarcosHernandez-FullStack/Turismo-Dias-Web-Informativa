@@ -647,20 +647,20 @@
                                                         <div class="elementor-social-icons-wrapper elementor-grid">
                                                             <span class="elementor-grid-item">
                                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-animation-shrink elementor-repeater-item-c0163ab"
-                                                                    target="_blank">
+                                                                    href="https://www.facebook.com/TurismoDias" target="_blank">
                                                                     <span
                                                                         class="elementor-screen-only">Facebook-f</span>
                                                                     <i class="fab fa-facebook-f"></i> </a>
                                                             </span>
                                                             <span class="elementor-grid-item">
                                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-shrink elementor-repeater-item-310ab07"
-                                                                    target="_blank">
+                                                                    href="https://twitter.com/turdiassa" target="_blank">
                                                                     <span class="elementor-screen-only">Twitter</span>
                                                                     <i class="fab fa-twitter"></i> </a>
                                                             </span>
                                                             <span class="elementor-grid-item">
                                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-63f86db"
-                                                                    target="_blank">
+                                                                    href="https://www.instagram.com/turismodias/" target="_blank">
                                                                     <span
                                                                         class="elementor-screen-only">Instagram</span>
                                                                     <i class="fab fa-instagram"></i> </a>
@@ -693,7 +693,7 @@
                                                     <div class="elementor-widget-container">
                                                         <ul class="elementor-icon-list-items">
                                                             <li class="elementor-icon-list-item">
-                                                                <a href="#">
+                                                                <a href="{{ route('seccion.nosotros') }}">
 
                                                                     <span class="elementor-icon-list-icon">
                                                                         <i aria-hidden="true"
@@ -704,7 +704,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="elementor-icon-list-item">
-                                                                <a href="#">
+                                                                <a href="{{ route('seccion.servicios') }}">
 
                                                                     <span class="elementor-icon-list-icon">
                                                                         <i aria-hidden="true"
@@ -715,7 +715,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="elementor-icon-list-item">
-                                                                <a href="#">
+                                                                <a href="{{ route('seccion.rutas') }}">
 
                                                                     <span class="elementor-icon-list-icon">
                                                                         <i aria-hidden="true"
@@ -725,7 +725,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="elementor-icon-list-item">
-                                                                <a href="#">
+                                                                <a href="{{ route('seccion.libro-reclamaciones') }}">
 
                                                                     <span class="elementor-icon-list-icon">
                                                                         <i aria-hidden="true"
@@ -736,7 +736,7 @@
                                                                 </a>
                                                             </li>
                                                             <li class="elementor-icon-list-item">
-                                                                <a href="#">
+                                                                <a href="{{ route('seccion.preguntas-frecuentes') }}">
 
                                                                     <span class="elementor-icon-list-icon">
                                                                         <i aria-hidden="true"
@@ -812,11 +812,11 @@
 
                                                     <div class="elementor-widget-container">
                                                         Revisa Nuestros <a style="color: white;"
-                                                            href="#">Términos y
-                                                            Condiciones</a>, <a href="#"
+                                                            href="{{ route('seccion.terminos-condiciones') }}">Términos y
+                                                            Condiciones</a>, <a href="{{ route('seccion.preguntas-frecuentes') }}"
                                                             style="color: white; ">Preguntas Frecuentes</a> y
                                                         nuestro
-                                                        <a style="color: white;" href="#">Calendario de
+                                                        <a style="color: white;" href="{{ route('seccion.calendario-eventos') }}">Calendario de
                                                             Eventos</a>
                                                     </div>
                                                 </div>
