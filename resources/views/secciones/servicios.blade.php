@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="./../xmlrpc.php">
-   {{--  <title>Services &#8211; Titulo temporal</title> --}}
+    {{--  <title>Services &#8211; Titulo temporal</title> --}}
     <meta name="robots" content="max-image-preview:large">
     <link rel="alternate" type="application/rss+xml" title="Titulo temporal &raquo; Feed" href="./../feed/index.html">
     <link rel="alternate" type="application/rss+xml" title="Titulo temporal &raquo; Feed de comentarios"
@@ -281,6 +281,39 @@
                     </div>
                 </section>
                 <style>
+                    .group-item-servicios {
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                        justify-content: center;
+                    }
+
+
+                    .item {
+                        width: 30%;
+                        /* Ajusta el ancho deseado según tu diseño */
+                        /* margin: 10px; */
+                        /* background-color: #ccc; */
+
+                        box-sizing: border-box;
+                    }
+
+                    @media (max-width: 868px) {
+                        .item {
+                            width: 45%;
+                            /* Cambio a 2 en 2 en dispositivos más pequeños */
+                        }
+                    }
+
+                    @media (max-width: 680px) {
+                        .item {
+                            width: 90%;
+                            /* Cambio a 1 en 1 en dispositivos aún más pequeños */
+                        }
+                    }
+                </style>
+
+                <style>
                     @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
 
                     html,
@@ -385,6 +418,8 @@
 
                     }
                 </style>
+
+
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-200a3fbc elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                     data-id="200a3fbc" data-element_type="section"
@@ -424,214 +459,38 @@
                                     class="elementor-section elementor-inner-section elementor-element elementor-element-9c63961 animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
                                     data-id="9c63961" data-element_type="section"
                                     data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
-                                    <div class="elementor-container elementor-column-gap-no">
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-26df1553"
-                                            data-id="26df1553" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-55169f68 jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
-                                                    data-id="55169f68" data-element_type="widget"
-                                                    data-widget_type="jkit_icon_box.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="content-card col-xs-12 col-sm-4">
-                                                            <div class="card">
-                                                                <a class="img-card"
-                                                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                    <img src="assets/img/inicio/inicio-service-item.png" />
-                                                                </a>
-                                                                <div class="card-content">
-                                                                    <h4 class="card-title">
-                                                                        <a
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            Transporte de personal
-                                                                        </a>
-                                                                    </h4>
-                                                                    <p class="">
-                                                                        Servicio de transporte terrestre brindado hacia
-                                                                        empresas para el traslado de sus trabajadores.
-                                                                    </p>
-                                                                </div>
 
-                                                            </div>
+                                    <div class="group-item-servicios">
+
+                                        @foreach ($servicios as $servicio)
+                                            <div class="item">
+                                                <div class="content-card col-xs-12 col-sm-4">
+                                                    <div class="card">
+                                                        <a class="img-card" href="#" onclick="return false">
+                                                            <img src="{{ $servicio['ruta_foto'] }}" />
+                                                        </a>
+                                                        <div class="card-content">
+                                                            <h4 class="card-title">
+                                                                <a href="#" onclick="return false">
+                                                                    {{ $servicio['nombre'] }}
+                                                                </a>
+                                                            </h4>
+                                                            <p>
+                                                                {{ $servicio['descripcion'] }}
+                                                            </p>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-26df1553"
-                                            data-id="26df1553" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-55169f68 jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
-                                                    data-id="55169f68" data-element_type="widget"
-                                                    data-widget_type="jkit_icon_box.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="content-card col-xs-12 col-sm-4">
-                                                            <div class="card">
-                                                                <a class="img-card"
-                                                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                    <img src="assets/img/inicio/inicio-service-item.png" />
-                                                                </a>
-                                                                <div class="card-content">
-                                                                    <h4 class="card-title">
-                                                                        <a
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            Transporte de pasajeros
-                                                                        </a>
-                                                                    </h4>
-                                                                    <p class="">
-                                                                        Servicio de transporte terrestre que brinda el
-                                                                        traslado de pasajeros en rutas definidas por la
-                                                                        empresa.
-                                                                    </p>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-26df1553"
-                                            data-id="26df1553" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-55169f68 jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
-                                                    data-id="55169f68" data-element_type="widget"
-                                                    data-widget_type="jkit_icon_box.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="content-card col-xs-12 col-sm-4">
-                                                            <div class="card">
-                                                                <a class="img-card"
-                                                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                    <img src="assets/img/inicio/inicio-service-item.png" />
-                                                                </a>
-                                                                <div class="card-content">
-                                                                    <h4 class="card-title">
-                                                                        <a
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            Encomiendas
-                                                                        </a>
-                                                                    </h4>
-                                                                    <p class="">
-                                                                        Servicio de envío de encomiendas y paquetería en las
-                                                                        diversas rutas de la empresa.
-                                                                    </p>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                        @endforeach
 
                                     </div>
+
+
                                 </section>
 
-                                <section
-                                    class="elementor-section elementor-inner-section elementor-element elementor-element-9c63961 animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
-                                    data-id="9c63961" data-element_type="section"
-                                    data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
-                                    <div class="elementor-container elementor-column-gap-no">
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-26df1553"
-                                            data-id="26df1553" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-55169f68 jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
-                                                    data-id="55169f68" data-element_type="widget"
-                                                    data-widget_type="jkit_icon_box.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="content-card col-xs-12 col-sm-4">
-                                                            <div class="card">
-                                                                <a class="img-card"
-                                                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                    <img src="assets/img/inicio/inicio-service-item.png" />
-                                                                </a>
-                                                                <div class="card-content">
-                                                                    <h4 class="card-title">
-                                                                        <a
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            Carga corporativa
-                                                                        </a>
-                                                                    </h4>
-                                                                    <p class="">
-                                                                        Servicio de envío de carga dirigido a empresas.
-                                                                    </p>
-                                                                </div>
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-26df1553"
-                                            data-id="26df1553" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-55169f68 jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
-                                                    data-id="55169f68" data-element_type="widget"
-                                                    data-widget_type="jkit_icon_box.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="content-card col-xs-12 col-sm-4">
-                                                            <div class="card">
-                                                                <a class="img-card"
-                                                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                    <img src="assets/img/inicio/inicio-service-item.png" />
-                                                                </a>
-                                                                <div class="card-content">
-                                                                    <h4 class="card-title">
-                                                                        <a
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            Mudanzas
-                                                                        </a>
-                                                                    </h4>
-                                                                    <p class="">
-                                                                        Servicio de mudanza provincial o interprovincial.
-                                                                    </p>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-26df1553"
-                                            data-id="26df1553" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-55169f68 jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
-                                                    data-id="55169f68" data-element_type="widget"
-                                                    data-widget_type="jkit_icon_box.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="content-card col-xs-12 col-sm-4">
-                                                            <div class="card">
-                                                                <a class="img-card"
-                                                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                    <img src="assets/img/inicio/inicio-service-item.png" />
-                                                                </a>
-                                                                <div class="card-content">
-                                                                    <h4 class="card-title">
-                                                                        <a
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            Delegaciones
-                                                                        </a>
-                                                                    </h4>
-                                                                    <p class="">
-                                                                        Servicio de alquiler de buses para empresas,
-                                                                        colegios, instituciones.
-                                                                    </p>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </section>
                             </div>
                         </div>
                     </div>
