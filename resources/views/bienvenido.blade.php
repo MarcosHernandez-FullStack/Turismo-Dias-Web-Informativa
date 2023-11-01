@@ -254,7 +254,7 @@
                                                                     data-animation-duration="3500">0</span>
                                                                 <span class="suffix"></span><sup class="super">+</sup>
                                                             </div>
-                                                            <h2 class="title">Years Experience</h2>
+                                                            <h2 class="title">Años de Experiencia</h2>
                                                         </div>
                                                     </div>
                                                 </div>
