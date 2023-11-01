@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\RutaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 Route::get('/servicios', [ServicioController::class, 'index'])->name('seccion.servicios');
 Route::get('/preguntas-frecuentes', [FAQController::class, 'index'])->name('seccion.preguntas-frecuentes');
+Route::get('/rutas', [RutaController::class, 'index'])->name('seccion.rutas');
 
 
 Route::get('/nosotros', function () {
@@ -30,10 +32,6 @@ Route::get('/nosotros', function () {
 
 
 
-
-Route::get('/rutas', function () {
-    return view('secciones.rutas');
-})->name('seccion.rutas');
 
 
 
