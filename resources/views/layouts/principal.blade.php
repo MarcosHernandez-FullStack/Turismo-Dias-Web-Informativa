@@ -128,6 +128,8 @@
             }
         }
     </style>
+
+    @livewireStyles
 </head>
 
 <body
@@ -864,7 +866,7 @@
 
 
     </div>
-
+    @livewireScripts
 </body>
 
 </html>
