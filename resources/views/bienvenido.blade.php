@@ -267,7 +267,7 @@
                         <div
                             class="elementor-element elementor-element-26cc5f19 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-image">
                             <div class="elementor-widget-container">
-                                <img src="assets/img/inicio/inicio-sobrenosotros-2.png">
+                                <img src="assets/img/inicio/inicio-sobrenosotros-1.png">
                             </div>
                         </div>
                     </div>
