@@ -180,8 +180,19 @@
                 padding-right: 2%;
             }
         </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
+        <style>
+            .text-center {
+                text-align: center;
+            }
+
+            #map {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <link rel='stylesheet' href='https://unpkg.com/leaflet@1.8.0/dist/leaflet.css' crossorigin='' />
     </head>
 
 
@@ -194,12 +205,8 @@
     </div>
 
 
-
-
     <div class="seccion-map">
         <div>
-
-
 
             <div class="fila">
                 {{-- CIUDADES Y MAPAS --}}
@@ -210,18 +217,23 @@
                     <div id="ciudades-list" class=" ciudades columna" style="width: 25%;  border: 1px solid #ccc;">
 
                         <h6 style="color: white" class="encabezado">Ciudades Disponibles</h6>
+
                         <ul class="ul-ciudad">
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"><i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
-                            <li class="li-ciudad"> <i class="fa-solid fa-square-caret-right"></i> Item 01</li>
+                            @foreach ($cities as $city)
+                                <li class="li-ciudad">
+                                    <i class="fa-solid fa-square-caret-right"></i> {{ $city['name'] }}
+                                </li>
+                            @endforeach
+
+                            {{-- /* Para la funcionalidad del mapa */  --}}
+                            {{--  @foreach ($cities as $city)
+                                <li class="li-ciudad" data-latitude="{{ $city['latitude'] }}"
+                                    data-longitude="{{ $city['longitude'] }}" wire:key="{{ $city['id'] }}">
+                                    <i class="fa-solid fa-square-caret-right"></i> {{ $city['name'] }}
+                                </li>
+                            @endforeach --}}
                         </ul>
+
 
                     </div>
 
@@ -230,10 +242,7 @@
                     {{-- MAPA --}}
                     <div class="direcciones columna" style="width: 45%">
                         <div class="mapa" style="position: relative;">
-                            <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
-                                marginwidth="0"
-                                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Les%20Rambles,%201%20Barcelona,%20Spain+(Mi%20nombre%20de%20negocios)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                            </iframe>
+                            <div id='map'></div>
 
                         </div>
 
@@ -365,5 +374,63 @@
                 }
             });
         });
+    </script>
+    <script src='https://unpkg.com/leaflet@1.8.0/dist/leaflet.js' crossorigin=''></script>
+    <script>
+        let map, markers = [];
+        /* ----------------------------- Initialize Map ----------------------------- */
+        function initMap() {
+            map = L.map('map', {
+                center: {
+                    lat: -7.169249549585607,
+                    lng: -78.49936645500152,
+                },
+                zoom: 8
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+
+            initMarkers();
+        }
+
+        initMap();
+
+        /* ------------------------  Para la funcionalidad del mapa ------------------------------- */
+
+
+        /*  const ciudadElements = document.querySelectorAll('.li-ciudad');
+
+         ciudadElements.forEach(element => {
+             element.addEventListener('click', function() {
+                 const latitude = this.getAttribute('data-latitude');
+                 const longitude = this.getAttribute('data-longitude');
+                 map.flyTo([latitude, longitude], 13);
+             });
+         });
+
+
+         function initMarkers() {
+             const initialMarkers = <?php echo json_encode($initialMarkers); ?>;
+
+             for (let index = 0; index < initialMarkers.length; index++) {
+                 const data = initialMarkers[index];
+                 const city = <?php echo json_encode($cities); ?>[index]['name'];
+                 const coordinates = `Lat: ${data.position.lat}, Lng: ${data.position.lng}`;
+                 const popupContent = `Estás en la ciudad '${city}' con coordenadas ${coordinates}`;
+                 const marker = generateMarker(data, popupContent);
+                 marker.addTo(map).bindPopup(popupContent); // Mostrar el contenido en el pop-up
+                 map.panTo(data.position);
+                 markers.push(marker);
+             }
+         }
+
+         function generateMarker(data, index) {
+             return L.marker(data.position, {
+                 draggable: data.draggable
+             });
+         } */
     </script>
 </div>
