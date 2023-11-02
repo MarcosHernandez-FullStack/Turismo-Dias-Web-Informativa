@@ -87,6 +87,11 @@
     <meta name="generator"
         content="Elementor 3.16.6; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
 
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.6.0/main.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.6.0/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.6.0/locales-all.js"></script>
+
+
     <style>
         .logo-turismo {
 
@@ -305,7 +310,7 @@
     </div>
 
     @yield('contenidoPrincipal')
-
+    <script src="{{asset('js/agenda.js')}}" defer></script>
 
 
 
