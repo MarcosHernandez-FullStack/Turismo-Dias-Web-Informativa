@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class InstitucionalController extends Controller
+class BienvenidoController extends Controller
 {
     private $apiUrl;
 

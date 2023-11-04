@@ -6,7 +6,8 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="./../../xmlrpc.php">
     <meta name="robots" content="max-image-preview:large">
-    <link rel="alternate" type="application/rss+xml" title="Titulo temporal &raquo; Feed" href="./../../feed/index.html">
+    <link rel="alternate" type="application/rss+xml" title="Titulo temporal &raquo; Feed"
+        href="./../../feed/index.html">
     <link rel="alternate" type="application/rss+xml" title="Titulo temporal &raquo; Feed de comentarios"
         href="./../../comments/feed/index.html">
 
@@ -21,8 +22,7 @@
         href="assets/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1.6.17"
         media="all">
     <link rel="stylesheet" id="elementor-icons-css"
-        href="assets/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.23.0"
-        media="all">
+        href="assets/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.23.0" media="all">
     <link rel="stylesheet" id="elementor-frontend-css"
         href="assets/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.16.6" media="all">
     <link rel="stylesheet" id="swiper-css"
@@ -36,8 +36,7 @@
     <link rel="stylesheet" id="font-awesome-5-all-css"
         href="assets/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=3.16.6" media="all">
     <link rel="stylesheet" id="font-awesome-4-shim-css"
-        href="assets/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.16.6"
-        media="all">
+        href="assets/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=3.16.6" media="all">
     <link rel="stylesheet" id="elementor-post-177-css"
         href="assets/wp-content/uploads/elementor/css/post-177.css?ver=1697735167" media="all">
     <link rel="stylesheet" id="elementor-post-232-css"
@@ -59,8 +58,7 @@
     <link rel="stylesheet" id="elementor-icons-fa-solid-css"
         href="assets/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3" media="all">
     <link rel="stylesheet" id="elementor-icons-fa-brands-css"
-        href="assets/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.15.3"
-        media="all">
+        href="assets/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.15.3" media="all">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <script src="assets/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=3.16.6"
         id="font-awesome-4-shim-js"></script>
@@ -81,7 +79,9 @@
     <style>
         .elementor-142 .elementor-element.elementor-element-4b40328b:not(.elementor-motion-effects-element-type-background)>.elementor-widget-wrap,
         .elementor-142 .elementor-element.elementor-element-4b40328b>.elementor-widget-wrap>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/nosotros/imagen-principal.png");
+            /*background-image: url("assets/img/nosotros/imagen-principal.png");*/
+            background-image: url({{$institucional['ruta_foto_principal']}});
+
 
         }
 
@@ -97,343 +97,394 @@
 </head>
 @section('contenidoPrincipal')
 
-    <body
-        class="page-template page-template-elementor_header_footer page page-id-142 page-child parent-pageid-130 ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme elementor-default elementor-template-full-width elementor-kit-12 elementor-page elementor-page-142">
-        <div id="page" class="hfeed site">
+<body
+    class="page-template page-template-elementor_header_footer page page-id-142 page-child parent-pageid-130 ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme elementor-default elementor-template-full-width elementor-kit-12 elementor-page elementor-page-142">
+    <div id="page" class="hfeed site">
 
 
-            <div data-elementor-type="wp-page" data-elementor-id="142" class="elementor elementor-142">
-                <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-7b9d4ac5 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                    data-id="7b9d4ac5" data-element_type="section"
-                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                    <div class="elementor-background-overlay"></div>
-                    <div class="elementor-container elementor-column-gap-default">
-                        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-d93f6a0"
-                            data-id="d93f6a0" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-66d53345 elementor-widget elementor-widget-heading"
-                                    data-id="66d53345" data-element_type="widget" data-widget_type="heading.default">
-                                    <div class="elementor-widget-container">
+        <div data-elementor-type="wp-page" data-elementor-id="142" class="elementor elementor-142">
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-7b9d4ac5 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                data-id="7b9d4ac5" data-element_type="section"
+                data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <div class="elementor-background-overlay"></div>
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-d93f6a0"
+                        data-id="d93f6a0" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-66d53345 elementor-widget elementor-widget-heading"
+                                data-id="66d53345" data-element_type="widget" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
 
-                                        <h2 class="elementor-heading-title elementor-size-default">NOSOTROS</h2>
-                                    </div>
+                                    <h2 class="elementor-heading-title elementor-size-default">NOSOTROS</h2>
                                 </div>
-
                             </div>
+
                         </div>
-                        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7bbcc05e"
-                            data-id="7bbcc05e" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-275dd1cf elementor-icon-list--layout-inline elementor-align-right elementor-mobile-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                    data-id="275dd1cf" data-element_type="widget" data-widget_type="icon-list.default">
-                                    <div class="elementor-widget-container">
-                                        <link rel="stylesheet"
-                                            href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
-                                        <ul class="elementor-icon-list-items elementor-inline-items">
-                                            <li class="elementor-icon-list-item elementor-inline-item">
-                                                <span class="elementor-icon-list-text">Inicio</span>
-                                            </li>
-                                            <li class="elementor-icon-list-item elementor-inline-item">
-                                                <span class="elementor-icon-list-icon">
-                                                    <i aria-hidden="true" class="jki jki-chevrons-right-line"></i> </span>
-                                                <span class="elementor-icon-list-text">Nosotros</span>
-                                            </li>
-                                        </ul>
-                                    </div>
+                    </div>
+                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7bbcc05e"
+                        data-id="7bbcc05e" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-275dd1cf elementor-icon-list--layout-inline elementor-align-right elementor-mobile-align-center elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                data-id="275dd1cf" data-element_type="widget" data-widget_type="icon-list.default">
+                                <div class="elementor-widget-container">
+                                    <link rel="stylesheet"
+                                        href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+                                    <ul class="elementor-icon-list-items elementor-inline-items">
+                                        <li class="elementor-icon-list-item elementor-inline-item">
+                                            <span class="elementor-icon-list-text">Inicio</span>
+                                        </li>
+                                        <li class="elementor-icon-list-item elementor-inline-item">
+                                            <span class="elementor-icon-list-icon">
+                                                <i aria-hidden="true" class="jki jki-chevrons-right-line"></i> </span>
+                                            <span class="elementor-icon-list-text">Nosotros</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-405acf80 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                    data-id="405acf80" data-element_type="section">
-                    <div class="elementor-container elementor-column-gap-default">
-                        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1996cbbf animated-slow elementor-invisible"
-                            data-id="1996cbbf" data-element_type="column"
-                            data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-46994b93 animated-slow elementor-invisible elementor-widget elementor-widget-heading"
-                                    data-id="46994b93" data-element_type="widget"
-                                    data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}"
-                                    data-widget_type="heading.default">
-                                    <div class="elementor-widget-container">
-                                        <h5 class="elementor-heading-title elementor-size-default">Turismo Dias</h5>
-                                    </div>
+                </div>
+            </section>
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-405acf80 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                data-id="405acf80" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1996cbbf animated-slow elementor-invisible"
+                        data-id="1996cbbf" data-element_type="column"
+                        data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;}">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-46994b93 animated-slow elementor-invisible elementor-widget elementor-widget-heading"
+                                data-id="46994b93" data-element_type="widget"
+                                data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}"
+                                data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h5 class="elementor-heading-title elementor-size-default">Turismo Dias</h5>
                                 </div>
-                                <div class="elementor-element elementor-element-6d4653f5 elementor-widget elementor-widget-jkit_heading"
-                                    data-id="6d4653f5" data-element_type="widget"
-                                    data-widget_type="jkit_heading.default">
-                                    <div class="elementor-widget-container">
-                                        <div
-                                            class="jeg-elementor-kit jkit-heading  align-left align-tablet- align-mobile- jeg_module_142_2_653170e6b4a9a">
-                                            <div class="heading-section-title  display-inline-block">
-                                                <h2 class="heading-title">Nuestra Historia
-                                                </h2>
-                                            </div>
+                            </div>
+                            <div class="elementor-element elementor-element-6d4653f5 elementor-widget elementor-widget-jkit_heading"
+                                data-id="6d4653f5" data-element_type="widget" data-widget_type="jkit_heading.default">
+                                <div class="elementor-widget-container">
+                                    <div
+                                        class="jeg-elementor-kit jkit-heading  align-left align-tablet- align-mobile- jeg_module_142_2_653170e6b4a9a">
+                                        <div class="heading-section-title  display-inline-block">
+                                            <h2 class="heading-title">Nuestra Historia
+                                            </h2>
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="elementor-element elementor-element-4f88dc59 elementor-widget elementor-widget-text-editor">
-                                    <div class="elementor-widget-container">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                        exercitation ullamco laboris. </div>
-                                </div>
-                                <div class="elementor-element elementor-element-68044eb2 elementor-widget elementor-widget-jkit_accordion"
-                                    data-id="68044eb2" data-element_type="widget"
-                                    data-widget_type="jkit_accordion.default">
-                                    <div class="elementor-widget-container">
-                                        <div
-                                            class="jeg-elementor-kit jkit-accordion style-default jeg_module_142_3_653170e6b92ac">
-                                            <div class="card-wrapper expand">
-                                                <div class="card-header">
-                                                    <a href="#expand-cf689ee" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-cf689ee"
-                                                        aria-controls="expand-cf689ee">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">Misión</span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-cf689ee" style="display:block">
-                                                    <div class="card-body">Proporcionar una mejora constante de los
-                                                        servicios de transporte de pasajeros y de carga; con la tecnología
-                                                        más avanzada, ofreciendo un servicio personalizado y profesional,
-                                                        donde los clientes se sientan seguros y cómodos.</div>
-                                                </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-9259c74" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-9259c74"
-                                                        aria-controls="expand-9259c74">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">Visión</span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-9259c74" style="display:none">
-                                                    <div class="card-body">Ser una de las principales empresas de
-                                                        transporte
-                                                        de personas y de carga del Perú, siempre cuidando que la calidad y
-                                                        excelencia del servicio, beneficien tanto a los trabajadores como a
-                                                        los clientes.</div>
-                                                </div>
-                                            </div>
-                                            <div class="card-wrapper ">
-                                                <div class="card-header">
-                                                    <a href="#expand-75c9e32" class="card-header-button"
-                                                        aria-expanded="false" data-target="#expand-75c9e32"
-                                                        aria-controls="expand-75c9e32">
-                                                        <div class="left-icon-group">
-                                                            <div class="normal-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-right-line"></i></div>
-                                                            <div class="active-icon"><i aria-hidden="true"
-                                                                    class="jki jki-chevrons-down-line"></i></div>
-                                                        </div>
-                                                        <span class="title">Valores</span>
-                                                    </a>
-                                                </div>
-                                                <div class="card-expand" id="expand-75c9e32" style="display:none">
-                                                    <div class="card-body">
+                            </div>
 
-                                                        <div class="elementor-container elementor-column-gap-no">
-                                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
-                                                                data-id="8d47c51" data-element_type="column">
-                                                                <div
-                                                                    class="elementor-widget-wrap elementor-element-populated">
-                                                                    <div class="elementor-element elementor-element-505abdcc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                                                        data-id="505abdcc" data-element_type="widget"
-                                                                        data-widget_type="icon-list.default">
-                                                                        <div class="elementor-widget-container">
-                                                                            <link rel="stylesheet"
-                                                                                href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
-                                                                            <ul class="elementor-icon-list-items">
-                                                                                <li class="elementor-icon-list-item">
-                                                                                    <span class="elementor-icon-list-icon">
-                                                                                        <i aria-hidden="true"
-                                                                                            class="fas fa-check-circle"
-                                                                                            style="color:green"></i>
-                                                                                    </span>
-                                                                                    <span
-                                                                                        class="elementor-icon-list-text">Brilient
-                                                                                        Client
-                                                                                        Service</span>
-                                                                                </li>
-                                                                                <li class="elementor-icon-list-item">
-                                                                                    <span class="elementor-icon-list-icon">
-                                                                                        <i aria-hidden="true"
-                                                                                            class="fas fa-check-circle"
-                                                                                            style="color:green"></i>
-                                                                                    </span>
-                                                                                    <span
-                                                                                        class="elementor-icon-list-text">24/7
-                                                                                        Support</span>
-                                                                                </li>
-                                                                                <li class="elementor-icon-list-item">
-                                                                                    <span class="elementor-icon-list-icon">
-                                                                                        <i aria-hidden="true"
-                                                                                            class="fas fa-check-circle"
-                                                                                            style="color:green"></i>
-                                                                                    </span>
-                                                                                    <span
-                                                                                        class="elementor-icon-list-text">Free
-                                                                                        Consultations</span>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-218b16af"
-                                                                data-id="218b16af" data-element_type="column">
-                                                                <div
-                                                                    class="elementor-widget-wrap elementor-element-populated">
-                                                                    <div class="elementor-element elementor-element-300b4fdb elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                                                        data-id="300b4fdb" data-element_type="widget"
-                                                                        data-widget_type="icon-list.default">
-                                                                        <div class="elementor-widget-container">
-                                                                            <ul class="elementor-icon-list-items">
-                                                                                <li class="elementor-icon-list-item">
-                                                                                    <span class="elementor-icon-list-icon">
-                                                                                        <i aria-hidden="true"
-                                                                                            class="fas fa-check-circle"
-                                                                                            style="color:green"></i>
-                                                                                    </span>
-                                                                                    <span
-                                                                                        class="elementor-icon-list-text">User
-                                                                                        Experience</span>
-                                                                                </li>
-                                                                                <li class="elementor-icon-list-item">
-                                                                                    <span class="elementor-icon-list-icon">
-                                                                                        <i aria-hidden="true"
-                                                                                            class="fas fa-check-circle"
-                                                                                            style="color:green"></i>
-                                                                                    </span>
-                                                                                    <span
-                                                                                        class="elementor-icon-list-text">Big
-                                                                                        Data &
-                                                                                        Analytics</span>
-                                                                                </li>
-                                                                                <li class="elementor-icon-list-item">
-                                                                                    <span class="elementor-icon-list-icon">
-                                                                                        <i aria-hidden="true"
-                                                                                            class="fas fa-check-circle"
-                                                                                            style="color:green"></i>
-                                                                                    </span>
-                                                                                    <span
-                                                                                        class="elementor-icon-list-text">Quick
-                                                                                        Tips and
-                                                                                        Advice</span>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
+                            <div
+                                class="elementor-element elementor-element-4f88dc59 elementor-widget elementor-widget-text-editor">
+                                <div class="elementor-widget-container">
+                                    {{$institucional['breve_historia']}}
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-68044eb2 elementor-widget elementor-widget-jkit_accordion"
+                                data-id="68044eb2" data-element_type="widget" data-widget_type="jkit_accordion.default">
+                                <div class="elementor-widget-container">
+                                    <div
+                                        class="jeg-elementor-kit jkit-accordion style-default jeg_module_142_3_653170e6b92ac">
+                                        <div class="card-wrapper expand">
+                                            <div class="card-header">
+                                                <a href="#expand-cf689ee" class="card-header-button"
+                                                    aria-expanded="false" data-target="#expand-cf689ee"
+                                                    aria-controls="expand-cf689ee">
+                                                    <div class="left-icon-group">
+                                                        <div class="normal-icon"><i aria-hidden="true"
+                                                                class="jki jki-chevrons-right-line"></i></div>
+                                                        <div class="active-icon"><i aria-hidden="true"
+                                                                class="jki jki-chevrons-down-line"></i></div>
+                                                    </div>
+                                                    <span class="title">Misión</span>
+                                                </a>
+                                            </div>
+                                            <div class="card-expand" id="expand-cf689ee" style="display:block">
+                                                <div class="card-body">{{$institucional['mision']}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-wrapper ">
+                                            <div class="card-header">
+                                                <a href="#expand-9259c74" class="card-header-button"
+                                                    aria-expanded="false" data-target="#expand-9259c74"
+                                                    aria-controls="expand-9259c74">
+                                                    <div class="left-icon-group">
+                                                        <div class="normal-icon"><i aria-hidden="true"
+                                                                class="jki jki-chevrons-right-line"></i></div>
+                                                        <div class="active-icon"><i aria-hidden="true"
+                                                                class="jki jki-chevrons-down-line"></i></div>
+                                                    </div>
+                                                    <span class="title">Visión</span>
+                                                </a>
+                                            </div>
+                                            <div class="card-expand" id="expand-9259c74" style="display:none">
+                                                <div class="card-body">{{$institucional['vision']}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="card-wrapper ">
+                                            <div class="card-header">
+                                                <a href="#expand-75c9e32" class="card-header-button"
+                                                    aria-expanded="false" data-target="#expand-75c9e32"
+                                                    aria-controls="expand-75c9e32">
+                                                    <div class="left-icon-group">
+                                                        <div class="normal-icon"><i aria-hidden="true"
+                                                                class="jki jki-chevrons-right-line"></i></div>
+                                                        <div class="active-icon"><i aria-hidden="true"
+                                                                class="jki jki-chevrons-down-line"></i></div>
+                                                    </div>
+                                                    <span class="title">Valores</span>
+                                                </a>
+                                            </div>
+                                            <div class="card-expand" id="expand-75c9e32" style="display:none;">
+                                                <div class="card-body">
+
+                                                    <div class="elementor-container elementor-column-gap-no">
+                                                        @if (count($institucional['valores']) > 3)
+                                                            @php
+                                                                $valores = $institucional['valores'];
+                                                                $mitad = ceil(count($valores) / 2);
+                                                            @endphp
+                                                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
+                                                            data-id="8d47c51" data-element_type="column">
+
+                                                            <div
+                                                                class="elementor-widget-wrap elementor-element-populated">
+
+                                                                <div class="elementor-element elementor-element-505abdcc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                                    data-id="505abdcc" data-element_type="widget"
+                                                                    data-widget_type="icon-list.default">
+
+                                                                    <div class="elementor-widget-container">
+                                                                        <link rel="stylesheet"
+                                                                            href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+                                                                                <ul class="elementor-icon-list-items">
+                                                                                    @foreach ($valores as $index =>$valor)
+                                                                                    @if ($index < $mitad) 
+                                                                                       <li
+                                                                                        class="elementor-icon-list-item">
+                                                                                        <span
+                                                                                            class="elementor-icon-list-icon">
+                                                                                            <i aria-hidden="true"
+                                                                                                class="fas fa-check-circle"
+                                                                                                style="color:green"></i>
+                                                                                        </span>
+                                                                                        <span
+                                                                                            class="elementor-icon-list-text">{{
+                                                                                            $valor['descripcion']
+                                                                                            }}</span>
+                                                                                        </li>
+                                                                                        @endif
+                                                                                        @endforeach
+                                                                                </ul>
+                                                                            
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-218b16af"
+                                                            data-id="218b16af" data-element_type="column">
+                                                            <div
+                                                                class="elementor-widget-wrap elementor-element-populated">
+                                                                <div class="elementor-element elementor-element-300b4fdb elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                                    data-id="300b4fdb" data-element_type="widget"
+                                                                    data-widget_type="icon-list.default">
+                                                                    <div class="elementor-widget-container">
+                                                                        <ul class="elementor-icon-list-items">
+                                                                            @foreach ($valores as $index =>$valor)
+                                                                            @if ($index >= $mitad)
+                                                                            <li class="elementor-icon-list-item">
+                                                                                <span class="elementor-icon-list-icon">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="fas fa-check-circle"
+                                                                                        style="color:green"></i>
+                                                                                </span>
+                                                                                <span
+                                                                                    class="elementor-icon-list-text">{{
+                                                                                        $valor['descripcion']
+                                                                                        }}</span>
+                                                                            </li>
+                                                                            @endif
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        @else
+                                                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
+                                                            data-id="8d47c51" data-element_type="column">
 
+                                                            <div
+                                                                class="elementor-widget-wrap elementor-element-populated">
+
+                                                                <div class="elementor-element elementor-element-505abdcc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                                    data-id="505abdcc" data-element_type="widget"
+                                                                    data-widget_type="icon-list.default">
+
+                                                                    <div class="elementor-widget-container">
+                                                                        <link rel="stylesheet"
+                                                                            href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+                                                                        <!-- Si no hay más de 3 valores, mostrar todo en una sola columna -->
+
+                                                                        <ul class="elementor-icon-list-items">
+                                                                            @foreach ($institucional['valores'] as $valor)
+                                                                            <li class="elementor-icon-list-item">
+                                                                                <span class="elementor-icon-list-icon">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="fas fa-check-circle"
+                                                                                        style="color:green"></i>
+                                                                                </span>
+                                                                                <span
+                                                                                    class="elementor-icon-list-text">{{
+                                                                                    $valor['descripcion'] }}</span>
+                                                                            </li>
+                                                                            @endforeach
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        @endif
+                                                        {{--<div
+                                                            class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-218b16af"
+                                                            data-id="218b16af" data-element_type="column">
+                                                            <div
+                                                                class="elementor-widget-wrap elementor-element-populated">
+                                                                <div class="elementor-element elementor-element-300b4fdb elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                                    data-id="300b4fdb" data-element_type="widget"
+                                                                    data-widget_type="icon-list.default">
+                                                                    <div class="elementor-widget-container">
+                                                                        <ul class="elementor-icon-list-items">
+                                                                            <li class="elementor-icon-list-item">
+                                                                                <span class="elementor-icon-list-icon">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="fas fa-check-circle"
+                                                                                        style="color:green"></i>
+                                                                                </span>
+                                                                                <span
+                                                                                    class="elementor-icon-list-text">User
+                                                                                    Experience</span>
+                                                                            </li>
+                                                                            <li class="elementor-icon-list-item">
+                                                                                <span class="elementor-icon-list-icon">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="fas fa-check-circle"
+                                                                                        style="color:green"></i>
+                                                                                </span>
+                                                                                <span
+                                                                                    class="elementor-icon-list-text">Big
+                                                                                    Data &
+                                                                                    Analytics</span>
+                                                                            </li>
+                                                                            <li class="elementor-icon-list-item">
+                                                                                <span class="elementor-icon-list-icon">
+                                                                                    <i aria-hidden="true"
+                                                                                        class="fas fa-check-circle"
+                                                                                        style="color:green"></i>
+                                                                                </span>
+                                                                                <span
+                                                                                    class="elementor-icon-list-text">Quick
+                                                                                    Tips and
+                                                                                    Advice</span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>--}}
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
-
                             </div>
-                        </div>
-                        <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4b40328b animated-slow elementor-invisible"
-                            data-id="4b40328b" data-element_type="column"
-                            data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInRight&quot;}">
-                            <div class="elementor-widget-wrap elementor-element-populated">
 
-                                <section
-                                    class="elementor-section elementor-inner-section elementor-element elementor-element-557636c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                    data-id="557636c" data-element_type="section">
-                                    <div class="elementor-container elementor-column-gap-default">
-                                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-3513749c"
-                                            data-id="3513749c" data-element_type="column"
-                                            data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-2e4942f4 elementor-widget elementor-widget-heading"
-                                                    data-id="2e4942f4" data-element_type="widget"
-                                                    data-widget_type="heading.default">
-                                                    <div class="elementor-widget-container">
-                                                        <h2 class="elementor-heading-title elementor-size-default">Consulta
-                                                            nuestras Rutas</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-element elementor-element-127095d2 elementor-widget__width-auto elementor-widget elementor-widget-button"
-                                                    data-id="127095d2" data-element_type="widget"
-                                                    data-widget_type="button.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="elementor-button-wrapper">
-                                                            <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
-                                                                href="{{ route('seccion.rutas') }}">
-                                                                <span class="elementor-button-content-wrapper">
-                                                                    <span
-                                                                        class="elementor-button-icon elementor-align-icon-right">
-                                                                        <i aria-hidden="true"
-                                                                            class="fas fa-arrow-right"></i> </span>
-                                                                    <span class="elementor-button-text">Más
-                                                                        Información</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7904d391"
-                                            data-id="7904d391" data-element_type="column">
-                                            <div class="elementor-widget-wrap">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
+
+
                         </div>
                     </div>
-                </section>
+                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4b40328b animated-slow elementor-invisible"
+                        data-id="4b40328b" data-element_type="column"
+                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInRight&quot;}">
+                        <div class="elementor-widget-wrap elementor-element-populated">
 
-                <section>
+                            <section
+                                class="elementor-section elementor-inner-section elementor-element elementor-element-557636c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                data-id="557636c" data-element_type="section">
+                                <div class="elementor-container elementor-column-gap-default">
+                                    <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-3513749c"
+                                        data-id="3513749c" data-element_type="column"
+                                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-2e4942f4 elementor-widget elementor-widget-heading"
+                                                data-id="2e4942f4" data-element_type="widget"
+                                                data-widget_type="heading.default">
+                                                <div class="elementor-widget-container">
+                                                    <h2 class="elementor-heading-title elementor-size-default">Consulta
+                                                        nuestras Rutas</h2>
+                                                </div>
+                                            </div>
+                                            <div class="elementor-element elementor-element-127095d2 elementor-widget__width-auto elementor-widget elementor-widget-button"
+                                                data-id="127095d2" data-element_type="widget"
+                                                data-widget_type="button.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-button-wrapper">
+                                                        <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
+                                                            href="{{ route('seccion.rutas') }}">
+                                                            <span class="elementor-button-content-wrapper">
+                                                                <span
+                                                                    class="elementor-button-icon elementor-align-icon-right">
+                                                                    <i aria-hidden="true"
+                                                                        class="fas fa-arrow-right"></i> </span>
+                                                                <span class="elementor-button-text">Más
+                                                                    Información</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7904d391"
+                                        data-id="7904d391" data-element_type="column">
+                                        <div class="elementor-widget-wrap">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                </section>
+            <section>
 
-            </div>
-
+            </section>
 
         </div>
-        <!-- #page -->
-        <link rel="stylesheet" id="jeg-dynamic-style-css"
-            href="assets/wp-content/plugins/jeg-elementor-kit/lib/jeg-framework/assets/css/jeg-dynamic-styles.css?ver=1.3.0"
-            media="all">
-        <link rel="stylesheet" id="e-animations-css"
-            href="assets/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.16.6" media="all">
-        <script src="assets/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=1.0.0"
-            id="hello-theme-frontend-js"></script>
-        <script src="assets/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.16.6"
-            id="elementor-webpack-runtime-js"></script>
-        <script src="assets/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.16.6"
-            id="elementor-frontend-modules-js"></script>
-        <script src="assets/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2"
-            id="elementor-waypoints-js"></script>
-        <script src="assets/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
-        <script id="elementor-frontend-js-before">
-            var elementorFrontendConfig = {
+
+
+    </div>
+    <!-- #page -->
+    <link rel="stylesheet" id="jeg-dynamic-style-css"
+        href="assets/wp-content/plugins/jeg-elementor-kit/lib/jeg-framework/assets/css/jeg-dynamic-styles.css?ver=1.3.0"
+        media="all">
+    <link rel="stylesheet" id="e-animations-css"
+        href="assets/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.16.6" media="all">
+    <script src="assets/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=1.0.0"
+        id="hello-theme-frontend-js"></script>
+    <script src="assets/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.16.6"
+        id="elementor-webpack-runtime-js"></script>
+    <script src="assets/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.16.6"
+        id="elementor-frontend-modules-js"></script>
+    <script src="assets/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2"
+        id="elementor-waypoints-js"></script>
+    <script src="assets/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
+    <script id="elementor-frontend-js-before">
+        var elementorFrontendConfig = {
                 "environmentMode": {
                     "edit": false,
                     "wpPreview": false,
@@ -555,44 +606,44 @@
                     "featuredImage": false
                 }
             };
-        </script>
-        <script src="assets/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.16.6" id="elementor-frontend-js">
-        </script>
-        <script id="elementor-frontend-js-after">
-            var jkit_ajax_url = ".//?jkit-ajax-request=jkit_elements",
+    </script>
+    <script src="assets/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.16.6" id="elementor-frontend-js">
+    </script>
+    <script id="elementor-frontend-js-after">
+        var jkit_ajax_url = ".//?jkit-ajax-request=jkit_elements",
                 jkit_nonce = "14b06dc768";
-        </script>
-        <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/sticky-element.js?ver=2.6.2"
-            id="jkit-sticky-element-js"></script>
-        <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/nav-menu.js?ver=2.6.2"
-            id="jkit-element-navmenu-js"></script>
-        <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/accordion.js?ver=2.6.2"
-            id="jkit-element-accordion-js"></script>
-        <script id="jkit-element-pagination-js-extra">
-            var jkit_element_pagination_option = {
+    </script>
+    <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/sticky-element.js?ver=2.6.2"
+        id="jkit-sticky-element-js"></script>
+    <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/nav-menu.js?ver=2.6.2"
+        id="jkit-element-navmenu-js"></script>
+    <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/accordion.js?ver=2.6.2"
+        id="jkit-element-accordion-js"></script>
+    <script id="jkit-element-pagination-js-extra">
+        var jkit_element_pagination_option = {
                 "element_prefix": "jkit_element_ajax_"
             };
-        </script>
-        <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/post-pagination.js?ver=2.6.2"
-            id="jkit-element-pagination-js"></script>
-        <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/mailchimp.js?ver=2.6.2"
-            id="jkit-element-mailchimp-js"></script>
-        <script src="assets/wp-includes/js/underscore.min.js?ver=1.13.4" id="underscore-js"></script>
-        <script id="wp-util-js-extra">
-            var _wpUtilSettings = {
+    </script>
+    <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/post-pagination.js?ver=2.6.2"
+        id="jkit-element-pagination-js"></script>
+    <script src="assets/wp-content/plugins/jeg-elementor-kit/assets/js/elements/mailchimp.js?ver=2.6.2"
+        id="jkit-element-mailchimp-js"></script>
+    <script src="assets/wp-includes/js/underscore.min.js?ver=1.13.4" id="underscore-js"></script>
+    <script id="wp-util-js-extra">
+        var _wpUtilSettings = {
                 "ajax": {
                     "url": "\/wordpress\/wp-admin\/admin-ajax.php"
                 }
             };
-        </script>
-        <script src="assets/wp-includes/js/wp-util.min.js?ver=6.3.2" id="wp-util-js"></script>
-        <script id="wpforms-elementor-js-extra">
-            var wpformsElementorVars = {
+    </script>
+    <script src="assets/wp-includes/js/wp-util.min.js?ver=6.3.2" id="wp-util-js"></script>
+    <script id="wpforms-elementor-js-extra">
+        var wpformsElementorVars = {
                 "captcha_provider": "recaptcha",
                 "recaptcha_type": "v2"
             };
-        </script>
-        <script src="assets/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.8.4"
-            id="wpforms-elementor-js"></script>
-    </body>
+    </script>
+    <script src="assets/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.8.4"
+        id="wpforms-elementor-js"></script>
+</body>
 @endsection

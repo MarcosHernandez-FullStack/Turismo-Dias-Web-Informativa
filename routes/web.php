@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InstitucionalController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\FAQController;
 use Illuminate\Support\Facades\Route;
@@ -22,10 +23,11 @@ Route::get('/', function () {
 Route::get('/servicios', [ServicioController::class, 'index'])->name('seccion.servicios');
 Route::get('/preguntas-frecuentes', [FAQController::class, 'index'])->name('seccion.preguntas-frecuentes');
 
+Route::get('/nosotros', [InstitucionalController::class, 'index'])->name('seccion.nosotros');
 
-Route::get('/nosotros', function () {
+/*Route::get('/nosotros', function () {
     return view('secciones.nosotros');
-})->name('seccion.nosotros');
+})->name('seccion.nosotros');*/
 
 
 
