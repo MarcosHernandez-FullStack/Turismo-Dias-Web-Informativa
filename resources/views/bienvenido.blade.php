@@ -254,7 +254,7 @@
                                                                     data-animation-duration="3500">0</span>
                                                                 <span class="suffix"></span><sup class="super">+</sup>
                                                             </div>
-                                                            <h2 class="title">Years Experience</h2>
+                                                            <h2 class="title">Años de Experiencia</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -267,7 +267,7 @@
                         <div
                             class="elementor-element elementor-element-26cc5f19 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-image">
                             <div class="elementor-widget-container">
-                                <img src="assets/img/inicio/inicio-sobrenosotros-2.png">
+                                <img src="assets/img/inicio/inicio-sobrenosotros-1.png">
                             </div>
                         </div>
                     </div>

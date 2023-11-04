@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\InstitucionalController;
+use App\Http\Controllers\CalendarioController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\RutaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,9 @@ Route::get('/', function () {
 
 Route::get('/servicios', [ServicioController::class, 'index'])->name('seccion.servicios');
 Route::get('/preguntas-frecuentes', [FAQController::class, 'index'])->name('seccion.preguntas-frecuentes');
+Route::get('/rutas', [RutaController::class, 'index'])->name('seccion.rutas');
+Route::get('/calendario-eventos', [CalendarioController::class, 'index'])->name('seccion.calendario-eventos');
+
 
 Route::get('/nosotros', [InstitucionalController::class, 'index'])->name('seccion.nosotros');
 
@@ -33,19 +38,12 @@ Route::get('/nosotros', [InstitucionalController::class, 'index'])->name('seccio
 
 
 
-Route::get('/rutas', function () {
-    return view('secciones.rutas');
-})->name('seccion.rutas');
 
 
 
 
 
 
-
-Route::get('/calendario-eventos', function () {
-    return view('secciones.condiciones-de-viaje.calendario-eventos');
-})->name('seccion.calendario-eventos');
 
 Route::get('/terminos-condiciones', function () {
     return view('secciones.condiciones-de-viaje.terminos-condiciones');
