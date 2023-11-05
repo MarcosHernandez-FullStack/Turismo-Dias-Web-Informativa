@@ -23,18 +23,27 @@ class BienvenidoController extends Controller
             
                 $data = $response->json()['data'];
                 $tipobuses = $data['tipobuses'];
+                $servicios = $data['servicios'];
+                $institucional = $data['institucional'];
+                $configuracion = $data['configuracion'];
                
             } else {
 
                 $tipobuses = [];
+                $servicios = [];
+                $institucional = [];
+                $configuracion = [];
                 
             }
         } catch (\Exception $e) {
 
             $tipobuses = [];
+            $servicios = [];
+            $institucional = [];
+            $configuracion = [];
 
         }
 
-        return view('bienvenido', compact('tipobuses'));
+        return view('bienvenido', compact('tipobuses','servicios','institucional','configuracion'));
     }
 }
