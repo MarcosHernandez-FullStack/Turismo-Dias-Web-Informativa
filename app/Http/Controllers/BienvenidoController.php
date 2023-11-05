@@ -17,23 +17,24 @@ class BienvenidoController extends Controller
     public function index()
     {
         try {
-            $response = Http::get($this->apiUrl . 'nosotros/all');
+            $response = Http::get($this->apiUrl . 'bienvenido/all');
 
             if ($response->successful()) {
             
-                $institucional = $response->json()['data'];
+                $data = $response->json()['data'];
+                $tipobuses = $data['tipobuses'];
                
             } else {
 
-                $institucional = [];
+                $tipobuses = [];
                 
             }
         } catch (\Exception $e) {
 
-            $institucional = [];
+            $tipobuses = [];
 
         }
 
-        return view('secciones.nosotros', compact('institucional'));
+        return view('bienvenido', compact('tipobuses'));
     }
 }

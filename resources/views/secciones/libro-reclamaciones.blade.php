@@ -81,7 +81,7 @@
     <style>
         .elementor-134 .elementor-element.elementor-element-415057a9:not(.elementor-motion-effects-element-type-background),
         .elementor-134 .elementor-element.elementor-element-415057a9>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/header-secciones.jpg");
+            background-image: url({{$data['fotoHeader']}});
 
         }
     </style>
@@ -206,12 +206,7 @@
                                 <div
                                     class="elementor-element elementor-element-2a6264f9 elementor-widget elementor-widget-text-editor">
                                     <div class="elementor-widget-container">
-                                        <Además,>Una vez realizado un reclamo, pueden esperar una respuesta por correo
-                                            electrónico o
-                                            llamada telefónica. Además, estamos disponibles a través de nuestras oficinas,
-                                            correo y teléfono convencional para cualquier comunicación adicional.
-                                            Agradecemos
-                                            sus aportaciones, ya que nos ayudan a mejorar nuestros servicios constantemente.
+                                        <p>{{$data['subtitulo_seccion']}}
                                             </p>
                                     </div>
                                 </div>
@@ -274,6 +269,7 @@
                                         </div>
                                     </div>
                                 </section>
+                                @if($data['correoPrincipal'])
                                 <section
                                     class="elementor-section elementor-inner-section elementor-element elementor-element-40752fe5 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                     data-id="40752fe5" data-element_type="section">
@@ -297,7 +293,7 @@
                                                                 </div>
                                                                 <div class="icon-box icon-box-body">
                                                                     <h4 class="title">Correo Electrónico</h4>
-                                                                    <p class="icon-box-description">support@domain.com</p>
+                                                                    <p class="icon-box-description">{{$data['correoPrincipal']}}</p>
                                                                 </div>
 
                                                             </div>
@@ -308,7 +304,8 @@
                                         </div>
                                     </div>
                                 </section>
-
+                                @endif
+                                @if($data['celularPrincipal'])
                                 <section
                                     class="elementor-section elementor-inner-section elementor-element elementor-element-40752fe5 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                                     data-id="40752fe5" data-element_type="section">
@@ -330,7 +327,7 @@
                                                                 </div>
                                                                 <div class="icon-box icon-box-body">
                                                                     <h4 class="title">Teléfono Celular</h4>
-                                                                    <p class="icon-box-description">(+62)81 250 3358</p>
+                                                                    <p class="icon-box-description">{{$data['celularPrincipal']}}</p>
                                                                 </div>
 
                                                             </div>
@@ -344,6 +341,7 @@
 
                                     </div>
                                 </section>
+                                @endif
                                 <div class="elementor-element elementor-element-286f7294 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
                                     data-id="286f7294" data-element_type="widget" data-widget_type="divider.default">
                                     <div class="elementor-widget-container">
@@ -786,36 +784,46 @@
                                             }
                                         </style>
                                         <div class="elementor-social-icons-wrapper elementor-grid">
+                                            @if ($data['facebook'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-animation-shrink elementor-repeater-item-c0163ab"
                                                     target="_blank">
-                                                    <span class="elementor-screen-only">Facebook-f</span>
+                                                    <span class="elementor-screen-only">{{$data['facebook']}}</span>
                                                     <i class="fab fa-facebook-f"></i> </a>
                                             </span>
+                                            @endif
+                                            @if($data['twitter'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-shrink elementor-repeater-item-310ab07"
                                                     target="_blank">
-                                                    <span class="elementor-screen-only">Twitter</span>
+                                                    <span class="elementor-screen-only">{{$data['twitter']}}</span>
                                                     <i class="fab fa-twitter"></i> </a>
                                             </span>
+                                            @endif
+                                            @if($data['instagram'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-63f86db"
                                                     target="_blank">
-                                                    <span class="elementor-screen-only">Instagram</span>
+                                                    <span class="elementor-screen-only">{{$data['instagram']}}</span>
                                                     <i class="fab fa-instagram"></i> </a>
                                             </span>
+                                            @endif
+                                            @if($data['linkedin'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-animation-shrink elementor-repeater-item-3dbfd36"
                                                     target="_blank">
-                                                    <span class="elementor-screen-only">Linkedin-in</span>
+                                                    <span class="elementor-screen-only">{{$data['linkedin']}}</span>
                                                     <i class="fab fa-linkedin-in"></i> </a>
                                             </span>
+                                            @endif
+                                            @if ($data['youtube'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-40041f1"
                                                     target="_blank">
-                                                    <span class="elementor-screen-only">Youtube</span>
+                                                    <span class="elementor-screen-only">{{$data['youtube']}}</span>
                                                     <i class="fab fa-youtube"></i> </a>
                                             </span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

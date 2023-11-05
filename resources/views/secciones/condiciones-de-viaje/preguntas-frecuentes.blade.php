@@ -83,7 +83,7 @@
     <style>
         .elementor-142 .elementor-element.elementor-element-7b9d4ac5:not(.elementor-motion-effects-element-type-background),
         .elementor-142 .elementor-element.elementor-element-7b9d4ac5>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/header-secciones.jpg");
+            background-image: url({{$fotoHeader}});
 
         }
     </style>

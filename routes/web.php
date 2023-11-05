@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\BienvenidoController;
 use App\Http\Controllers\InstitucionalController;
 use App\Http\Controllers\CalendarioController;
 use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\RutaController;
+use App\Http\Controllers\TerminoCondicionController;
+use App\Http\Controllers\LibroReclamacionController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,17 +22,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('bienvenido');
-});
-
+});*/
+Route::get('/', [BienvenidoController::class, 'index']);
 Route::get('/servicios', [ServicioController::class, 'index'])->name('seccion.servicios');
 Route::get('/preguntas-frecuentes', [FAQController::class, 'index'])->name('seccion.preguntas-frecuentes');
 Route::get('/rutas', [RutaController::class, 'index'])->name('seccion.rutas');
 Route::get('/calendario-eventos', [CalendarioController::class, 'index'])->name('seccion.calendario-eventos');
-
+Route::get('/terminos-condiciones', [TerminoCondicionController::class, 'index'])->name('seccion.terminos-condiciones');
 
 Route::get('/nosotros', [InstitucionalController::class, 'index'])->name('seccion.nosotros');
+Route::get('/libro-reclamaciones', [LibroReclamacionController::class, 'index'])->name('seccion.libro-reclamaciones');
+
+
 
 /*Route::get('/nosotros', function () {
     return view('secciones.nosotros');
@@ -45,10 +52,5 @@ Route::get('/nosotros', [InstitucionalController::class, 'index'])->name('seccio
 
 
 
-Route::get('/terminos-condiciones', function () {
-    return view('secciones.condiciones-de-viaje.terminos-condiciones');
-})->name('seccion.terminos-condiciones');
 
-Route::get('/libro-reclamaciones', function () {
-    return view('secciones.libro-reclamaciones');
-})->name('seccion.libro-reclamaciones');
+

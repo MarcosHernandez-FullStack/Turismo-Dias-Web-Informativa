@@ -80,14 +80,14 @@
         .elementor-142 .elementor-element.elementor-element-4b40328b:not(.elementor-motion-effects-element-type-background)>.elementor-widget-wrap,
         .elementor-142 .elementor-element.elementor-element-4b40328b>.elementor-widget-wrap>.elementor-motion-effects-container>.elementor-motion-effects-layer {
             /*background-image: url("assets/img/nosotros/imagen-principal.png");*/
-            background-image: url({{$institucional['ruta_foto_principal']}});
+            background-image: url({{$institucional['ruta_foto_secundaria']}});
 
 
         }
 
         .elementor-142 .elementor-element.elementor-element-7b9d4ac5:not(.elementor-motion-effects-element-type-background),
         .elementor-142 .elementor-element.elementor-element-7b9d4ac5>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/header-secciones.jpg");
+            background-image: url({{$fotoHeader}});
             background-position: center center;
             background-size: cover;
         }

@@ -188,7 +188,7 @@
     <style>
         .elementor-126 .elementor-element.elementor-element-5ca10497:not(.elementor-motion-effects-element-type-background),
         .elementor-126 .elementor-element.elementor-element-5ca10497>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/header-secciones.jpg");
+            background-image: url({{$fotoHeader}});
             background-position: center center;
             background-size: cover;
         }
@@ -452,7 +452,7 @@
                                 <div
                                     class="elementor-element elementor-element-3dc83411 elementor-widget elementor-widget-text-editor">
                                     <div class="elementor-widget-container">
-                                        Consulta nuestro catálogo de servicios disponibles </div>
+                                        {{$subtitulo_seccion}} </div>
                                 </div>
 
                                 <section
