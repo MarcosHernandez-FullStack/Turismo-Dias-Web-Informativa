@@ -206,7 +206,12 @@
                                 <div
                                     class="elementor-element elementor-element-2a6264f9 elementor-widget elementor-widget-text-editor">
                                     <div class="elementor-widget-container">
-                                        <p>{{$data['subtitulo_seccion']}}
+                                        <p>Una vez realizado un reclamo, pueden esperar una respuesta por correo
+                                            electrónico o
+                                            llamada telefónica. Además, estamos disponibles a través de nuestras oficinas,
+                                            correo y teléfono convencional para cualquier comunicación adicional.
+                                            Agradecemos
+                                            sus aportaciones, ya que nos ayudan a mejorar nuestros servicios constantemente.
                                             </p>
                                     </div>
                                 </div>
