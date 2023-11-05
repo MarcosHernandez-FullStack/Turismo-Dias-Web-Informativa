@@ -31,17 +31,20 @@ class FAQController extends Controller
 
                 $faqsPrincipal = $data['faqsPrincipal'];
                 $faqsSecundaria = $data['faqsSecundaria'];
+                $fotoHeader = $data['fotoHeader'];
             } else {
 
                 $faqsPrincipal = [];
                 $faqsSecundaria = [];
+                $fotoHeader = [];
             }
         } catch (\Exception $e) {
 
             $faqsPrincipal = [];
             $faqsSecundaria = [];
+            $fotoHeader = [];
         }
 
-        return view('secciones.condiciones-de-viaje.preguntas-frecuentes', compact('faqsPrincipal', 'faqsSecundaria'));
+        return view('secciones.condiciones-de-viaje.preguntas-frecuentes', compact('faqsPrincipal', 'faqsSecundaria','fotoHeader'));
     }
 }

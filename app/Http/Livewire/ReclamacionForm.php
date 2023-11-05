@@ -43,7 +43,6 @@ class ReclamacionForm extends Component
             'telefono' => 'required|max:20',
             'correo' => 'required|max:120',
             'direccion' => 'required|max:120',
-            'tutor' => 'required|max:120',
             'monto' => 'required|numeric|max:5000',
             'descripcion_producto_servicio' => 'required|max:255',
             'detalle_reclamo_queja' => 'required|max:255',
@@ -68,9 +67,6 @@ class ReclamacionForm extends Component
 
             'direccion.required' => 'El campo dirección es requerido.',
             'direccion.max' => 'El campo dirección excede los límites establecidos.',
-
-            'tutor.required' => 'El campo tutor es requerido.',
-            'tutor.max' => 'El campo tutor excede los límites establecidos.',
 
             'monto.required' => 'El campo monto es requerido.',
             'monto.max' => 'El campo monto excede los límites establecidos.',

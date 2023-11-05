@@ -590,7 +590,7 @@
                             <div class="elementor-widget-container">
                                 <div class="elementor-button-wrapper">
                                     <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
-                                        href="#">
+                                        href="{{ route('seccion.rutas') }}">
                                         <span class="elementor-button-content-wrapper">
                                             <span class="elementor-button-text">Ver más</span>
                                         </span>
@@ -608,12 +608,13 @@
             class="elementor-section elementor-top-section elementor-element elementor-element-66412b06 animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
             data-id="66412b06" data-element_type="section" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
             <div class="elementor-container elementor-column-gap-default">
+                @foreach($tipobuses as $tipobus)
                 <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-5c10f049"
                     data-id="5c10f049" data-element_type="column">
                     <div class="elementor-widget-wrap elementor-element-populated">
                         <div class="elementor-element elementor-element-406938e elementor-widget elementor-widget-image">
                             <div class="elementor-widget-container">
-                                <img src="assets/img/inicio/inicio-ruta-item.png"
+                                <img src="{{$tipobus['ruta_foto']}}"
                                     class="attachment-large size-large wp-image-29">
                             </div>
                         </div>
@@ -633,12 +634,27 @@
                                         <div
                                             class="elementor-element elementor-element-47b7cc10 elementor-widget elementor-widget-heading">
                                             <div class="elementor-widget-container">
-                                                <h4 class="elementor-heading-title elementor-size-default">Clásico
+                                                <h4 class="elementor-heading-title elementor-size-default">{{$tipobus['nombre']}}
                                                 </h4>
                                             </div>
                                         </div>
-
+                                        @foreach($tipobus['rutas'] as $key=>$ruta)
                                         <div style="margin-bottom: 10%;">
+                                            <div>{{$ruta['ciudad_origen']}}-{{$ruta['ciudad_destino']}}</div>
+                                            <div style="display: flex;     justify-content: space-evenly;">
+                                                <div>
+                                                    <i class="fas fa-arrow-up"></i>
+                                                    <span>{{$ruta['hora_salida']}}</span>
+                                                </div>
+
+                                                <div>
+                                                    <i class="fas fa-arrow-down"></i>
+                                                    <span>{{$ruta['hora_llegada']}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                        {{--<div style="margin-bottom: 10%;">
                                             <div>CAJAMARCA - TRUJILLO</div>
                                             <div style="display: flex;     justify-content: space-evenly;">
                                                 <div>
@@ -651,22 +667,7 @@
                                                     <span>7:00 am</span>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div style="margin-bottom: 10%;">
-                                            <div>CAJAMARCA - TRUJILLO</div>
-                                            <div style="display: flex;     justify-content: space-evenly;">
-                                                <div>
-                                                    <i class="fas fa-arrow-up"></i>
-                                                    <span>7:00 am</span>
-                                                </div>
-
-                                                <div>
-                                                    <i class="fas fa-arrow-down"></i>
-                                                    <span>7:00 am</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div>--}}
 
 
                                         <div class="elementor-element elementor-element-219d9773 elementor-widget__width-auto elementor-mobile-align-center elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button"
@@ -690,7 +691,8 @@
                         </section>
                     </div>
                 </div>
-                <div
+                @endforeach
+                {{--<div
                     class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-a01ea2c">
                     <div class="elementor-widget-wrap elementor-element-populated">
                         <div class="elementor-element elementor-element-251f7e07 elementor-widget elementor-widget-image">
@@ -846,7 +848,7 @@
                             </div>
                         </section>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </section>
 

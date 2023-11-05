@@ -81,7 +81,7 @@
     <style>
         .elementor-126 .elementor-element.elementor-element-5ca10497:not(.elementor-motion-effects-element-type-background),
         .elementor-126 .elementor-element.elementor-element-5ca10497>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/header-secciones.jpg");
+            background-image: url({{$fotoHeader}});
             background-position: center center;
             background-size: cover;
         }
@@ -213,7 +213,7 @@
 							<div
 								class="elementor-element elementor-element-3dc83411 elementor-widget elementor-widget-text-editor">
 								<div class="elementor-widget-container">
-									Consulta todos nuestros términos y condiciones </div>
+									{{$subtitulo_seccion}}</div>
 							</div>
 
 						</div>
@@ -237,7 +237,8 @@
 								<div class="elementor-widget-container">
 									<div
 										class="jeg-elementor-kit jkit-accordion style-default jeg_module_126_16_653170db9b262">
-										<div class="card-wrapper expand">
+										@foreach ($terminos as $key => $termino)
+										<div class="card-wrapper{{$key == 0 ? ' expand' : '' }}">
 											<div class="card-header">
 												<a href="#expand-cf689ee" class="card-header-button"
 													aria-expanded="false" data-target="#expand-cf689ee"
@@ -248,16 +249,15 @@
 														<div class="active-icon"><i aria-hidden="true"
 																class="jki jki-chevrons-down-line"></i></div>
 													</div>
-													<span class="title">Are there offices in other areas?</span>
+													<span class="title">{{ $termino['seccion'] }}</span>
 												</a>
 											</div>
-											<div class="card-expand" id="expand-cf689ee" style="display:block">
-												<div class="card-body">Lorem ipsum dolor sit amet, consectetuer
-													adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-													sociis natoque penatibus et.</div>
+											<div class="card-expand" id="expand-cf689ee" style="display:{{ $key == 0 ? 'block' : 'none' }}">
+												<div class="card-body">{{ $termino['descripcion'] }}</div>
 											</div>
 										</div>
-										<div class="card-wrapper ">
+										@endforeach
+										{{--<div class="card-wrapper ">
 											<div class="card-header">
 												<a href="#expand-9259c74" class="card-header-button"
 													aria-expanded="false" data-target="#expand-9259c74"
@@ -297,7 +297,7 @@
 													adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
 													sociis natoque penatibus et.</div>
 											</div>
-										</div>
+										</div>--}}
 									</div>
 								</div>
 							</div>
