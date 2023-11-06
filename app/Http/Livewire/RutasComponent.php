@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Http;
 
 class RutasComponent extends Component
 {
-    private $apiUrl;
-    public $ciudad,$rutas,$tipo_buses_disponibles;
+    public $apiUrl;
+    public $ciudad,$tipo_buses;
     public function mount(){
         $this->apiUrl = env('API_URL');
         $metodoGetPrincipal=$this->getPrincipal();
@@ -19,7 +19,7 @@ class RutasComponent extends Component
         }
         else
         {
-            $this->rutas=[];
+            $this->tipo_buses=[];
             $this->ciudad=[];
         }
     }
@@ -156,8 +156,7 @@ class RutasComponent extends Component
     
     public function getPrincipal(){
         try {
-            /* $response = Http::get($this->apiUrl . 'rutas/principal'); */
-            $response = Http::get('http://127.0.0.1:8000/api/rutas/principal');
+            $response = Http::get($this->apiUrl.'rutas/principal');
             if ($response->successful()) {
 
                 $data = $response->json()['data'];
@@ -181,32 +180,19 @@ class RutasComponent extends Component
     }
 
     public function getDetallesDeUnaCiudad($ciudad){
-         /* 
-         $response = Http::get('http://127.0.0.1:8000/api/rutas/rutasDeCiudad/2'); 
-        $response = Http::get($this->apiUrl . 'rutas/rutasDeCiudad/2');
-        $data = $response->json()['data'];
-        dd($data);
-         dd(json_decode($ciudad, true));
-         dd($ciudad);
-         */
-
         $this->ciudad=$ciudad;
         try {
-            $response = Http::get('http://127.0.0.1:8000/api/rutas/detallesDeUnaCiudad/'.$this->ciudad['id']);
+            $response = Http::get($this->apiUrl.'rutas/detallesDeUnaCiudad/'.$this->ciudad['id']);
             if ($response->successful()) {
                 $data = $response->json()['data'];
-                $rutas = $data['rutas'];
-                $tipo_buses_disponibles=$data['tipo_buses_disponibles'];
+                $tipo_buses = $data['tipo_buses'];
             } else {
-                $rutas = [];
-                $tipo_buses_disponibles=[];
+                $tipo_buses = [];
+
             }
         } catch (\Exception $e) {
-            $rutas = [];
-            $tipo_buses_disponibles=[];
+            $tipo_buses = [];
         } 
-        $this->rutas=$rutas;
-        $this->tipo_buses_disponibles=$tipo_buses_disponibles;
+        $this->tipo_buses=$tipo_buses;
     }
-
 }
