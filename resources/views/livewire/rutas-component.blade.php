@@ -278,9 +278,6 @@
 
 
                     </div>
-
-
-
                     {{-- MAPA --}}
                     <div class="direcciones columna" style="width: 45%">
                         <div class="mapa" style="position: relative;">
@@ -401,15 +398,15 @@
     </div>
 
     <div class="row">
-        @foreach ($tipo_buses_disponibles as $key => $tbd)
-            <div class="col-4">
-                <h3>{{$tbd['nombre_tipo_bus']}}</h3>
-                @foreach ($rutas as $key => $ruta)
-                    @if ($ruta['nombre_tipo_bus']==$tbd['nombre_tipo_bus'])
-                        <li>{{$ruta['nombre_tipo_bus']}}/{{$ruta['nombre_ruta']}}/{{$ruta['hora_salida']}}-{{$ruta['hora_llegada']}}</li>
-                    @endif
-                @endforeach
-            </div>
+        @foreach ($tipo_buses as $key => $tipo_bus)
+            @if($tipo_bus['rutas'])
+                <div class="col-4">
+                    <h3>{{$tipo_bus['nombre']}}</h3>
+                    @foreach ($tipo_bus['rutas'] as $key => $ruta)
+                    <li>{{$ruta['nombre_tipo_bus']}}/{{$ruta['nombre_ruta']}}/{{$ruta['hora_salida']}}-{{$ruta['hora_llegada']}}</li>
+                    @endforeach
+                </div>
+            @endif
         @endforeach
     </div>
     <script>
