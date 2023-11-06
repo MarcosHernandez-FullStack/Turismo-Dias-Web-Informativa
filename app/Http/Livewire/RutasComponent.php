@@ -3,11 +3,29 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Http;
 
 class RutasComponent extends Component
 {
+    private $apiUrl;
+    public $ciudad,$rutas,$tipo_buses_disponibles;
+    public function mount(){
+        $this->apiUrl = env('API_URL');
+        $metodoGetPrincipal=$this->getPrincipal();
+        if($metodoGetPrincipal['ciudades'])
+        {
+            $this->ciudad=$metodoGetPrincipal['ciudades'][1];
+            $this->getDetallesDeUnaCiudad($this->ciudad);
+        }
+        else
+        {
+            $this->rutas=[];
+            $this->ciudad=[];
+        }
+    }
+
     /* Para la funcionalidad del mapa */
-    /*  public $cities = [
+     public $cities = [
         [
             'id' => 1,
             'name' => 'Lima',
@@ -68,8 +86,8 @@ class RutasComponent extends Component
             'latitude' => -15.840222,
             'longitude' => -70.021880,
         ],
-    ]; */
-
+    ];
+/* 
     public $cities = [
         [
             'id' => 1,
@@ -111,7 +129,7 @@ class RutasComponent extends Component
             'id' => 10,
             'name' => 'Puno',
         ],
-    ];
+    ]; */
 
     public function render()
     {
@@ -119,7 +137,7 @@ class RutasComponent extends Component
         $initialMarkers = [];
 
         /* Para la funcionalidad del mapa */
-        /* foreach ($this->cities as $city) {
+        foreach ($this->cities as $city) {
             $initialMarkers[] = [
                 'position' => [
                     'lat' => $city['latitude'],
@@ -127,8 +145,68 @@ class RutasComponent extends Component
                 ],
                 'draggable' => false,
             ];
-        } */
+        }
 
-        return view('livewire.rutas-component', compact('initialMarkers'));
+        $metodoGetPrincipal=$this->getPrincipal();
+        $ciudades=$metodoGetPrincipal['ciudades'];
+        $call_center=$metodoGetPrincipal['call_center'];     
+        return view('livewire.rutas-component', compact('initialMarkers','ciudades', 'call_center'));
     }
+
+    
+    public function getPrincipal(){
+        try {
+            /* $response = Http::get($this->apiUrl . 'rutas/principal'); */
+            $response = Http::get('http://127.0.0.1:8000/api/rutas/principal');
+            if ($response->successful()) {
+
+                $data = $response->json()['data'];
+                $ciudades = $data['ciudades'];
+                $call_center = $data['call_center'];
+            } else {
+
+                $ciudades = [];
+                $call_center = [];
+            }
+        } catch (\Exception $e) {
+
+            $ciudades = [];
+            $call_center = [];
+        }
+        return 
+        [
+                'ciudades'=>$ciudades,
+                'call_center'=>$call_center
+        ];
+    }
+
+    public function getDetallesDeUnaCiudad($ciudad){
+         /* 
+         $response = Http::get('http://127.0.0.1:8000/api/rutas/rutasDeCiudad/2'); 
+        $response = Http::get($this->apiUrl . 'rutas/rutasDeCiudad/2');
+        $data = $response->json()['data'];
+        dd($data);
+         dd(json_decode($ciudad, true));
+         dd($ciudad);
+         */
+
+        $this->ciudad=$ciudad;
+        try {
+            $response = Http::get('http://127.0.0.1:8000/api/rutas/detallesDeUnaCiudad/'.$this->ciudad['id']);
+            if ($response->successful()) {
+                $data = $response->json()['data'];
+                $rutas = $data['rutas'];
+                $tipo_buses_disponibles=$data['tipo_buses_disponibles'];
+            } else {
+                $rutas = [];
+                $tipo_buses_disponibles=[];
+            }
+        } catch (\Exception $e) {
+            $rutas = [];
+            $tipo_buses_disponibles=[];
+        } 
+        $this->rutas=$rutas;
+        $this->tipo_buses_disponibles=$tipo_buses_disponibles;
+    }
+
 }
