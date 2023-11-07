@@ -204,9 +204,51 @@
         </button>
     </div>
 
+    <section
+                    class="elementor-section elementor-top-section elementor-element elementor-element-2653e49d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                    data-id="2653e49d" data-element_type="section">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-27e5c5f0"
+                            data-id="27e5c5f0" data-element_type="column">
+                            <div class="elementor-widget-wrap elementor-element-populated">
+                                <div class="elementor-element elementor-element-571cee57 animated-slow elementor-invisible elementor-widget elementor-widget-heading"
+                                    data-id="571cee57" data-element_type="widget"
+                                    data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;}"
+                                    data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                        <h5 class="elementor-heading-title elementor-size-default">Turismo Dias</h5>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-3bedf1b8 elementor-widget elementor-widget-jkit_heading"
+                                    data-id="3bedf1b8" data-element_type="widget"
+                                    data-widget_type="jkit_heading.default">
+                                    <div class="elementor-widget-container">
+                                        <div
+                                            class="jeg-elementor-kit jkit-heading  align-center align-tablet-center align-mobile-center jeg_module_128_7_653170df725d3">
+                                            <div class="heading-section-title  display-inline-block">
+                                                <h2 class="heading-title">Rutas Disponibles para: <span
+                                                        class="style-color"><span>@if($ciudad){{$ciudad['descripcion']}}@endif</span></span> </h2>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div
+                                    class="elementor-element elementor-element-112472f0 elementor-widget elementor-widget-text-editor">
+                                    <div class="elementor-widget-container">
+                                        Selecciona una ciudad para conocer nuestras oficinas, rutas y horarios
+                                        disponibles.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
 
     <div class="seccion-map">
-        <div>
+        {{-- <div> --}}
 
             <div class="fila">
                 {{-- CIUDADES Y MAPAS --}}
@@ -219,9 +261,9 @@
                         <h6 style="color: white" class="encabezado">Ciudades Disponibles</h6>
 
                         <ul class="ul-ciudad">
-                            @foreach ($cities as $city)
-                                <li class="li-ciudad">
-                                    <i class="fa-solid fa-square-caret-right"></i> {{ $city['name'] }}
+                            @foreach ($ciudades as $ciudad)
+                                <li class="li-ciudad" wire:click='getDetallesDeUnaCiudad(@json($ciudad))'>
+                                    <i class="fa-solid fa-square-caret-right"></i> {{ $ciudad['descripcion'] }}
                                 </li>
                             @endforeach
 
@@ -236,13 +278,11 @@
 
 
                     </div>
-
-
-
                     {{-- MAPA --}}
                     <div class="direcciones columna" style="width: 45%">
                         <div class="mapa" style="position: relative;">
-                            <div id='map'></div>
+                            {{-- <div id='map'></div> --}}
+                            <div class="row col" style="background:green">MAPA</div>
 
                         </div>
 
@@ -255,14 +295,14 @@
                 <div class="call columna" style="width: 30%">
                     <div class="call-center">
 
-                        <div>
+                        {{-- <div> --}}
 
                             <div class="tarjeta">
                                 <div class="contenido">
                                     <div style="border-block: inherit; margin-bottom: 20px;">
                                         <h5 style="text-align: center;" class="title">CALL CENTER</h5>
                                     </div>
-                                    <div>
+                                    {{-- <div> --}}
 
                                         <div
                                             class="jeg-elementor-kit jkit-icon-box icon-position-left elementor-animation- jeg_module_134_4_653170f033005">
@@ -278,9 +318,9 @@
                                                     style="width: 100%;     margin-left: 3%;">
                                                     <h4 class="title" style=" font-size: larger;text-align: left; ">
                                                         Teléfono Celular</h4>
-                                                    <p class="icon-box-description"
-                                                        style="text-align: left;margin-top: -10px">(+62)81 250
-                                                        3358</p>
+                                                    <p class="icon-box-description" style="text-align: left;margin-top: -10px">
+                                                        {{$call_center['celular_principal']}} - {{$call_center['celular_secundario']}}
+                                                    </p>
                                                 </div>
 
 
@@ -302,9 +342,10 @@
                                                     style="width: 100%;     margin-left: 3%;">
                                                     <h4 class="title" style=" font-size: larger; text-align: left; ">
                                                         Correo Electrónico</h4>
-                                                    <p class="icon-box-description"
-                                                        style="text-align: left;margin-top: -10px">
-                                                        contacto@turismodias.com</p>
+                                                    <p class="icon-box-description" style="text-align: left;margin-top: -10px">
+                                                        {{$call_center['correo_principal']}}<br>
+                                                        {{$call_center['correo_secundario']}}
+                                                    </p>
                                                 </div>
 
 
@@ -333,9 +374,7 @@
                                                         Domingo
                                                     </p>
                                                     <p class="icon-box-description"
-                                                        style="text-align: left;margin-top: -10px">7:00 am -
-                                                        10:30
-                                                        pm</p>
+                                                        style="text-align: left;margin-top: -10px">{{$call_center['horario_atencion_principal']}}</p>
                                                 </div>
 
 
@@ -344,21 +383,32 @@
 
 
 
-                                    </div>
+                                    {{-- </div> --}}
                                 </div>
 
 
                             </div>
 
 
-                        </div>
+                        {{-- </div> --}}
                     </div>
                 </div>
             </div>
-        </div>
-
+        {{-- </div> --}}
     </div>
 
+    <div class="row">
+        @foreach ($tipo_buses as $key => $tipo_bus)
+            @if($tipo_bus['rutas'])
+                <div class="col-4">
+                    <h3>{{$tipo_bus['nombre']}}</h3>
+                    @foreach ($tipo_bus['rutas'] as $key => $ruta)
+                    <li>{{$ruta['nombre_tipo_bus']}}/{{$ruta['nombre_ruta']}}/{{$ruta['hora_salida']}}-{{$ruta['hora_llegada']}}</li>
+                    @endforeach
+                </div>
+            @endif
+        @endforeach
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Obtener elementos del DOM
@@ -401,7 +451,7 @@
         /* ------------------------  Para la funcionalidad del mapa ------------------------------- */
 
 
-        /*  const ciudadElements = document.querySelectorAll('.li-ciudad');
+        const ciudadElements = document.querySelectorAll('.li-ciudad');
 
          ciudadElements.forEach(element => {
              element.addEventListener('click', function() {
@@ -431,6 +481,9 @@
              return L.marker(data.position, {
                  draggable: data.draggable
              });
-         } */
+         }
+      
     </script>
+
+    
 </div>

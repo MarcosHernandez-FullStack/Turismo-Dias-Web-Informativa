@@ -20,22 +20,22 @@ class InstitucionalController extends Controller
             $response = Http::get($this->apiUrl . 'nosotros/all');
 
             if ($response->successful()) {
-            
+
                 $data = $response->json()['data'];
                 $institucional = $data['institucional'];
                 $fotoHeader = $data['fotoHeader'];
-               
             } else {
-
+                $data = [];
                 $institucional = [];
-                
+                $fotoHeader = [];
             }
         } catch (\Exception $e) {
 
+            $data = [];
             $institucional = [];
-
+            $fotoHeader = [];
         }
 
-        return view('secciones.nosotros', compact('institucional','fotoHeader'));
+        return view('secciones.nosotros', compact('institucional', 'fotoHeader'));
     }
 }
