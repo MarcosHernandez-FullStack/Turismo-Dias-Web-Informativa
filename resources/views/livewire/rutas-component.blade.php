@@ -3,6 +3,8 @@
 
     <head>
         <style>
+            /* Establece los estilos iniciales */
+
             .fila {
                 display: flex;
             }
@@ -66,6 +68,7 @@
             @media (max-width: 1000px) {
 
 
+
                 .call {
                     width: 100% !important;
                 }
@@ -90,7 +93,7 @@
                 }
 
                 .ciudades {
-                    width: 100% !important;
+                    width: 78% !important;
                 }
 
                 .bt-ciudades {
@@ -223,13 +226,6 @@
     </head>
 
 
-    <div class="bt-ciudades">
-
-        <button id="mostrar-ciudades"
-            style=" top: 10px; right: 10px; background-color: #017F01; color: white; padding: 5px 10px; border: none; cursor: pointer;">
-            <i class="fas fa-list"></i> ciudades
-        </button>
-    </div>
 
     <section
         class="elementor-section elementor-top-section elementor-element elementor-element-2653e49d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
@@ -256,13 +252,14 @@
                                                 @if ($ciudad)
                                                     {{ $ciudad['descripcion'] }}
                                                 @endif
-                                            </span></span> </h2>
-                                    </>
+
+
 
                                 </div>
                             </div>
 
                         </div>
+                        <br>
                         <div
                             class="elementor-element elementor-element-112472f0 elementor-widget elementor-widget-text-editor">
                             <div class="elementor-widget-container">
@@ -275,6 +272,14 @@
             </div>
     </section>
 
+
+    {{--   <div class="bt-ciudades">
+
+        <button id="mostrar-ciudades"
+            style=" top: 10px; right: 10px; background-color: #017F01; color: white; padding: 5px 10px; border: none; cursor: pointer;">
+            <i class="fas fa-list"></i> ciudades
+        </button>
+    </div> --}}
 
     <div class="seccion-map">
         {{-- <div> --}}
@@ -291,9 +296,17 @@
                     <h6 style="color: white; position: sticky; top: 0;" class="encabezado">Ciudades Disponibles</h6>
 
                     <ul class="ul-ciudad">
-                        @foreach ($ciudades as $ciudad)
-                            <li class="li-ciudad" wire:click='getDetallesDeUnaCiudad(@json($ciudad))' >
+                        {{--  @foreach ($ciudades as $ciudad)
+                            <li class="li-ciudad" wire:click='getDetallesDeUnaCiudad(@json($ciudad))'>
                                 <i class="fa-solid fa-square-caret-right"></i> {{ $ciudad['descripcion'] }}
+                            </li>
+                        @endforeach --}}
+
+                        @foreach ($ciudades as $city)
+                            <li class="li-ciudad" wire:click='getDetallesDeUnaCiudad(@json($city))'
+                                data-latitude="{{ $city['latitude'] }}" data-longitude="{{ $city['longitude'] }}"
+                                wire:key="{{ $city['id'] }}">
+                                <i class="fa-solid fa-square-caret-right"></i> {{ $city['descripcion'] }}
                             </li>
                         @endforeach
                     </ul>
@@ -305,8 +318,6 @@
                         <div id='map'></div>
                     </div>
                 </div>
-
-
             </div>
 
             {{-- CALL CENTER --}}
@@ -428,7 +439,7 @@
                 cursor: pointer;
                 transition: all .2s ease-in-out;
 
-                margin-top: 40%;
+                margin-top: 33%;
                 z-index: 2;
 
                 /*  min-height: 320px; */
@@ -488,10 +499,20 @@
                 margin-bottom: 50px;
             }
 
-            @media (max-width: 700px) {
+
+
+
+            @media (max-width: 1000px) {
+
+                .content-image img {
+                    border-radius: 10px;
+                    object-fit: cover;
+                    height: 189px;
+                    width: 410px;
+                }
 
                 .column-container {
-                    margin-left: 20%;
+                    margin-left: 12%;
                     display: block;
                     justify-content: space-between;
                     width: 100%;
@@ -508,10 +529,13 @@
                 .content-image {
                     position: absolute;
 
-                    width: 65%;
+                    width: 100%;
                 }
 
-
+                .card-bus {
+                    margin-top: 160px;
+                    width: 362px;
+                }
             }
         </style>
         <div class="column-container">
@@ -542,13 +566,42 @@
                             </div>
                         </div>
                     </div>
+                @else
+                    <div class="column-item">
+                        <div class="content-image">
+                            <img src="{{ $tipo_bus['ruta_foto_tipo_bus'] }}" />
+                        </div>
+                        <div class="card-bus">
+
+                            <div class="content-card-bus">
+
+                                <h4>{{ $tipo_bus['nombre'] }} <a href=""> <i style="font-size: 20px"
+                                            class="fas fa-info-circle"></i></a>
+                                </h4>
+
+
+                                <p>
+                                    <span> No se encontraron rutas para este servicio. </span>
+                                </p>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
                 @endif
             @endforeach
 
         </div>
 
     </div>
-
+    <style>
+        /* Define una clase CSS llamada 'green-icon' para cambiar el color a verde. */
+        .green-icon {
+            color: green;
+        }
+    </style>
 
 
     {{--  <div class="row">
@@ -564,7 +617,7 @@
             @endif
         @endforeach
     </div> --}}
-    <script>
+    {{--  <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Obtener elementos del DOM
             var ciudadesList = document.getElementById('ciudades-list');
@@ -579,7 +632,7 @@
                 }
             });
         });
-    </script>
+    </script> --}}
     <script src='https://unpkg.com/leaflet@1.8.0/dist/leaflet.js' crossorigin=''></script>
     <script>
         let map, markers = [];
@@ -587,67 +640,56 @@
         function initMap() {
             map = L.map('map', {
                 center: {
-                    lat: 28.626137,
-                    lng: 79.821603,
+                    lat: -7.169249549585607,
+                    lng: -78.49936645500152,
                 },
-                zoom: 15
+                zoom: 6
             });
-
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap'
             }).addTo(map);
-
-            map.on('click', mapClicked);
             initMarkers();
         }
         initMap();
+        /* ------------------------  Para la funcionalidad del mapa ------------------------------- */
+        const ciudadElements = document.querySelectorAll('.li-ciudad');
+        ciudadElements.forEach(element => {
+            element.addEventListener('click', function() {
+                const latitude = this.getAttribute('data-latitude');
+                const longitude = this.getAttribute('data-longitude');
+                map.flyTo([latitude, longitude], 10);
+            });
+        });
 
-        /* --------------------------- Initialize Markers --------------------------- */
         function initMarkers() {
             const initialMarkers = <?php echo json_encode($initialMarkers); ?>;
-
+            const ambientes = <?php echo json_encode($ambientes); ?>;
             for (let index = 0; index < initialMarkers.length; index++) {
-
                 const data = initialMarkers[index];
-                const marker = generateMarker(data, index);
-                marker.addTo(map).bindPopup(`<b>${data.position.lat},  ${data.position.lng}</b>`);
+                const nombre = ambientes[index]['nombre'];
+                const direccion = ambientes[index]['direccion'];
+                const horario_atencion = ambientes[index]['horario_atencion'];
+                const telefono = ambientes[index]['telefono'];
+                const popupContent = `<div style="text-align: center;"><b>${nombre}</b></div>
+
+
+                <br><i class="fas fa-map-marker-alt green-icon"></i> ${direccion}
+                <br><i class="fas fa-calendar-alt green-icon"></i> ${horario_atencion}
+                <br><i class="fas fa-phone-volume green-icon"></i> ${telefono}
+                    `;
+
+                /*    const popupContent = `Estás en la ciudad '${nombre_oficina}' con coordenadas ${coordinates}`; */
+                const marker = generateMarker(data, popupContent);
+                marker.addTo(map).bindPopup(popupContent); // Mostrar el contenido en el pop-up
                 map.panTo(data.position);
-                markers.push(marker)
+                markers.push(marker);
             }
         }
 
         function generateMarker(data, index) {
             return L.marker(data.position, {
-                    draggable: data.draggable
-                })
-                .on('click', (event) => markerClicked(event, index))
-                .on('dragend', (event) => markerDragEnd(event, index));
-        }
-
-        /* ------------------------- Handle Map Click Event ------------------------- */
-        function mapClicked($event) {
-            console.log(map);
-            console.log($event.latlng.lat, $event.latlng.lng);
-        }
-
-        /* ------------------------ Handle Marker Click Event ----------------------- */
-        function markerClicked($event, index) {
-            console.log(map);
-            console.log($event.latlng.lat, $event.latlng.lng);
-        }
-
-        /* ----------------------- Handle Marker DragEnd Event ---------------------- */
-        function markerDragEnd($event, index) {
-            console.log(map);
-            console.log($event.target.getLatLng());
-        }
-
-        const data = {
-            position: {
-                lat: 28.625043,
-                lng: 79.810135
-            },
-            draggable: true
+                draggable: data.draggable
+            });
         }
     </script>
 
