@@ -4,7 +4,7 @@
     <style>
         .elementor-97 .elementor-element.elementor-element-53f7d7ce:not(.elementor-motion-effects-element-type-background),
         .elementor-97 .elementor-element.elementor-element-53f7d7ce>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/inicio/inicio.png");
+            background-image: url({{$configuracion['foto']}});
 
         }
     </style>
@@ -27,8 +27,7 @@
                                 <div
                                     class="jeg-elementor-kit jkit-heading  align-left align-tablet- align-mobile- jeg_module_97_2_653170c8a7127">
                                     <div class="heading-section-title  display-inline-block" style="font-size: x-small;">
-                                        <h1 class="heading-title">Viaja por todo el Norte y Nororiente de nuestro
-                                            pais con Turismo Dias</h1>
+                                        <h1 class="heading-title">{{$configuracion['slogan']}}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -56,6 +55,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @if ($configuracion['video'])
                                         <div class="elementor-element elementor-element-a1c717c animated-slow elementor-widget__width-auto elementor-invisible elementor-widget elementor-widget-jkit_video_button"
                                             data-id="a1c717c" data-element_type="widget"
                                             data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:10}"
@@ -64,7 +64,7 @@
                                                 <div class="jeg-elementor-kit jkit-video-button jeg_module_97_3_653170c8a921c"
                                                     data-autoplay="0" data-loop="0" data-controls="0" data-type="youtube"
                                                     data-mute="0" data-start="0" data-end="0"><a
-                                                        href="https://www.youtube.com/watch?v=MLpWrANjFbI"
+                                                        href="{{$configuracion['video']}}"
                                                         class="jkit-video-popup-btn glow-enable"><span
                                                             class="icon-position-before"><i aria-hidden="true"
                                                                 class="jki jki-play-button-light"></i></span></a>
@@ -86,6 +86,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -117,8 +118,7 @@
                                 <div
                                     class="jeg-elementor-kit jkit-heading  align-left align-tablet- align-mobile- jeg_module_97_4_653170c8ad756">
                                     <div class="heading-section-title  display-inline-block">
-                                        <h2 class="heading-title">Más de 25 años brindando servicio de transporte en
-                                            Perú
+                                        <h2 class="heading-title">{{$institucional['slogan_home']}}
                                         </h2>
                                     </div>
                                 </div>
@@ -126,15 +126,17 @@
                         </div>
                         <div
                             class="elementor-element elementor-element-6c67ebca elementor-widget elementor-widget-text-editor">
-                            <div class="elementor-widget-container">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi </div>
+                            <div class="elementor-widget-container">{{$institucional['breve_historia']}}</div>
                         </div>
                         <section
                             class="elementor-section elementor-inner-section elementor-element elementor-element-749d01a5 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                             data-id="749d01a5" data-element_type="section">
                             <div class="elementor-container elementor-column-gap-no">
+                                @if (count($institucional['valores']) > 3)
+                                    @php
+                                        $valores = $institucional['valores'];
+                                        $mitad = ceil(count($valores) / 2);
+                                    @endphp
                                 <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
                                     data-id="8d47c51" data-element_type="column">
                                     <div class="elementor-widget-wrap elementor-element-populated">
@@ -145,26 +147,19 @@
                                                 <link rel="stylesheet"
                                                     href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
                                                 <ul class="elementor-icon-list-items">
+                                                    @foreach ($valores as $index =>$valor)
+                                                    @if ($index < $mitad) 
                                                     <li class="elementor-icon-list-item">
                                                         <span class="elementor-icon-list-icon">
                                                             <i aria-hidden="true" class="fas fa-check-circle"></i>
                                                         </span>
-                                                        <span class="elementor-icon-list-text">Excelente servicio al
-                                                            cliente</span>
+                                                        <span class="elementor-icon-list-text">{{
+                                                            $valor['descripcion']
+                                                            }}</span>
                                                     </li>
-                                                    <li class="elementor-icon-list-item">
-                                                        <span class="elementor-icon-list-icon">
-                                                            <i aria-hidden="true" class="fas fa-check-circle"></i>
-                                                        </span>
-                                                        <span class="elementor-icon-list-text">24/7 Support</span>
-                                                    </li>
-                                                    <li class="elementor-icon-list-item">
-                                                        <span class="elementor-icon-list-icon">
-                                                            <i aria-hidden="true" class="fas fa-check-circle"></i>
-                                                        </span>
-                                                        <span class="elementor-icon-list-text">Free
-                                                            Consultations</span>
-                                                    </li>
+                                                    @endif
+                                                    @endforeach
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
@@ -178,32 +173,51 @@
                                             data-widget_type="icon-list.default">
                                             <div class="elementor-widget-container">
                                                 <ul class="elementor-icon-list-items">
+                                                    @foreach ($valores as $index =>$valor)
+                                                    @if ($index >= $mitad)
                                                     <li class="elementor-icon-list-item">
                                                         <span class="elementor-icon-list-icon">
                                                             <i aria-hidden="true" class="fas fa-check-circle"></i>
                                                         </span>
-                                                        <span class="elementor-icon-list-text">User
-                                                            Experience</span>
+                                                        <span class="elementor-icon-list-text">{{
+                                                            $valor['descripcion']
+                                                            }}</span>
                                                     </li>
-                                                    <li class="elementor-icon-list-item">
-                                                        <span class="elementor-icon-list-icon">
-                                                            <i aria-hidden="true" class="fas fa-check-circle"></i>
-                                                        </span>
-                                                        <span class="elementor-icon-list-text">Big Data &
-                                                            Analytics</span>
-                                                    </li>
-                                                    <li class="elementor-icon-list-item">
-                                                        <span class="elementor-icon-list-icon">
-                                                            <i aria-hidden="true" class="fas fa-check-circle"></i>
-                                                        </span>
-                                                        <span class="elementor-icon-list-text">Quick Tips and
-                                                            Advice</span>
-                                                    </li>
+                                                    @endif
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                @else 
+                                <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
+                                    data-id="8d47c51" data-element_type="column">
+                                    <div class="elementor-widget-wrap elementor-element-populated">
+                                        <div class="elementor-element elementor-element-505abdcc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                            data-id="505abdcc" data-element_type="widget"
+                                            data-widget_type="icon-list.default">
+                                            <div class="elementor-widget-container">
+                                                <link rel="stylesheet"
+                                                    href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+                                                <ul class="elementor-icon-list-items">
+                                                    @foreach ($institucional['valores'] as $valor)
+                                                    <li class="elementor-icon-list-item">
+                                                        <span class="elementor-icon-list-icon">
+                                                            <i aria-hidden="true" class="fas fa-check-circle"></i>
+                                                        </span>
+                                                        <span class="elementor-icon-list-text">{{
+                                                            $valor['descripcion']
+                                                            }}</span>
+                                                    </li>
+                                                    @endforeach
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
                             </div>
                         </section>
                         <div class="elementor-element elementor-element-3120362a elementor-align-left elementor-widget elementor-widget-button"
@@ -228,9 +242,10 @@
                         <div class="elementor-element elementor-element-393b8a46 elementor-widget elementor-widget-image"
                             data-id="393b8a46" data-element_type="widget" data-widget_type="image.default">
                             <div class="elementor-widget-container">
-                                <img src="assets/img/inicio/inicio-sobrenosotros-1.png">
+                                <img src="{{$institucional['ruta_foto_principal']}}">
                             </div>
                         </div>
+                        @if($institucional['aniosDeDiferencia'])
                         <section
                             class="elementor-section elementor-inner-section elementor-element elementor-element-1151c47d elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
                             data-id="1151c47d" data-element_type="section">
@@ -250,7 +265,7 @@
                                                         <div class="content">
                                                             <div class="number-wrapper">
                                                                 <span class="prefix"></span>
-                                                                <span class="number" data-value="25"
+                                                                <span class="number" data-value="{{$institucional['aniosDeDiferencia']}}"
                                                                     data-animation-duration="3500">0</span>
                                                                 <span class="suffix"></span><sup class="super">+</sup>
                                                             </div>
@@ -264,10 +279,11 @@
                                 </div>
                             </div>
                         </section>
+                        @endif
                         <div
                             class="elementor-element elementor-element-26cc5f19 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-image">
                             <div class="elementor-widget-container">
-                                <img src="assets/img/inicio/inicio-sobrenosotros-1.png">
+                                <img src="{{$institucional['ruta_foto_secundaria']}}">
                             </div>
                         </div>
                     </div>
@@ -432,112 +448,30 @@
                                                     data-settings="{&quot;autoplay&quot;:true,&quot;autoplay_speed&quot;:3500,&quot;autoplay_hover_pause&quot;:false,&quot;show_navigation&quot;:false,&quot;navigation_left&quot;:&quot;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fas fa-angle-left\&quot;&gt;&lt;\/i&gt;&quot;,&quot;navigation_right&quot;:&quot;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fas fa-angle-right\&quot;&gt;&lt;\/i&gt;&quot;,&quot;show_dots&quot;:false,&quot;arrow_position&quot;:&quot;bottom&quot;,&quot;responsive&quot;:{&quot;desktop&quot;:{&quot;items&quot;:3,&quot;margin&quot;:10,&quot;breakpoint&quot;:1025},&quot;tablet&quot;:{&quot;items&quot;:2,&quot;margin&quot;:10,&quot;breakpoint&quot;:768},&quot;mobile&quot;:{&quot;items&quot;:1,&quot;margin&quot;:10,&quot;breakpoint&quot;:0}}}">
                                                     <div class="testimonials-list">
                                                         <div class="testimonials-track">
+                                                            @foreach($servicios as $servicio)
                                                             <div class="testimonial-item  elementor-repeater-item-2a1c64e">
                                                                 <div class="content-card col-xs-12 col-sm-4">
                                                                     <div class="card">
                                                                         <a class="img-card"
                                                                             href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
                                                                             <img
-                                                                                src="assets/img/inicio/inicio-service-item.png" />
+                                                                                src="{{$servicio['ruta_foto']}}" />
                                                                         </a>
                                                                         <div class="card-content">
                                                                             <h4 class="card-title">
                                                                                 <a href="#">
-                                                                                    Transporte de personal
+                                                                                    {{$servicio['nombre']}}
                                                                                 </a>
                                                                             </h4>
                                                                             <p class="">
-                                                                                Servicio de transporte terrestre
-                                                                                brindado hacia
-                                                                                empresas para el traslado de sus
-                                                                                trabajadores.
+                                                                                {{$servicio['descripcion']}}
                                                                             </p>
                                                                         </div>
 
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="testimonial-item  elementor-repeater-item-8edb0ec">
-
-                                                                <div class="content-card col-xs-12 col-sm-4">
-                                                                    <div class="card">
-                                                                        <a class="img-card"
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            <img
-                                                                                src="assets/img/inicio/inicio-service-item.png" />
-                                                                        </a>
-                                                                        <div class="card-content">
-                                                                            <h4 class="card-title">
-                                                                                <a href="#">
-                                                                                    Transporte de personal
-                                                                                </a>
-                                                                            </h4>
-                                                                            <p class="">
-                                                                                Servicio de transporte terrestre
-                                                                                brindado hacia
-                                                                                empresas para el traslado de sus
-                                                                                trabajadores.
-                                                                            </p>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="testimonial-item  elementor-repeater-item-c6129c9">
-
-                                                                <div class="content-card col-xs-12 col-sm-4">
-                                                                    <div class="card">
-                                                                        <a class="img-card"
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            <img
-                                                                                src="assets/img/inicio/inicio-service-item.png" />
-                                                                        </a>
-                                                                        <div class="card-content">
-                                                                            <h4 class="card-title">
-                                                                                <a href="#">
-                                                                                    Transporte de personal
-                                                                                </a>
-                                                                            </h4>
-                                                                            <p class="">
-                                                                                Servicio de transporte terrestre
-                                                                                brindado hacia
-                                                                                empresas para el traslado de sus
-                                                                                trabajadores.
-                                                                            </p>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="testimonial-item  elementor-repeater-item-5251de3">
-
-                                                                <div class="content-card col-xs-12 col-sm-4">
-                                                                    <div class="card">
-                                                                        <a class="img-card"
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            <img
-                                                                                src="assets/img/inicio/inicio-service-item.png" />
-                                                                        </a>
-                                                                        <div class="card-content">
-                                                                            <h4 class="card-title">
-                                                                                <a href="#">
-                                                                                    Transporte de personal
-                                                                                </a>
-                                                                            </h4>
-                                                                            <p class="">
-                                                                                Servicio de transporte terrestre
-                                                                                brindado hacia
-                                                                                empresas para el traslado de sus
-                                                                                trabajadores.
-                                                                            </p>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
+                                                            @endforeach
                                                         </div>
                                                     </div>
                                                 </div>
@@ -639,14 +573,14 @@
                                             </div>
                                         </div>
                                         @foreach($tipobus['rutas'] as $key=>$ruta)
-                                        <div style="margin-bottom: 10%;">
+                                        <div style="margin-bottom: 10%; text-align: center;">
                                             <div>{{$ruta['ciudad_origen']}}-{{$ruta['ciudad_destino']}}</div>
                                             <div style="display: flex;     justify-content: space-evenly;">
                                                 <div>
                                                     <i class="fas fa-arrow-up"></i>
                                                     <span>{{$ruta['hora_salida']}}</span>
                                                 </div>
-
+                                                &nbsp;
                                                 <div>
                                                     <i class="fas fa-arrow-down"></i>
                                                     <span>{{$ruta['hora_llegada']}}</span>
@@ -654,29 +588,16 @@
                                             </div>
                                         </div>
                                         @endforeach
-                                        {{--<div style="margin-bottom: 10%;">
-                                            <div>CAJAMARCA - TRUJILLO</div>
-                                            <div style="display: flex;     justify-content: space-evenly;">
-                                                <div>
-                                                    <i class="fas fa-arrow-up"></i>
-                                                    <span>7:00 am</span>
-                                                </div>
+                                        
 
-                                                <div>
-                                                    <i class="fas fa-arrow-down"></i>
-                                                    <span>7:00 am</span>
-                                                </div>
-                                            </div>
-                                        </div>--}}
-
-
+                                       
                                         <div class="elementor-element elementor-element-219d9773 elementor-widget__width-auto elementor-mobile-align-center elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button"
                                             data-id="219d9773" data-element_type="widget"
                                             data-widget_type="button.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-button-wrapper">
                                                     <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
-                                                        href="#">
+                                                        href="{{ route('seccion.rutas') }}">
                                                         <span class="elementor-button-content-wrapper">
 
                                                             <span class="elementor-button-text">Ver Oficinas</span>
@@ -685,6 +606,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    
                                     </div>
                                 </div>
                             </div>
