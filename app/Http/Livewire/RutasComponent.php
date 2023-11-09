@@ -39,8 +39,8 @@ class RutasComponent extends Component
         foreach ($ambientes as $city) {
             $initialMarkers[] = [
                 'position' => [
-                    'lat' => $city['coordenada_longitud'],
-                    'lng' => $city['coordenada_latitud'],
+                    'lat' => $city['coordenada_latitud'],
+                    'lng' => $city['coordenada_longitud'],
                 ],
                 'draggable' => false,
             ];
