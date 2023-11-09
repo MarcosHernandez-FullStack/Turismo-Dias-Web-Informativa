@@ -311,10 +311,25 @@
 
     @yield('contenidoPrincipal')
     <script src="{{asset('js/agenda.js')}}" defer></script>
+    <script>
+
+        var botmanWidget = {
+            chatServer: '/botman',
+            frameEndpoint: '/chat-frame',
+            dateTimeFormat: 'd/m/yy HH:MM',
+            title: 'TurismitoBot',
+            mainColor: '#017F01',
+            headerTextColor: '#fff',
+            bubbleBackground: '#017F01',
+            aboutText: '',
+            placeholderText: 'Escribe un mensaje...',
+        };
+        </script>
+        <script src='{{asset('assets/js/widget.js')}}'></script>
 
 
 
-    
+
     @livewire('footer-component')
 
     </div>

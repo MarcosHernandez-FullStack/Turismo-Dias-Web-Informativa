@@ -8,6 +8,8 @@ use App\Http\Controllers\FAQController;
 use App\Http\Controllers\RutaController;
 use App\Http\Controllers\TerminoCondicionController;
 use App\Http\Controllers\LibroReclamacionController;
+use App\Http\Controllers\ChatbotController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +36,8 @@ Route::get('/terminos-condiciones', [TerminoCondicionController::class, 'index']
 
 Route::get('/nosotros', [InstitucionalController::class, 'index'])->name('seccion.nosotros');
 Route::get('/libro-reclamaciones', [LibroReclamacionController::class, 'index'])->name('seccion.libro-reclamaciones');
+Route::match(['get', 'post'], '/botman', [ChatbotController::class, 'invoke']);
+Route::get('/chat-frame', [ChatbotController::class, 'index']);
 
 
 
