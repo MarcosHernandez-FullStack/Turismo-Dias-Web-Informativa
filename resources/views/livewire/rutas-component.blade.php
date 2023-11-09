@@ -555,7 +555,7 @@
 
                                 @foreach ($tipo_bus['rutas'] as $key => $ruta)
                                     <p>
-                                        <span> {{ $ruta['nombre_ruta'] }} <br> <i class="fas fa-arrow-up"></i>
+                                        <span> {{ $ruta['nombre_origen'] }}-{{ $ruta['nombre_destino'] }}<br> <i class="fas fa-arrow-up"></i>
                                             {{ $ruta['hora_salida'] }} -
                                             <i class="fas fa-arrow-down"></i>{{ $ruta['hora_llegada'] }} </span>
                                     </p>
