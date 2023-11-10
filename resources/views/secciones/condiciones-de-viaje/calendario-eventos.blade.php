@@ -247,6 +247,8 @@
                                 calendar.setOption('height', 600);
                                 calendar.setOption('locale', 'es');
                                 calendar.render();
+                                var element = document.getElementsByClassName("fc-license-message");
+                element[0].parentNode.removeChild(element[0]);
                             });
                         </script>
                     </div>
@@ -431,5 +433,12 @@
         </script>
         <script src="assets/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.8.4"
             id="wpforms-elementor-js"></script>
+            {{-- //eliminar div con fc-license-message que aparece en el calendario de eventos usando solo javascript que se ejecute cada segundo --}}
+        <script>
+            setInterval(function() {
+                var element = document.getElementsByClassName("fc-license-message");
+                element[0].parentNode.removeChild(element[0]);
+            }, 10);
+        </script>
     </body>
 @endsection
