@@ -78,7 +78,7 @@
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-button-wrapper">
                                                     <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                        href="#">
+                                                        href="#" onclick="return false;">
                                                         <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-text">Watch Video</span>
                                                         </span>
@@ -369,6 +369,7 @@
                             .content-card {
                                 justify-content: center;
                                 display: flex;
+                                height: 100%;
                             }
 
                             .card {
@@ -381,6 +382,7 @@
                                 transition: box-shadow .25s;
                                 border-radius: 10px;
                                 width: 85%;
+                                height: 385px; /*11-11-2023 para emparejar la altura de los card de servicios*/
 
                             }
 
@@ -408,6 +410,7 @@
                             .card-content {
                                 padding: 15px;
                                 text-align: left;
+                                
                             }
 
                             .card-title {
@@ -459,7 +462,7 @@
                                                                         </a>
                                                                         <div class="card-content">
                                                                             <h4 class="card-title">
-                                                                                <a href="#">
+                                                                                <a href="#" onclick="return false;">
                                                                                     {{$servicio['nombre']}}
                                                                                 </a>
                                                                             </h4>

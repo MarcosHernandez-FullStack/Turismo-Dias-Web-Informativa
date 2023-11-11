@@ -370,6 +370,7 @@
                         transition: box-shadow .25s;
                         border-radius: 10px;
                         width: 85%;
+                        height: 385px;
 
                     }
 
