@@ -3,34 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class CalendarioController extends Controller
 {
+    private $apiUrl;
+
+    public function __construct()
+    {
+        $this->apiUrl = env('API_URL');
+    }
 
     public function index()
     {
-        $listaEventos = [
-            [
-                'title' => 'Cumpleaños del Yisus',
-                'start_date' => '2023-11-01',
-                'end_date' => '2023-11-02',
-            ],
-            [
-                'title' => 'Fiesta Patronal',
-                'start_date' => '2023-11-03',
-                'end_date' => '2023-11-05',
-            ],
-            // Puedes agregar más eventos aquí
-        ];
 
-        $events = [];
+        try {
+            $response = Http::get($this->apiUrl . 'feriados/all');
 
-        foreach ($listaEventos as $evento) {
-            $eventos[] = [
-                'title' => $evento['title'],
-                'start' => $evento['start_date'],
-                'end' => $evento['end_date'],
-            ];
+            if ($response->successful()) {
+
+                $data = $response->json()['data'];
+                $eventos = $data['feriados'];
+            } else {
+                $data = [];
+                $eventos = [];
+            }
+        } catch (\Exception $e) {
+
+            $data = [];
+            $eventos = [];
         }
 
         return view('secciones.condiciones-de-viaje.calendario-eventos', compact('eventos'));
