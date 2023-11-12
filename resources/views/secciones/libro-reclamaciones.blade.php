@@ -261,7 +261,7 @@
                                                                 </div>
                                                                 <div class="icon-box icon-box-body">
                                                                     <h4 class="title">Nuestras Oficinas</h4>
-                                                                    <a href="#">
+                                                                    <a href="{{ route('seccion.rutas') }}">
                                                                         Ver Oficinas
                                                                     </a>
                                                                 </div>
@@ -792,40 +792,40 @@
                                             @if ($data['facebook'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-animation-shrink elementor-repeater-item-c0163ab"
-                                                    target="_blank">
-                                                    <span class="elementor-screen-only">{{$data['facebook']}}</span>
+                                                href="{{$data['facebook']}}" target="_blank">
+                                                    <span class="elementor-screen-only"></span>
                                                     <i class="fab fa-facebook-f"></i> </a>
                                             </span>
                                             @endif
                                             @if($data['twitter'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-shrink elementor-repeater-item-310ab07"
-                                                    target="_blank">
-                                                    <span class="elementor-screen-only">{{$data['twitter']}}</span>
+                                                    href="{{$data['twitter']}}" target="_blank">
+                                                    <span class="elementor-screen-only"></span>
                                                     <i class="fab fa-twitter"></i> </a>
                                             </span>
                                             @endif
                                             @if($data['instagram'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-63f86db"
-                                                    target="_blank">
-                                                    <span class="elementor-screen-only">{{$data['instagram']}}</span>
+                                                    href="{{$data['instagram']}}" target="_blank">
+                                                    <span class="elementor-screen-only"></span>
                                                     <i class="fab fa-instagram"></i> </a>
                                             </span>
                                             @endif
                                             @if($data['linkedin'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-animation-shrink elementor-repeater-item-3dbfd36"
-                                                    target="_blank">
-                                                    <span class="elementor-screen-only">{{$data['linkedin']}}</span>
+                                                   href="{{$data['linkedin']}}" target="_blank">
+                                                    <span class="elementor-screen-only"></span>
                                                     <i class="fab fa-linkedin-in"></i> </a>
                                             </span>
                                             @endif
                                             @if ($data['youtube'])
                                             <span class="elementor-grid-item">
                                                 <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-40041f1"
-                                                    target="_blank">
-                                                    <span class="elementor-screen-only">{{$data['youtube']}}</span>
+                                                    href="{{$data['youtube']}}" target="_blank">
+                                                    <span class="elementor-screen-only"></span>
                                                     <i class="fab fa-youtube"></i> </a>
                                             </span>
                                             @endif

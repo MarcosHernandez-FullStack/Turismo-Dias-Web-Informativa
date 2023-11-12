@@ -78,7 +78,7 @@
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-button-wrapper">
                                                     <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                        href="#">
+                                                        href="#" onclick="return false;">
                                                         <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-text">Watch Video</span>
                                                         </span>
@@ -369,6 +369,7 @@
                             .content-card {
                                 justify-content: center;
                                 display: flex;
+                                height: 100%;
                             }
 
                             .card {
@@ -381,6 +382,7 @@
                                 transition: box-shadow .25s;
                                 border-radius: 10px;
                                 width: 85%;
+                                height: 385px; /*11-11-2023 para emparejar la altura de los card de servicios*/
 
                             }
 
@@ -408,6 +410,7 @@
                             .card-content {
                                 padding: 15px;
                                 text-align: left;
+                                
                             }
 
                             .card-title {
@@ -459,7 +462,7 @@
                                                                         </a>
                                                                         <div class="card-content">
                                                                             <h4 class="card-title">
-                                                                                <a href="#">
+                                                                                <a href="#" onclick="return false;">
                                                                                     {{$servicio['nombre']}}
                                                                                 </a>
                                                                             </h4>
@@ -590,8 +593,21 @@
                                         @endforeach
                                         
 
-                                       
-                                        <div class="elementor-element elementor-element-219d9773 elementor-widget__width-auto elementor-mobile-align-center elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button"
+                                        <div
+                                            class="elementor-element elementor-element-47b7cc10 elementor-widget elementor-widget-heading">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-button-wrapper">
+                                                    <a class=" elementor-button-link elementor-size-sm elementor-animation-float"
+                                                        href="{{ route('seccion.rutas') }}">
+                                                        <span class="elementor-button-content-wrapper">
+
+                                                            <span class="elementor-button-text"><b>Ver Oficinas</b></span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{--<div class="elementor-element elementor-element-219d9773 elementor-widget__width-auto elementor-mobile-align-center elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button"
                                             data-id="219d9773" data-element_type="widget"
                                             data-widget_type="button.default">
                                             <div class="elementor-widget-container">
@@ -605,7 +621,7 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>--}}
                                     
                                     </div>
                                 </div>
