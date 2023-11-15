@@ -80,8 +80,8 @@
     <style>
         .elementor-128 .elementor-element.elementor-element-6d37fdfe:not(.elementor-motion-effects-element-type-background),
         .elementor-128 .elementor-element.elementor-element-6d37fdfe>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/header-secciones.jpg");
 
+            background-image: url({{$fotoHeader}});
         }
     </style>
 </head>
@@ -224,7 +224,12 @@
                             button.fc-today-button.fc-button.fc-button-primary {
                                 background-color: rgb(38, 160, 7) !important;
                             }
+
+                            .fc-license-message {
+                                display: none;
+                            }
                         </style>
+
 
                         <div style="width: 100%" id='calendar'></div>
 

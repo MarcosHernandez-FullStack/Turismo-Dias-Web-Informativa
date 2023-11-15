@@ -80,7 +80,7 @@
     <style>
         .elementor-128 .elementor-element.elementor-element-6d37fdfe:not(.elementor-motion-effects-element-type-background),
         .elementor-128 .elementor-element.elementor-element-6d37fdfe>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url("assets/img/header-secciones.jpg");
+            background-image: url({{ $fotoHeader }});
             /* background-position: center center;
    background-size: cover; */
         }
@@ -176,7 +176,7 @@
                     </div>
                 </section>
 
-                
+
                 @livewire('rutas-component')
 
 

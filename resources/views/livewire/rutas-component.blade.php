@@ -347,8 +347,13 @@
                                         <h4 class="title" style=" font-size: larger;text-align: left; ">
                                             Teléfono Celular</h4>
                                         <p class="icon-box-description" style="text-align: left;margin-top: -10px">
-                                            {{ $call_center['celular_principal'] }} -
-                                            {{ $call_center['celular_secundario'] }}
+                                            {{ $call_center['celular_principal'] }}
+
+                                            @if ($call_center['celular_secundario'])
+                                                <br>
+                                                {{ $call_center['celular_secundario'] }}
+                                            @endif
+
                                         </p>
                                     </div>
 
@@ -371,8 +376,13 @@
                                         <h4 class="title" style=" font-size: larger; text-align: left; ">
                                             Correo Electrónico</h4>
                                         <p class="icon-box-description" style="text-align: left;margin-top: -10px">
-                                            {{ $call_center['correo_principal'] }}<br>
-                                            {{ $call_center['correo_secundario'] }}
+                                            {{ $call_center['correo_principal'] }}
+
+                                            @if ($call_center['correo_secundario'])
+                                                <br>
+                                                {{ $call_center['correo_secundario'] }}
+                                            @endif
+
                                         </p>
                                     </div>
 
@@ -555,7 +565,8 @@
 
                                 @foreach ($tipo_bus['rutas'] as $key => $ruta)
                                     <p>
-                                        <span> {{ $ruta['nombre_origen'] }}-{{ $ruta['nombre_destino'] }}<br> <i class="fas fa-arrow-up"></i>
+                                        <span> {{ $ruta['nombre_origen'] }}-{{ $ruta['nombre_destino'] }}<br> <i
+                                                class="fas fa-arrow-up"></i>
                                             {{ $ruta['hora_salida'] }} -
                                             <i class="fas fa-arrow-down"></i>{{ $ruta['hora_llegada'] }} </span>
                                     </p>

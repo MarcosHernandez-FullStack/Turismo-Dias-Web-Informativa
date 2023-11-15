@@ -1,13 +1,39 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
 class RutaController extends Controller
 {
+    private $apiUrl;
+
+    public function __construct()
+    {
+        $this->apiUrl = env('API_URL');
+    }
+
+
     public function index()
     {
+        try {
+            $response = Http::get($this->apiUrl . 'rutas/principal');
+
+            if ($response->successful()) {
+
+                $data = $response->json()['data'];
+                $fotoHeader = $data['fotoHeader'];
+            } else {
+
+                $fotoHeader = [];
+            }
+        } catch (\Exception $e) {
+
+
+            $fotoHeader = [];
+        }
+
+
         $initialMarkers = [
             [
                 'position' => [
@@ -31,6 +57,6 @@ class RutaController extends Controller
                 'draggable' => false
             ]
         ];
-        return view('secciones.rutas', compact('initialMarkers'));
+        return view('secciones.rutas', compact('initialMarkers', 'fotoHeader'));
     }
 }

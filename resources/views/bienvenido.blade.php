@@ -4,7 +4,7 @@
     <style>
         .elementor-97 .elementor-element.elementor-element-53f7d7ce:not(.elementor-motion-effects-element-type-background),
         .elementor-97 .elementor-element.elementor-element-53f7d7ce>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-            background-image: url({{$configuracion['foto']}});
+            background-image: url({{ $configuracion['foto'] }});
 
         }
     </style>
@@ -27,7 +27,7 @@
                                 <div
                                     class="jeg-elementor-kit jkit-heading  align-left align-tablet- align-mobile- jeg_module_97_2_653170c8a7127">
                                     <div class="heading-section-title  display-inline-block" style="font-size: x-small;">
-                                        <h1 class="heading-title">{{$configuracion['slogan']}}</h1>
+                                        <h1 class="heading-title">{{ $configuracion['slogan'] }}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -56,36 +56,36 @@
                                             </div>
                                         </div>
                                         @if ($configuracion['video'])
-                                        <div class="elementor-element elementor-element-a1c717c animated-slow elementor-widget__width-auto elementor-invisible elementor-widget elementor-widget-jkit_video_button"
-                                            data-id="a1c717c" data-element_type="widget"
-                                            data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:10}"
-                                            data-widget_type="jkit_video_button.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="jeg-elementor-kit jkit-video-button jeg_module_97_3_653170c8a921c"
-                                                    data-autoplay="0" data-loop="0" data-controls="0" data-type="youtube"
-                                                    data-mute="0" data-start="0" data-end="0"><a
-                                                        href="{{$configuracion['video']}}"
-                                                        class="jkit-video-popup-btn glow-enable"><span
-                                                            class="icon-position-before"><i aria-hidden="true"
-                                                                class="jki jki-play-button-light"></i></span></a>
+                                            <div class="elementor-element elementor-element-a1c717c animated-slow elementor-widget__width-auto elementor-invisible elementor-widget elementor-widget-jkit_video_button"
+                                                data-id="a1c717c" data-element_type="widget"
+                                                data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:10}"
+                                                data-widget_type="jkit_video_button.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="jeg-elementor-kit jkit-video-button jeg_module_97_3_653170c8a921c"
+                                                        data-autoplay="0" data-loop="0" data-controls="0"
+                                                        data-type="youtube" data-mute="0" data-start="0" data-end="0"><a
+                                                            href="{{ $configuracion['video'] }}"
+                                                            class="jkit-video-popup-btn glow-enable"><span
+                                                                class="icon-position-before"><i aria-hidden="true"
+                                                                    class="jki jki-play-button-light"></i></span></a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-786032f9 elementor-align-right elementor-widget__width-auto animated-slow elementor-invisible elementor-widget elementor-widget-button"
-                                            data-id="786032f9" data-element_type="widget"
-                                            data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:10}"
-                                            data-widget_type="button.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="elementor-button-wrapper">
-                                                    <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                        href="#" onclick="return false;">
-                                                        <span class="elementor-button-content-wrapper">
-                                                            <span class="elementor-button-text">Watch Video</span>
-                                                        </span>
-                                                    </a>
+                                            <div class="elementor-element elementor-element-786032f9 elementor-align-right elementor-widget__width-auto animated-slow elementor-invisible elementor-widget elementor-widget-button"
+                                                data-id="786032f9" data-element_type="widget"
+                                                data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_animation_delay&quot;:10}"
+                                                data-widget_type="button.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-button-wrapper">
+                                                        <a class="elementor-button elementor-button-link elementor-size-sm"
+                                                            href="#" onclick="return false;">
+                                                            <span class="elementor-button-content-wrapper">
+                                                                <span class="elementor-button-text">ver video</span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endif
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                                 <div
                                     class="jeg-elementor-kit jkit-heading  align-left align-tablet- align-mobile- jeg_module_97_4_653170c8ad756">
                                     <div class="heading-section-title  display-inline-block">
-                                        <h2 class="heading-title">{{$institucional['slogan_home']}}
+                                        <h2 class="heading-title">{{ $institucional['slogan_home'] }}
                                         </h2>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@
                         </div>
                         <div
                             class="elementor-element elementor-element-6c67ebca elementor-widget elementor-widget-text-editor">
-                            <div class="elementor-widget-container">{{$institucional['breve_historia']}}</div>
+                            <div class="elementor-widget-container">{{ $institucional['breve_historia'] }}</div>
                         </div>
                         <section
                             class="elementor-section elementor-inner-section elementor-element elementor-element-749d01a5 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
@@ -137,86 +137,85 @@
                                         $valores = $institucional['valores'];
                                         $mitad = ceil(count($valores) / 2);
                                     @endphp
-                                <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
-                                    data-id="8d47c51" data-element_type="column">
-                                    <div class="elementor-widget-wrap elementor-element-populated">
-                                        <div class="elementor-element elementor-element-505abdcc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                            data-id="505abdcc" data-element_type="widget"
-                                            data-widget_type="icon-list.default">
-                                            <div class="elementor-widget-container">
-                                                <link rel="stylesheet"
-                                                    href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
-                                                <ul class="elementor-icon-list-items">
-                                                    @foreach ($valores as $index =>$valor)
-                                                    @if ($index < $mitad) 
-                                                    <li class="elementor-icon-list-item">
-                                                        <span class="elementor-icon-list-icon">
-                                                            <i aria-hidden="true" class="fas fa-check-circle"></i>
-                                                        </span>
-                                                        <span class="elementor-icon-list-text">{{
-                                                            $valor['descripcion']
-                                                            }}</span>
-                                                    </li>
-                                                    @endif
-                                                    @endforeach
-                                                    
-                                                </ul>
+                                    <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
+                                        data-id="8d47c51" data-element_type="column">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-505abdcc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                data-id="505abdcc" data-element_type="widget"
+                                                data-widget_type="icon-list.default">
+                                                <div class="elementor-widget-container">
+                                                    <link rel="stylesheet"
+                                                        href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+                                                    <ul class="elementor-icon-list-items">
+                                                        @foreach ($valores as $index => $valor)
+                                                            @if ($index < $mitad)
+                                                                <li class="elementor-icon-list-item">
+                                                                    <span class="elementor-icon-list-icon">
+                                                                        <i aria-hidden="true"
+                                                                            class="fas fa-check-circle"></i>
+                                                                    </span>
+                                                                    <span
+                                                                        class="elementor-icon-list-text">{{ $valor['descripcion'] }}</span>
+                                                                </li>
+                                                            @endif
+                                                        @endforeach
+
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-218b16af"
-                                    data-id="218b16af" data-element_type="column">
-                                    <div class="elementor-widget-wrap elementor-element-populated">
-                                        <div class="elementor-element elementor-element-300b4fdb elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                            data-id="300b4fdb" data-element_type="widget"
-                                            data-widget_type="icon-list.default">
-                                            <div class="elementor-widget-container">
-                                                <ul class="elementor-icon-list-items">
-                                                    @foreach ($valores as $index =>$valor)
-                                                    @if ($index >= $mitad)
-                                                    <li class="elementor-icon-list-item">
-                                                        <span class="elementor-icon-list-icon">
-                                                            <i aria-hidden="true" class="fas fa-check-circle"></i>
-                                                        </span>
-                                                        <span class="elementor-icon-list-text">{{
-                                                            $valor['descripcion']
-                                                            }}</span>
-                                                    </li>
-                                                    @endif
-                                                    @endforeach
-                                                </ul>
+                                    <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-218b16af"
+                                        data-id="218b16af" data-element_type="column">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-300b4fdb elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                data-id="300b4fdb" data-element_type="widget"
+                                                data-widget_type="icon-list.default">
+                                                <div class="elementor-widget-container">
+                                                    <ul class="elementor-icon-list-items">
+                                                        @foreach ($valores as $index => $valor)
+                                                            @if ($index >= $mitad)
+                                                                <li class="elementor-icon-list-item">
+                                                                    <span class="elementor-icon-list-icon">
+                                                                        <i aria-hidden="true"
+                                                                            class="fas fa-check-circle"></i>
+                                                                    </span>
+                                                                    <span
+                                                                        class="elementor-icon-list-text">{{ $valor['descripcion'] }}</span>
+                                                                </li>
+                                                            @endif
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                @else 
-                                <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
-                                    data-id="8d47c51" data-element_type="column">
-                                    <div class="elementor-widget-wrap elementor-element-populated">
-                                        <div class="elementor-element elementor-element-505abdcc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                            data-id="505abdcc" data-element_type="widget"
-                                            data-widget_type="icon-list.default">
-                                            <div class="elementor-widget-container">
-                                                <link rel="stylesheet"
-                                                    href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
-                                                <ul class="elementor-icon-list-items">
-                                                    @foreach ($institucional['valores'] as $valor)
-                                                    <li class="elementor-icon-list-item">
-                                                        <span class="elementor-icon-list-icon">
-                                                            <i aria-hidden="true" class="fas fa-check-circle"></i>
-                                                        </span>
-                                                        <span class="elementor-icon-list-text">{{
-                                                            $valor['descripcion']
-                                                            }}</span>
-                                                    </li>
-                                                    @endforeach
-                                                    
-                                                </ul>
+                                @else
+                                    <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8d47c51"
+                                        data-id="8d47c51" data-element_type="column">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-505abdcc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                                data-id="505abdcc" data-element_type="widget"
+                                                data-widget_type="icon-list.default">
+                                                <div class="elementor-widget-container">
+                                                    <link rel="stylesheet"
+                                                        href="assets/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css">
+                                                    <ul class="elementor-icon-list-items">
+                                                        @foreach ($institucional['valores'] as $valor)
+                                                            <li class="elementor-icon-list-item">
+                                                                <span class="elementor-icon-list-icon">
+                                                                    <i aria-hidden="true" class="fas fa-check-circle"></i>
+                                                                </span>
+                                                                <span
+                                                                    class="elementor-icon-list-text">{{ $valor['descripcion'] }}</span>
+                                                            </li>
+                                                        @endforeach
+
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endif
                             </div>
                         </section>
@@ -242,34 +241,37 @@
                         <div class="elementor-element elementor-element-393b8a46 elementor-widget elementor-widget-image"
                             data-id="393b8a46" data-element_type="widget" data-widget_type="image.default">
                             <div class="elementor-widget-container">
-                                <img src="{{$institucional['ruta_foto_principal']}}">
+                                <img src="{{ $institucional['ruta_foto_principal'] }}">
                             </div>
                         </div>
-                        @if($institucional['aniosDeDiferencia'])
-                        <section
-                            class="elementor-section elementor-inner-section elementor-element elementor-element-1151c47d elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                            data-id="1151c47d" data-element_type="section">
-                            <div class="elementor-container elementor-column-gap-default">
-                                <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-531d61a5"
-                                    data-id="531d61a5" data-element_type="column">
-                                    <div class="elementor-widget-wrap elementor-element-populated">
-                                        <div class="elementor-element elementor-element-578f056b elementor-widget__width-auto elementor-hidden-mobile elementor-widget elementor-widget-jkit_fun_fact"
-                                            data-id="578f056b" data-element_type="widget"
-                                            data-widget_type="jkit_fun_fact.default">
-                                            <div class="elementor-widget-container">
-                                                <div
-                                                    class="jeg-elementor-kit jkit-fun-fact align-center hover-from-left elementor-animation- jeg_module_97_5_653170c8b29e1">
-                                                    <div class="fun-fact-inner">
-                                                        <div class="icon elementor-animation-"><i aria-hidden="true"
-                                                                class="jki jki-badge-light"></i></div>
-                                                        <div class="content">
-                                                            <div class="number-wrapper">
-                                                                <span class="prefix"></span>
-                                                                <span class="number" data-value="{{$institucional['aniosDeDiferencia']}}"
-                                                                    data-animation-duration="3500">0</span>
-                                                                <span class="suffix"></span><sup class="super">+</sup>
+                        @if ($institucional['aniosDeDiferencia'])
+                            <section
+                                class="elementor-section elementor-inner-section elementor-element elementor-element-1151c47d elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                data-id="1151c47d" data-element_type="section">
+                                <div class="elementor-container elementor-column-gap-default">
+                                    <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-531d61a5"
+                                        data-id="531d61a5" data-element_type="column">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-578f056b elementor-widget__width-auto elementor-hidden-mobile elementor-widget elementor-widget-jkit_fun_fact"
+                                                data-id="578f056b" data-element_type="widget"
+                                                data-widget_type="jkit_fun_fact.default">
+                                                <div class="elementor-widget-container">
+                                                    <div
+                                                        class="jeg-elementor-kit jkit-fun-fact align-center hover-from-left elementor-animation- jeg_module_97_5_653170c8b29e1">
+                                                        <div class="fun-fact-inner">
+                                                            <div class="icon elementor-animation-"><i aria-hidden="true"
+                                                                    class="jki jki-badge-light"></i></div>
+                                                            <div class="content">
+                                                                <div class="number-wrapper">
+                                                                    <span class="prefix"></span>
+                                                                    <span class="number"
+                                                                        data-value="{{ $institucional['aniosDeDiferencia'] }}"
+                                                                        data-animation-duration="3500">0</span>
+                                                                    <span class="suffix"></span><sup
+                                                                        class="super">+</sup>
+                                                                </div>
+                                                                <h2 class="title">Años de Experiencia</h2>
                                                             </div>
-                                                            <h2 class="title">Años de Experiencia</h2>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -277,13 +279,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
                         @endif
                         <div
                             class="elementor-element elementor-element-26cc5f19 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-image">
                             <div class="elementor-widget-container">
-                                <img src="{{$institucional['ruta_foto_secundaria']}}">
+                                <img src="{{ $institucional['ruta_foto_secundaria'] }}">
                             </div>
                         </div>
                     </div>
@@ -382,7 +383,8 @@
                                 transition: box-shadow .25s;
                                 border-radius: 10px;
                                 width: 85%;
-                                height: 385px; /*11-11-2023 para emparejar la altura de los card de servicios*/
+                                height: 385px;
+                                /*11-11-2023 para emparejar la altura de los card de servicios*/
 
                             }
 
@@ -410,7 +412,7 @@
                             .card-content {
                                 padding: 15px;
                                 text-align: left;
-                                
+
                             }
 
                             .card-title {
@@ -451,29 +453,30 @@
                                                     data-settings="{&quot;autoplay&quot;:true,&quot;autoplay_speed&quot;:3500,&quot;autoplay_hover_pause&quot;:false,&quot;show_navigation&quot;:false,&quot;navigation_left&quot;:&quot;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fas fa-angle-left\&quot;&gt;&lt;\/i&gt;&quot;,&quot;navigation_right&quot;:&quot;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fas fa-angle-right\&quot;&gt;&lt;\/i&gt;&quot;,&quot;show_dots&quot;:false,&quot;arrow_position&quot;:&quot;bottom&quot;,&quot;responsive&quot;:{&quot;desktop&quot;:{&quot;items&quot;:3,&quot;margin&quot;:10,&quot;breakpoint&quot;:1025},&quot;tablet&quot;:{&quot;items&quot;:2,&quot;margin&quot;:10,&quot;breakpoint&quot;:768},&quot;mobile&quot;:{&quot;items&quot;:1,&quot;margin&quot;:10,&quot;breakpoint&quot;:0}}}">
                                                     <div class="testimonials-list">
                                                         <div class="testimonials-track">
-                                                            @foreach($servicios as $servicio)
-                                                            <div class="testimonial-item  elementor-repeater-item-2a1c64e">
-                                                                <div class="content-card col-xs-12 col-sm-4">
-                                                                    <div class="card">
-                                                                        <a class="img-card"
-                                                                            href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                                                            <img
-                                                                                src="{{$servicio['ruta_foto']}}" />
-                                                                        </a>
-                                                                        <div class="card-content">
-                                                                            <h4 class="card-title">
-                                                                                <a href="#" onclick="return false;">
-                                                                                    {{$servicio['nombre']}}
-                                                                                </a>
-                                                                            </h4>
-                                                                            <p class="">
-                                                                                {{$servicio['descripcion']}}
-                                                                            </p>
-                                                                        </div>
+                                                            @foreach ($servicios as $servicio)
+                                                                <div
+                                                                    class="testimonial-item  elementor-repeater-item-2a1c64e">
+                                                                    <div class="content-card col-xs-12 col-sm-4">
+                                                                        <div class="card">
+                                                                            <a class="img-card"
+                                                                                href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                                                                <img src="{{ $servicio['ruta_foto'] }}" />
+                                                                            </a>
+                                                                            <div class="card-content">
+                                                                                <h4 class="card-title">
+                                                                                    <a href="#"
+                                                                                        onclick="return false;">
+                                                                                        {{ $servicio['nombre'] }}
+                                                                                    </a>
+                                                                                </h4>
+                                                                                <p class="">
+                                                                                    {{ $servicio['descripcion'] }}
+                                                                                </p>
+                                                                            </div>
 
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
                                                             @endforeach
                                                         </div>
                                                     </div>
@@ -545,69 +548,72 @@
             class="elementor-section elementor-top-section elementor-element elementor-element-66412b06 animated-slow elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
             data-id="66412b06" data-element_type="section" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
             <div class="elementor-container elementor-column-gap-default">
-                @foreach($tipobuses as $tipobus)
-                <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-5c10f049"
-                    data-id="5c10f049" data-element_type="column">
-                    <div class="elementor-widget-wrap elementor-element-populated">
-                        <div class="elementor-element elementor-element-406938e elementor-widget elementor-widget-image">
-                            <div class="elementor-widget-container">
-                                <img src="{{$tipobus['ruta_foto']}}"
-                                    class="attachment-large size-large wp-image-29">
+                @foreach ($tipobuses as $tipobus)
+                    <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-5c10f049"
+                        data-id="5c10f049" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div
+                                class="elementor-element elementor-element-406938e elementor-widget elementor-widget-image">
+                                <div class="elementor-widget-container">
+                                    <img src="{{ $tipobus['ruta_foto'] }}"
+                                        class="attachment-large size-large wp-image-29">
+                                </div>
                             </div>
-                        </div>
 
-                        <style>
-                            .ruta i {
-                                color: green;
-                            }
-                        </style>
-                        <section
-                            class="elementor-section elementor-inner-section elementor-element elementor-element-193f8dee elementor-section-boxed elementor-section-height-default elementor-section-height-default">
-                            <div class=" ruta elementor-container elementor-column-gap-default">
-                                <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-c35e719"
-                                    data-id="c35e719" data-element_type="column"
-                                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                                    <div class="elementor-widget-wrap elementor-element-populated">
-                                        <div
-                                            class="elementor-element elementor-element-47b7cc10 elementor-widget elementor-widget-heading">
-                                            <div class="elementor-widget-container">
-                                                <h4 class="elementor-heading-title elementor-size-default">{{$tipobus['nombre']}}
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        @foreach($tipobus['rutas'] as $key=>$ruta)
-                                        <div style="margin-bottom: 10%; text-align: center;">
-                                            <div>{{$ruta['ciudad_origen']}}-{{$ruta['ciudad_destino']}}</div>
-                                            <div style="display: flex;     justify-content: space-evenly;">
-                                                <div>
-                                                    <i class="fas fa-arrow-up"></i>
-                                                    <span>{{$ruta['hora_salida']}}</span>
-                                                </div>
-                                                &nbsp;
-                                                <div>
-                                                    <i class="fas fa-arrow-down"></i>
-                                                    <span>{{$ruta['hora_llegada']}}</span>
+                            <style>
+                                .ruta i {
+                                    color: green;
+                                }
+                            </style>
+                            <section
+                                class="elementor-section elementor-inner-section elementor-element elementor-element-193f8dee elementor-section-boxed elementor-section-height-default elementor-section-height-default">
+                                <div class=" ruta elementor-container elementor-column-gap-default">
+                                    <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-c35e719"
+                                        data-id="c35e719" data-element_type="column"
+                                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div
+                                                class="elementor-element elementor-element-47b7cc10 elementor-widget elementor-widget-heading">
+                                                <div class="elementor-widget-container">
+                                                    <h4 class="elementor-heading-title elementor-size-default">
+                                                        {{ $tipobus['nombre'] }}
+                                                    </h4>
                                                 </div>
                                             </div>
-                                        </div>
-                                        @endforeach
-                                        
+                                            @foreach ($tipobus['rutas'] as $key => $ruta)
+                                                <div style="margin-bottom: 10%; text-align: center;">
+                                                    <div>{{ $ruta['ciudad_origen'] }}-{{ $ruta['ciudad_destino'] }}</div>
+                                                    <div style="display: flex;     justify-content: space-evenly;">
+                                                        <div>
+                                                            <i class="fas fa-arrow-up"></i>
+                                                            <span>{{ $ruta['hora_salida'] }}</span>
+                                                        </div>
+                                                        &nbsp;
+                                                        <div>
+                                                            <i class="fas fa-arrow-down"></i>
+                                                            <span>{{ $ruta['hora_llegada'] }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
 
-                                        <div
-                                            class="elementor-element elementor-element-47b7cc10 elementor-widget elementor-widget-heading">
-                                            <div class="elementor-widget-container">
-                                                <div class="elementor-button-wrapper">
-                                                    <a class=" elementor-button-link elementor-size-sm elementor-animation-float"
-                                                        href="{{ route('seccion.rutas') }}">
-                                                        <span class="elementor-button-content-wrapper">
 
-                                                            <span class="elementor-button-text"><b>Ver Oficinas</b></span>
-                                                        </span>
-                                                    </a>
+                                            <div
+                                                class="elementor-element elementor-element-47b7cc10 elementor-widget elementor-widget-heading">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-button-wrapper">
+                                                        <a class=" elementor-button-link elementor-size-sm elementor-animation-float"
+                                                            href="{{ route('seccion.rutas') }}">
+                                                            <span class="elementor-button-content-wrapper">
+
+                                                                <span class="elementor-button-text"><b>Ver
+                                                                        Oficinas</b></span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        {{--<div class="elementor-element elementor-element-219d9773 elementor-widget__width-auto elementor-mobile-align-center elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button"
+                                            {{-- <div class="elementor-element elementor-element-219d9773 elementor-widget__width-auto elementor-mobile-align-center elementor-widget-mobile__width-inherit elementor-widget elementor-widget-button"
                                             data-id="219d9773" data-element_type="widget"
                                             data-widget_type="button.default">
                                             <div class="elementor-widget-container">
@@ -621,16 +627,16 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                        </div>--}}
-                                    
+                                        </div> --}}
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
+                            </section>
+                        </div>
                     </div>
-                </div>
                 @endforeach
-                {{--<div
+                {{-- <div
                     class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-a01ea2c">
                     <div class="elementor-widget-wrap elementor-element-populated">
                         <div class="elementor-element elementor-element-251f7e07 elementor-widget elementor-widget-image">
@@ -786,7 +792,7 @@
                             </div>
                         </section>
                     </div>
-                </div>--}}
+                </div> --}}
             </div>
         </section>
 

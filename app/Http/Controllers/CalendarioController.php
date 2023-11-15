@@ -24,9 +24,11 @@ class CalendarioController extends Controller
 
                 $data = $response->json()['data'];
                 $eventos = $data['feriados'];
+                $fotoHeader= $data['fotoHeader'];
             } else {
                 $data = [];
                 $eventos = [];
+                $fotoHeader = [];
             }
         } catch (\Exception $e) {
 
@@ -34,6 +36,6 @@ class CalendarioController extends Controller
             $eventos = [];
         }
 
-        return view('secciones.condiciones-de-viaje.calendario-eventos', compact('eventos'));
+        return view('secciones.condiciones-de-viaje.calendario-eventos', compact('eventos', 'fotoHeader'));
     }
 }

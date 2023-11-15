@@ -481,7 +481,7 @@
                                 <div class="elementor-element elementor-element-63bfa3f1 elementor-widget elementor-widget-heading"
                                     data-id="63bfa3f1" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                        <h4 class="elementor-heading-title elementor-size-default">Follow Our Social Media
+                                        <h4 class="elementor-heading-title elementor-size-default">Consulta nuestras redes
                                         </h4>
                                     </div>
                                 </div>
