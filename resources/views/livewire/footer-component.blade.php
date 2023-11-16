@@ -361,6 +361,14 @@
                                                                 <i class="fab fa-instagram"></i> </a>
                                                         </span>
                                                         @endif
+                                                        @if ($data['linkedin'])
+                                                        <span class="elementor-grid-item">
+                                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-d54d883"
+                                                                href="{{$data['linkedin']}}" target="_blank">
+                                                                <span class="elementor-screen-only">Linkedin</span>
+                                                                <i class="fab fa-linkedin-in"></i> </a>
+                                                        </span>
+                                                        @endif
                                                         @if ($data['youtube'])
                                                         <span class="elementor-grid-item">
                                                             <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-d54d883"
