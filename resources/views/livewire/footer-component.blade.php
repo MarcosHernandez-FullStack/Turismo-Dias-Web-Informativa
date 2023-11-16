@@ -18,14 +18,16 @@
                                         data-id="1fde75da" data-element_type="column"
                                         data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                         <div class="elementor-widget-wrap elementor-element-populated">
+                                            @if ($data['logo'])
                                             <div class="elementor-element elementor-element-48cdba42 elementor-widget elementor-widget-image"
                                                 data-id="48cdba42" data-element_type="widget"
                                                 data-widget_type="image.default">
                                                 <div class="elementor-widget-container">
                                                     <img class="logo-footer" width="2895" height="735"
-                                                        src="assets/img/logo-light.png">
-                                                </div>
+                                                        src="{{$data['logo']}}" alt="logo">
+                                                </div>    
                                             </div>
+                                            @endif
                                             <div
                                                 class="elementor-element elementor-element-376790d2 elementor-widget elementor-widget-text-editor">
                                                 <div class="elementor-widget-container">

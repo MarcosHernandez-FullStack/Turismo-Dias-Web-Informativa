@@ -253,7 +253,7 @@
 												</a>
 											</div>
 											<div class="card-expand" id="expand-cf689ee" style="display:{{ $key == 0 ? 'block' : 'none' }}">
-												<div class="card-body">{{ $termino['descripcion'] }}</div>
+												<div class="card-body">{!!$termino['descripcion'] !!}</div>
 											</div>
 										</div>
 										@endforeach
