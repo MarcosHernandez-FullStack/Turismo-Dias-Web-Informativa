@@ -279,7 +279,7 @@
                                                     data-widget_type="jkit_icon_box.default">
                                                     <div class="elementor-widget-container">
                                                         @livewire('header-component')
-                                                        {{--<div>
+                                                        {{-- <div>
                                                             <div
                                                                 class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_97_1_653170c8a160a">
 
@@ -293,7 +293,7 @@
 
                                                                 </div>
                                                             </div>
-                                                        </div>--}}
+                                                        </div> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -310,9 +310,9 @@
     </div>
 
     @yield('contenidoPrincipal')
-    <script src="{{asset('js/agenda.js')}}" defer></script>
+    <script src="{{ asset('assets/js/fa-icons.min.js') }}"></script>
+    <script src="{{ asset('js/agenda.js') }}" defer></script>
     <script>
-
         var botmanWidget = {
             chatServer: '/botman',
             frameEndpoint: '/chat-frame',
@@ -324,8 +324,8 @@
             aboutText: '',
             placeholderText: 'Escribe un mensaje...',
         };
-        </script>
-        <script src='{{asset('assets/js/widget.js')}}'></script>
+    </script>
+    <script src='{{ asset('assets/js/widget.js') }}'></script>
 
 
 
