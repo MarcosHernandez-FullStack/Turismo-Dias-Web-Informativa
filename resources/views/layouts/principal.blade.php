@@ -143,8 +143,8 @@
 
         <!-- Header -->
         <header>
-
-            <div class="elementor elementor-177">
+            @livewire('header-component')
+            {{-- <div class="elementor elementor-177">
 
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-19121f5 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
@@ -279,7 +279,7 @@
                                                     data-widget_type="jkit_icon_box.default">
                                                     <div class="elementor-widget-container">
                                                         @livewire('header-component')
-                                                        {{-- <div>
+                                                        xx<div>
                                                             <div
                                                                 class="jeg-elementor-kit jkit-icon-box icon-position- elementor-animation- jeg_module_97_1_653170c8a160a">
 
@@ -294,18 +294,18 @@
                                                                 </div>
                                                             </div>
                                                         </div> --}}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </header>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>--}}
+    </header>
 
     </div>
 

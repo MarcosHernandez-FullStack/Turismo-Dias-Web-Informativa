@@ -549,6 +549,11 @@
             }
         </style>
         <div class="column-container">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
             @foreach ($tipo_buses as $key => $tipo_bus)
                 @if ($tipo_bus['rutas'])
                     <div class="column-item">
@@ -559,8 +564,11 @@
 
                             <div class="content-card-bus">
 
-                                <h4>{{ $tipo_bus['nombre'] }} <a href=""> <i style="font-size: 20px"
-                                            class="fas fa-info-circle"></i></a>
+                                <h4>{{ $tipo_bus['nombre'] }}<a href="#" data-toggle="modal"
+                                        data-target="#infoModal" data-nombre="{{ $tipo_bus['nombre'] }}"
+                                        data-descripcion="{{ $tipo_bus['descripcion'] }}">
+                                        <i style="font-size: 20px" class="fas fa-info-circle"></i>
+                                    </a>
                                 </h4>
 
                                 @foreach ($tipo_bus['rutas'] as $key => $ruta)
@@ -571,8 +579,6 @@
                                             <i class="fas fa-arrow-down"></i>{{ $ruta['hora_llegada'] }} </span>
                                     </p>
                                 @endforeach
-
-
 
                             </div>
                         </div>
@@ -586,17 +592,16 @@
 
                             <div class="content-card-bus">
 
-                                <h4>{{ $tipo_bus['nombre'] }} <a href=""> <i style="font-size: 20px"
-                                            class="fas fa-info-circle"></i></a>
+                                <h4>{{ $tipo_bus['nombre'] }}<a href="#" data-toggle="modal"
+                                        data-target="#infoModal" data-nombre="{{ $tipo_bus['nombre'] }}"
+                                        data-descripcion="{{ $tipo_bus['descripcion'] }}">
+                                        <i style="font-size: 20px" class="fas fa-info-circle"></i>
+                                    </a>
                                 </h4>
-
 
                                 <p>
                                     <span> No se encontraron rutas para este servicio. </span>
                                 </p>
-
-
-
 
                             </div>
                         </div>
@@ -614,6 +619,44 @@
         }
     </style>
 
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Puedes agregar aquí el mensaje o contenido que desees mostrar -->
+                    <p><b>Descripción del servicio:</b> <span id="descripcionServicio"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+
+            $('#infoModal').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget);
+                var nombreServicio = button.data('nombre');
+                var descripcionServicio = button.data('descripcion');
+                var modal = $(this);
+
+                modal.find('.modal-title').text('Información del servicio: ' + nombreServicio);
+                modal.find('#nombreServicio').text(nombreServicio);
+                modal.find('#descripcionServicio').text(descripcionServicio);
+            });
+        });
+    </script>
 
     {{--  <div class="row">
         @foreach ($tipo_buses as $key => $tipo_bus)
