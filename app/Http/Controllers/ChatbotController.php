@@ -31,7 +31,7 @@ class ChatbotController extends Controller
         $botman = BotManFactory::create($config, new LaravelCache());
 
         $botman->fallback(function ($bot) {
-            $bot->reply('¡Hola! 😀<br> Soy TurismitoBot 🤖, asesor virtual del Turismo Días <br>
+            $bot->reply('¡Hola! 😀<br> Soy TurismitoBot 🤖, asesor virtual de Turismo Días <br>
             ¿En qué puedo atenderte?<br>
            🤖 Atención automatizada las 24/7.');
             $bot->startConversation(new MenuConversation);
@@ -57,7 +57,7 @@ class MenuConversation extends Conversation
         $this->ask('Elige una opción para continuar:<br>
         <br>
         1] 🚗 NUESTRAS RUTAS<br>
-        2] 💻 LIBRO DE RECLAMACIONES VIRTUAL<br>
+        2] 📧 DÉJANOS UN MENSAJE<br>
         3] ❓ PREGUNTAS FRECUENTES<br>
         <br>
         ¡IMPORTANTE‼️, Digita el número que contenga la información de tu interés. Usa la misma dinámica para navegar en los menús.',
@@ -72,7 +72,7 @@ class MenuConversation extends Conversation
                 } elseif ($this->opcion == '3') {
                     $this->bot->startConversation(new FAQConversation());
                 } else {
-                    $this->say('Opción no disponible, elija un nume´ro en la lista por favor');
+                    $this->say('Opción no disponible, elija un número en la lista por favor');
                     $this->bot->startConversation(new MenuConversation());
                 }
             });
@@ -84,7 +84,7 @@ class RutaConversation extends Conversation
     protected $opcion;
     public function run()
     {
-        $this->preguntarOpcion();
+        $this->ubiSalidas();
     }
 
     public function preguntarOpcion()
@@ -107,7 +107,7 @@ class RutaConversation extends Conversation
                 } elseif ($this->opcion == '0') {
                     $this->bot->startConversation(new MenuConversation());
                 } else {
-                    $this->say('Opción no disponible, elija un nume´ro en la lista por favor.');
+                    $this->say('Opción no disponible, elija un número en la lista por favor.');
                     $this->bot->startConversation(new RutaConversation());
                 }
             });
@@ -171,7 +171,7 @@ class RutaConversation extends Conversation
     public function ubiSalidas()
     {
         try {
-            $mensaje = 'Por favor introduce la ubicación a donde deseas viajar: <br>
+            $mensaje = 'Por favor ingrese su destino: <br>
             0] VOLVER AL MENÚ DE RUTAS';
             $this->ask($mensaje, function (Answer $answer) {
                 // Save result
@@ -195,12 +195,13 @@ class RutaConversation extends Conversation
                             if (!empty($destinos)) {
                                 $mensaje2 = 'Estos son las salidas y horas de salida hacia tu DESTINO ' . $this->opcion . ':<br>';
                                 foreach ($destinos as $key => $destino) {
-                                    $mensaje2 = $mensaje2 . '<strong>Salida: ' . $destino['nombre_origen'] . '</strong> <br>';
-                                    $mensaje2 = $mensaje2 . 'Destino: ' . $destino['nombre_destino'] . '<br>';
-                                    $mensaje2 = $mensaje2 . 'Hora: ' . $destino['hora_salida'] . '<br>';
+                                    $mensaje2 = $mensaje2 . '<strong>' . $destino['nombre_origen'] . ' - ' . $destino['nombre_destino'] . '</strong><br>';
+                                    //$mensaje2 = $mensaje2 . 'Destino: ' . $destino['nombre_destino'] . '<br>';
+                                    $mensaje2 = $mensaje2 . 'Hora de salida: ' . $destino['hora_salida'] . '<br>';
                                 }
                                 $this->say($mensaje2, ['parse_mode' => 'HTML']);
-                                $this->preguntarOpcion();
+                                //$this->preguntarOpcion();
+                                $this->bot->startConversation(new MenuConversation());
                             } else {
                                 $this->say('Lo sentimos, por el momento no tenemos ninguna salida con dirección al DESTINO ingresado.');
                                 $this->bot->startConversation(new RutaConversation());
@@ -233,9 +234,9 @@ class ReclamacionConversation extends Conversation
     protected $direccion;
     protected $tutor;
     protected $tipo_producto_servicio = '2';
-    protected $monto;
+    protected $monto = '0';
     protected $descripcion_producto_servicio;
-    protected $tipo_reclamo_queja = '2';
+    protected $tipo_reclamo_queja = '3';
     protected $detalle_reclamo_queja;
     protected $pedido;
 
@@ -294,7 +295,7 @@ class ReclamacionConversation extends Conversation
             } else {
                 if (mb_strlen($this->opcion) <= 20) {
                     $this->dni = $this->opcion;
-                    $this->preguntarTelefono();
+                    $this->preguntarCorreo();
                 } else {
                     $this->say('El texto ingresado excede el limite de carácteres(' . mb_strlen($this->opcion) . ' ingresados), por favor vuelva a ingresar el dato.');
                     $this->preguntarDNI();
@@ -331,7 +332,7 @@ class ReclamacionConversation extends Conversation
             } else {
                 if (mb_strlen($this->opcion) <= 120) {
                     $this->correo = $this->opcion;
-                    $this->preguntarDireccion();
+                    $this->preguntarDetaReclQuej();
                 } else {
                     $this->say('El texto ingresado excede el limite de carácteres(' . mb_strlen($this->opcion) . ' ingresados), por favor vuelva a ingresar el dato.');
                     $this->preguntarCorreo();
@@ -449,7 +450,7 @@ class ReclamacionConversation extends Conversation
     }
     public function preguntarDetaReclQuej()
     {
-        $mensaje = 'Ingrese el detalle de su reclamo o queja:<br>Máximo 255 carácteres.<br><br>0] CANCELAR Y VOLVER AL MENU PRINCIPAL';
+        $mensaje = 'Ingrese un mensaje para nosotros:<br>Máximo 255 carácteres.<br><br>0] CANCELAR Y VOLVER AL MENU PRINCIPAL';
         $this->ask($mensaje, function (Answer $answer) {
             $this->opcion = $answer->getText();
             if ($this->opcion == '0') {
@@ -457,7 +458,7 @@ class ReclamacionConversation extends Conversation
             } else {
                 if (mb_strlen($this->opcion) <= 255) {
                     $this->detalle_reclamo_queja = $this->opcion;
-                    $this->preguntarPedido();
+                    $this->preguntarEnvio();
                 } else {
                     $this->say('El texto ingresado excede el limite de carácteres(' . mb_strlen($this->opcion) . ' ingresados), por favor vuelva a ingresar el dato.');
                     $this->preguntarDetaReclQuej();
@@ -486,47 +487,37 @@ class ReclamacionConversation extends Conversation
 
     public function preguntarEnvio()
     {
-        $mensaje = 'Se han recepcionado correctamente todos los datos de su reclamo!!<br>Esta seguro de enviar está información?<br><br>1] ENVIAR<br>0] CANCELAR Y VOLVER AL MENU PRINCIPAL';
-        $this->ask($mensaje, function (Answer $answer) {
-            $this->opcion = $answer->getText();
-            if ($this->opcion == '0') {
+        $mensaje = 'Datos registrados. Nos pondremos en contacto muy pronto!!!<br>0] CANCELAR Y VOLVER AL MENU PRINCIPAL';
+        try {
+            $data = [
+                'nombre_completo_consumidor' => $this->nombre,
+                'direccion_consumidor' => $this->direccion,
+                'email_consumidor' => $this->correo,
+                'nombre_completo_apoderado_consumidor' => $this->tutor,
+                'documento_identidad_consumidor' => $this->dni,
+                'telefono_consumidor' => $this->telefono,
+                'tipo_bien' => $this->tipo_producto_servicio,
+                'descripcion_bien' => $this->descripcion_producto_servicio,
+                'monto_reclamado_bien' => $this->monto,
+                'tipo_reclamacion_detalle' => $this->tipo_reclamo_queja,
+                'descripcion_reclamacion_detalle' => $this->detalle_reclamo_queja,
+                'pedido_reclamacion_detalle' => $this->pedido,
+
+            ];
+            $response = Http::post(env('API_URL') . 'libro-reclamacion/add', ['data' => $data]);
+
+            if ($response->successful()) {
+                $this->say('Datos registrados. Nos pondremos en contacto muy pronto!!!<br>Volviendo al menú principal...');
                 $this->bot->startConversation(new MenuConversation());
-            } elseif ($this->opcion == '1') {
-                try {
-                    $data = [
-                        'nombre_completo_consumidor' => $this->nombre,
-                        'direccion_consumidor' => $this->direccion,
-                        'email_consumidor' => $this->correo,
-                        'nombre_completo_apoderado_consumidor' => $this->tutor,
-                        'documento_identidad_consumidor' => $this->dni,
-                        'telefono_consumidor' => $this->telefono,
-                        'tipo_bien' => $this->tipo_producto_servicio,
-                        'descripcion_bien' => $this->descripcion_producto_servicio,
-                        'monto_reclamado_bien' => $this->monto,
-                        'tipo_reclamacion_detalle' => $this->tipo_reclamo_queja,
-                        'descripcion_reclamacion_detalle' => $this->detalle_reclamo_queja,
-                        'pedido_reclamacion_detalle' => $this->pedido,
-
-                    ];
-                    $response = Http::post(env('API_URL') . 'libro-reclamacion/add', ['data' => $data]);
-
-                    if ($response->successful()) {
-                        $this->say('Se ha registrado con exito su reclamo!!!<br>Volviendo al menú principal...');
-                        $this->bot->startConversation(new MenuConversation());
-                    } else {
-                        $this->say('Se ha producido un error, intente más tarde!!!<br>Volviendo al menú principal...');
-                        $this->bot->startConversation(new MenuConversation());
-                    }
-                } catch (\Exception $e) {
-                    $this->say('Se ha producido un error, intente más tarde!!!<br>Volviendo al menú principal...');
-                    $this->bot->startConversation(new MenuConversation());
-                }
-
             } else {
-                $this->say('Opción no disponible, elija un número en la lista por favor.');
-                $this->preguntarEnvio();
+                $this->say('Se ha producido un error, intente más tarde!!!<br>Volviendo al menú principal...');
+                $this->bot->startConversation(new MenuConversation());
             }
-        });
+        } catch (\Exception $e) {
+            $this->say('Se ha producido un error, intente más tarde!!!<br>Volviendo al menú principal...');
+            $this->bot->startConversation(new MenuConversation());
+        }
+
     }
 }
 
