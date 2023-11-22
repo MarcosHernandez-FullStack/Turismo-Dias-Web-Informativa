@@ -53,7 +53,7 @@
                 <div class="grupo-contenedor">
                     <div class="grupo-item">
                         <label for="Correo">Correo Electrónico</label>
-                        <input wire:model.defer="correo" type="text" id="Correo" name="Correo">
+                        <input wire:model.defer="correo" type="email" id="Correo" name="Correo">
                         @error('correo')
                             <span style="color: #ff00009e;font-size: 13px;">{{ $message }}</span>
                         @enderror

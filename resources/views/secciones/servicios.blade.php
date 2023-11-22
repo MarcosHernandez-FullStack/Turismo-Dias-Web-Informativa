@@ -464,7 +464,7 @@
                                     <div class="group-item-servicios">
 
                                         @foreach ($servicios as $servicio)
-                                            <div class="item">
+                                            <div class="item" style="margin-bottom: 5%;">
                                                 <div class="content-card col-xs-12 col-sm-4">
                                                     <div class="card">
                                                         <a class="img-card" href="#" onclick="return false">

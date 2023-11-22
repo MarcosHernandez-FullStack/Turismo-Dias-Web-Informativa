@@ -43,7 +43,7 @@ class ReclamacionForm extends Component
             'telefono' => 'required|max:20',
             'correo' => 'required|max:120',
             'direccion' => 'required|max:120',
-            'monto' => 'required|numeric|max:5000',
+            'monto' => 'required|numeric|max:50000',
             'descripcion_producto_servicio' => 'required|max:255',
             'detalle_reclamo_queja' => 'required|max:255',
             'pedido' => 'required|max:120',
