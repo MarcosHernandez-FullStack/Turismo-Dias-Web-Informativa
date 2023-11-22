@@ -145,7 +145,7 @@
         <!-- Header -->
         <header>
             @livewire('header-component')
-            {{--<div class="elementor elementor-177">
+            {{-- <div class="elementor elementor-177">
 
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-19121f5 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
@@ -294,26 +294,26 @@
 
                                                                 </div>
                                                             </div>
-                                                        </div> xx
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>--}}
-        </header>
+                                                        </div> --}}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>--}}
+    </header>
 
     </div>
 
     @yield('contenidoPrincipal')
-    <script src="{{asset('js/agenda.js')}}" defer></script>
+    <script src="{{ asset('assets/js/fa-icons.min.js') }}"></script>
+    <script src="{{ asset('js/agenda.js') }}" defer></script>
     <script>
-
         var botmanWidget = {
             chatServer: '/botman',
             frameEndpoint: '/chat-frame',
@@ -325,8 +325,8 @@
             aboutText: '',
             placeholderText: 'Escribe un mensaje...',
         };
-        </script>
-        <script src='{{asset('assets/js/widget.js')}}'></script>
+    </script>
+    <script src='{{ asset('assets/js/widget.js') }}'></script>
 
 
 
