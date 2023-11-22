@@ -140,7 +140,7 @@
 
                                                     <div class="jkit-icon-box-wrapper hover-from-left">
                                                         <div class="icon-box icon-box-body">
-                                                            <h2 class="title">Conctáctanos</h2>
+                                                            <h2 class="title">Contáctanos</h2>
                                                             @if ($data['celularPrincipal'])
                                                             <p class="icon-box-description">{{$data['celularPrincipal']}}</p>
                                                             @endif
