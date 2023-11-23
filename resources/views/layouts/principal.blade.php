@@ -164,6 +164,7 @@
             bubbleBackground: '#017F01',
             aboutText: '',
             placeholderText: 'Escribe un mensaje...',
+            bubbleAvatarUrl: '{{ asset('assets/img/chatbot.png') }}',
         };
     </script>
     <script src='{{ asset('assets/js/widget.js') }}'></script>
