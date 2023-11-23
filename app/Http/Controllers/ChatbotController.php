@@ -248,7 +248,7 @@ class ReclamacionConversation extends Conversation
 
     public function preguntarOpcion()
     {
-        $this->ask('A continuación, le ayudaré a registrar su reclamo.<br>Por favor, ingrese los datos que se soliciten respetando la cantidad de carácteres y tipo de dato indicado:<br>
+        $this->ask('A continuación, le ayudaré a registrar su mensaje.<br>Por favor, ingrese los datos que se soliciten respetando la cantidad de carácteres y tipo de dato indicado:<br>
         <br>
         1] CONTINUAR<br>
         0] VOLVER AL MENU PRINCIPAL<br>',
