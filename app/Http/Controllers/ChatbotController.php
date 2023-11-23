@@ -172,12 +172,12 @@ class RutaConversation extends Conversation
     {
         try {
             $mensaje = 'Por favor ingrese su destino: <br>
-            0] VOLVER AL MENÚ DE RUTAS';
+            0] VOLVER AL MENÚ PRINCIPAL';
             $this->ask($mensaje, function (Answer $answer) {
                 // Save result
                 $this->opcion = mb_strtoupper($answer->getText(), 'UTF-8');
                 if ($this->opcion == '0') {
-                    $this->bot->startConversation(new RutaConversation());
+                    $this->bot->startConversation(new MenuConversation());
                 } else {
                     try {
                         $response = Http::get(env('API_URL') . 'rutas/salidas', [
@@ -193,7 +193,7 @@ class RutaConversation extends Conversation
                             $data = $response->json()['data'];
                             $destinos = $data['destinos'];
                             if (!empty($destinos)) {
-                                $mensaje2 = 'Estos son las salidas y horas de salida hacia tu DESTINO ' . $this->opcion . ':<br>';
+                                $mensaje2 = 'Estas son las salidas y horas de salida hacia tu DESTINO ' . $this->opcion . ':<br>';
                                 foreach ($destinos as $key => $destino) {
                                     $mensaje2 = $mensaje2 . '<strong>' . $destino['nombre_origen'] . ' - ' . $destino['nombre_destino'] . '</strong><br>';
                                     //$mensaje2 = $mensaje2 . 'Destino: ' . $destino['nombre_destino'] . '<br>';
@@ -209,7 +209,7 @@ class RutaConversation extends Conversation
                             break;
                         case 404:
                             $this->say('No se ha encontrado la ubicación a donde quieres realizar tu viaje.');
-                            $this->ubiDestinos();
+                            $this->ubiSalidas();
                             break;
                         case 500:
                             $this->say('Ha ocurrido un error de conexión, vuelva a intentarlo.');
@@ -324,7 +324,7 @@ class ReclamacionConversation extends Conversation
 
     public function preguntarCorreo()
     {
-        $mensaje = 'Ingrese su correo electronico:<br>Máximo 120 carácteres.<br><br>0] CANCELAR Y VOLVER AL MENU PRINCIPAL';
+        $mensaje = 'Ingrese su correo electrónico:<br>Máximo 120 carácteres.<br><br>0] CANCELAR Y VOLVER AL MENU PRINCIPAL';
         $this->ask($mensaje, function (Answer $answer) {
             $this->opcion = $answer->getText();
             if ($this->opcion == '0') {
