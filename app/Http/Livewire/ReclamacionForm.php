@@ -87,13 +87,15 @@ class ReclamacionForm extends Component
     public function submitForm()
     {
 
+        $this->resetValidation(); // Add this line
+
         $this->validate();
 
         $data = [
             'nombre_completo_consumidor' => $this->nombre,
             'direccion_consumidor' => $this->direccion,
             'email_consumidor' => $this->correo,
-            'nombre_completo_apoderado_consumidor' => $this->tutor,
+            'nombre_completo_apoderado_consumidor' => $this->tutor !== null && $this->tutor !== '' ? $this->tutor : '-',
             'documento_identidad_consumidor' => $this->dni,
             'telefono_consumidor' => $this->telefono,
             'tipo_bien' => $this->tipo_producto_servicio,
