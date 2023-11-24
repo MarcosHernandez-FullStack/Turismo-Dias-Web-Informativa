@@ -284,7 +284,15 @@
                         <div
                             class="elementor-element elementor-element-26cc5f19 elementor-widget__width-auto elementor-absolute elementor-widget elementor-widget-image">
                             <div class="elementor-widget-container">
-                                <img src="{{ $institucional['ruta_foto_secundaria'] }}">
+                                <style>
+                                    img.imagen-secundaria {
+                                        height: 311px  !important;
+                                        /* width: 224px; */
+                                        object-fit: cover;
+                                        width: 220px !important;
+                                    }
+                                </style>
+                                <img class="imagen-secundaria" src="{{ $institucional['ruta_foto_secundaria'] }}">
                             </div>
                         </div>
                     </div>
