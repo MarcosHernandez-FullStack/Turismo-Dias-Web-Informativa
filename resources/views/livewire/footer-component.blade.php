@@ -19,19 +19,19 @@
                                         data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                                         <div class="elementor-widget-wrap elementor-element-populated">
                                             @if ($data['logo'])
-                                            <div class="elementor-element elementor-element-48cdba42 elementor-widget elementor-widget-image"
-                                                data-id="48cdba42" data-element_type="widget"
-                                                data-widget_type="image.default">
-                                                <div class="elementor-widget-container">
-                                                    <img class="logo-footer" width="2895" height="735"
-                                                        src="{{$data['logo']}}" alt="logo">
-                                                </div>    
-                                            </div>
+                                                <div class="elementor-element elementor-element-48cdba42 elementor-widget elementor-widget-image"
+                                                    data-id="48cdba42" data-element_type="widget"
+                                                    data-widget_type="image.default">
+                                                    <div class="elementor-widget-container">
+                                                        <img class="logo-footer" width="2895" height="735"
+                                                            src="{{ $data['logo'] }}" alt="logo">
+                                                    </div>
+                                                </div>
                                             @endif
                                             <div
                                                 class="elementor-element elementor-element-376790d2 elementor-widget elementor-widget-text-editor">
                                                 <div class="elementor-widget-container">
-                                                    {{$data['slogan']}} </div>
+                                                    {{ $data['slogan'] }} </div>
                                             </div>
                                             <div class="elementor-element elementor-element-407202cc elementor-shape-square e-grid-align-left e-grid-align-tablet-left elementor-grid-0 elementor-widget elementor-widget-social-icons"
                                                 data-id="407202cc" data-element_type="widget"
@@ -338,46 +338,45 @@
                                                     </style>
                                                     <div class="elementor-social-icons-wrapper elementor-grid">
                                                         @if ($data['facebook'])
-                                                        <span class="elementor-grid-item">
-                                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-animation-shrink elementor-repeater-item-c0163ab"
-                                                                href="{{$data['facebook']}}" target="_blank">
-                                                                <span
-                                                                    class="elementor-screen-only">Facebook-f</span>
-                                                                <i class="fab fa-facebook-f"></i> </a>
-                                                        </span>
+                                                            <span class="elementor-grid-item">
+                                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-animation-shrink elementor-repeater-item-c0163ab"
+                                                                    href="{{ $data['facebook'] }}" target="_blank">
+                                                                    <span
+                                                                        class="elementor-screen-only">Facebook-f</span>
+                                                                    <i class="fab fa-facebook-f"></i> </a>
+                                                            </span>
                                                         @endif
                                                         @if ($data['twitter'])
-                                                        <span class="elementor-grid-item">
-                                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-shrink elementor-repeater-item-310ab07"
-                                                                href="{{$data['twitter']}}" target="_blank">
-                                                                <span class="elementor-screen-only">Twitter</span>
-                                                                <i class="fab fa-twitter"></i> </a>
-                                                        </span>
+                                                            <span class="elementor-grid-item">
+                                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-shrink elementor-repeater-item-310ab07"
+                                                                    href="{{ $data['twitter'] }}" target="_blank">
+                                                                    <span class="elementor-screen-only">Twitter</span>
+                                                                    <i class="fab fa-twitter"></i> </a>
+                                                            </span>
                                                         @endif
                                                         @if ($data['instagram'])
-                                                        <span class="elementor-grid-item">
-                                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-63f86db"
-                                                                href="{{$data['instagram']}}" target="_blank">
-                                                                <span
-                                                                    class="elementor-screen-only">Instagram</span>
-                                                                <i class="fab fa-instagram"></i> </a>
-                                                        </span>
+                                                            <span class="elementor-grid-item">
+                                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-63f86db"
+                                                                    href="{{ $data['instagram'] }}" target="_blank">
+                                                                    <span class="elementor-screen-only">Instagram</span>
+                                                                    <i class="fab fa-instagram"></i> </a>
+                                                            </span>
                                                         @endif
                                                         @if ($data['linkedin'])
-                                                        <span class="elementor-grid-item">
-                                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-d54d883"
-                                                                href="{{$data['linkedin']}}" target="_blank">
-                                                                <span class="elementor-screen-only">Linkedin</span>
-                                                                <i class="fab fa-linkedin-in"></i> </a>
-                                                        </span>
+                                                            <span class="elementor-grid-item">
+                                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-d54d883"
+                                                                    href="{{ $data['linkedin'] }}" target="_blank">
+                                                                    <span class="elementor-screen-only">Linkedin</span>
+                                                                    <i class="fab fa-linkedin-in"></i> </a>
+                                                            </span>
                                                         @endif
                                                         @if ($data['youtube'])
-                                                        <span class="elementor-grid-item">
-                                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-d54d883"
-                                                                href="{{$data['youtube']}}" target="_blank">
-                                                                <span class="elementor-screen-only">Youtube</span>
-                                                                <i class="fab fa-youtube"></i> </a>
-                                                        </span>
+                                                            <span class="elementor-grid-item">
+                                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-d54d883"
+                                                                    href="{{ $data['youtube'] }}" target="_blank">
+                                                                    <span class="elementor-screen-only">Youtube</span>
+                                                                    <i class="fab fa-youtube"></i> </a>
+                                                            </span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -407,8 +406,7 @@
                                                                     <i aria-hidden="true"
                                                                         class="fas fa-chevron-right"></i>
                                                                 </span>
-                                                                <span
-                                                                    class="elementor-icon-list-text">Nosotros</span>
+                                                                <span class="elementor-icon-list-text">Nosotros</span>
                                                             </a>
                                                         </li>
                                                         <li class="elementor-icon-list-item">
@@ -418,8 +416,7 @@
                                                                     <i aria-hidden="true"
                                                                         class="fas fa-chevron-right"></i>
                                                                 </span>
-                                                                <span
-                                                                    class="elementor-icon-list-text">Servicios</span>
+                                                                <span class="elementor-icon-list-text">Servicios</span>
                                                             </a>
                                                         </li>
                                                         <li class="elementor-icon-list-item">
@@ -479,27 +476,28 @@
                                                             <span class="elementor-icon-list-icon">
                                                                 <i aria-hidden="true"
                                                                     class="fas fa-map-marker-alt"></i> </span>
-                                                            <span class="elementor-icon-list-text"><a
-                                                                    href="#" style="color: white;">Ver
+                                                            <span class="elementor-icon-list-text"><a href="#"
+                                                                    style="color: white;">Ver
                                                                     Oficinas</a></span>
                                                         </li>
                                                         @if ($data['celularPrincipal'])
-                                                        <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true"
-                                                                    class="fas fa-phone-alt"></i>
-                                                            </span>
-                                                            <span class="elementor-icon-list-text">{{$data['celularPrincipal']}}</span>
-                                                        </li>
+                                                            <li class="elementor-icon-list-item">
+                                                                <span class="elementor-icon-list-icon">
+                                                                    <i aria-hidden="true"
+                                                                        class="fas fa-phone-alt"></i>
+                                                                </span>
+                                                                <span
+                                                                    class="elementor-icon-list-text">{{ $data['celularPrincipal'] }}</span>
+                                                            </li>
                                                         @endif
                                                         @if ($data['correoPrincipal'])
-                                                        <li class="elementor-icon-list-item">
-                                                            <span class="elementor-icon-list-icon">
-                                                                <i aria-hidden="true" class="fas fa-envelope"></i>
-                                                            </span>
-                                                            <span
-                                                                class="elementor-icon-list-text">{{$data['correoPrincipal']}}</span>
-                                                        </li>
+                                                            <li class="elementor-icon-list-item">
+                                                                <span class="elementor-icon-list-icon">
+                                                                    <i aria-hidden="true" class="fas fa-envelope"></i>
+                                                                </span>
+                                                                <span
+                                                                    class="elementor-icon-list-text">{{ $data['correoPrincipal'] }}</span>
+                                                            </li>
                                                         @endif
                                                     </ul>
                                                 </div>
@@ -524,10 +522,12 @@
                                                 <div class="elementor-widget-container">
                                                     Revisa Nuestros <a style="color: white;"
                                                         href="{{ route('seccion.terminos-condiciones') }}">Términos y
-                                                        Condiciones</a>, <a href="{{ route('seccion.preguntas-frecuentes') }}"
+                                                        Condiciones</a>, <a
+                                                        href="{{ route('seccion.preguntas-frecuentes') }}"
                                                         style="color: white; ">Preguntas Frecuentes</a> y
                                                     nuestro
-                                                    <a style="color: white;" href="{{ route('seccion.calendario-eventos') }}">Calendario de
+                                                    <a style="color: white;"
+                                                        href="{{ route('seccion.calendario-eventos') }}">Calendario de
                                                         Eventos</a>
                                                 </div>
                                             </div>
@@ -546,8 +546,8 @@
                                             <div
                                                 class="elementor-element elementor-element-31e2be4 elementor-widget elementor-widget-text-editor">
                                                 <div class="elementor-widget-container">
-                                                    Sistema Web Turismo Días - Developed by <a
-                                                        style="color: white;" href="#">Gema
+                                                    Sistema Web Turismo Días - Developed by <a style="color: white;"
+                                                        target="_blank" href="https://www.gemaswsolutions.com/">Gema
                                                         Software Solutions</a> </div>
                                             </div>
                                         </div>

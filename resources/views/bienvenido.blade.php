@@ -467,7 +467,7 @@
                                                                     <div class="content-card col-xs-12 col-sm-4">
                                                                         <div class="card">
                                                                             <a class="img-card"
-                                                                                href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                                                                href="{{ route('seccion.servicios') }}">
                                                                                 <img src="{{ $servicio['ruta_foto'] }}" />
                                                                             </a>
                                                                             <div class="card-content">
